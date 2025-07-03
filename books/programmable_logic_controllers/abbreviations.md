@@ -1,4 +1,4 @@
-|Afkorting| Verklaring|
+|Abbreviation| Declaration|
 | --- | ----- |
 |AI| Analog Input|
 |AO| Analog Output|
