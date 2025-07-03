@@ -8,7 +8,7 @@ In short, the perfect basis for all training courses that involving PLC.
 
 ***Copyright***
 
-This ebook is a translation from Dutch of the book "Automatisatie, Programmeerbare sturingen, Editie 2021, ISBN 978-90-497-0098-0" written by Geert Van Grieken and Published by Plantyn Uitgeverij **(https://www.plantyn.com)**.
+This ebook is a translation from Dutch of the book *"Automatisatie, Programmeerbare sturingen, Editie 2021, ISBN 978-90-497-0098-0"* written by Geert Van Grieken and Published by Plantyn Uitgeverij **(https://www.plantyn.com)**.
 
 Copyright ©2025 Geert Van Grieken, 2200 Herentals, All rights reserved. No part of this publication may be reproduced or published in printed, acoustic, cinematorgraphic or any other form without the written permission of the author.
 
