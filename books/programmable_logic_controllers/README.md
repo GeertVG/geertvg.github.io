@@ -1,6 +1,6 @@
 # Programmable Logic Controllers
 
-This ebook is an introduction into the world of Programmable Logic Controllers, abbreviated as PLC. 
+This ebook is an introduction into the world of Programmable Logic Controllers (PLC). 
 PLC fundamentals are described starting from European standards and guidelines and continues with pratical examples from two well-know PLC brands; Beckhoff and Siemens.
 It starts from "0" and ends with PLC software engineering.
 
