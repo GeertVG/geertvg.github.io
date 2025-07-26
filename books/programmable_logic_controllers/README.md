@@ -1,5 +1,19 @@
 # Programmable Logic Controllers
 
+***Foreword***
+
+What started as an idea in the summer of 2017 has become a reality about 3 years later: an automation book for secondary education that explains industrial automation from 0 to software engineering.
+
+The idea arised because, as a lecturer in industrial automation at the AP university of applied sciences and arts, I noticed that PLC software engineering had not developed in the Flemish education program for several years. This is understandable, as this is often protected at companies, therefore limiting its reflection to education. My own experiences as an automation technician and lecturer were and added value when writing this book.
+
+The eBook is conceived as a narrative that unfolds across the chapters. It is not a book with exercises, but more a handbook that explains industrial automation from guidelines and standards and how this is implemented by two automation manufactures: BECKHOFF & SIEMENS. It ends with the chapter on software engineering, where the innovation lies: the development of PLC software according to a software model.
+
+As a teacher, you are not bound to follow the order of the book. You can create your own learning track for your students, referring to the various sections. This makes industrial automation challenge for the students and the teacher!
+
+Finally, I would like to thank a number of people and organizations: BECKHOFF nv, SIEMENS nv, and Realgames for GIVING PERMISSION TO REPRODUCE INFORMATION FROM THEIR PRODUCTS. Annette Luyten for the support within the publisher, Linda Van den Broeck en Randy Geert for the proofreading, Mohamed Al Farisi for his critical feedback and my family for their patience and support.
+
+***Summary***
+
 This eBook is an introduction into the world of Programmable Logic Controllers (PLC). 
 PLC fundamentals are described starting from European standards and guidelines and continues with practical examples from two well-know PLC brands; Beckhoff and Siemens.
 It starts from "0" and ends with PLC software engineering.
@@ -8,7 +22,7 @@ In short, the perfect basis for all training courses that involving PLC.
 
 ***Copyright***
 
-This ebook is a translation from Dutch of the book *"Automatisatie, Programmeerbare sturingen, Editie 2021, ISBN 978-90-497-0098-0"* written by Geert Van Grieken and Published by Plantyn Uitgeverij **(https://www.plantyn.com)**.
+This eBook is a translation from Dutch of the book *"Automatisatie, Programmeerbare sturingen, Editie 2021, ISBN 978-90-497-0098-0"* written by Geert Van Grieken and Published by Plantyn Uitgeverij **(https://www.plantyn.com)**.
 
 Copyright ©2025 Geert Van Grieken, 2200 Herentals, All rights reserved. No part of this publication may be reproduced or published in printed, acoustic, cinematographic or any other form without the written permission of the author.
 
