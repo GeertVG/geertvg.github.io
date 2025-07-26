@@ -1,7 +1,7 @@
 # Programmable Logic Controllers
 
-This ebook is an introduction into the world of Programmable Logic Controllers (PLC). 
-PLC fundamentals are described starting from European standards and guidelines and continues with pratical examples from two well-know PLC brands; Beckhoff and Siemens.
+This eBook is an introduction into the world of Programmable Logic Controllers (PLC). 
+PLC fundamentals are described starting from European standards and guidelines and continues with practical examples from two well-know PLC brands; Beckhoff and Siemens.
 It starts from "0" and ends with PLC software engineering.
 
 In short, the perfect basis for all training courses that involving PLC.
@@ -10,11 +10,11 @@ In short, the perfect basis for all training courses that involving PLC.
 
 This ebook is a translation from Dutch of the book *"Automatisatie, Programmeerbare sturingen, Editie 2021, ISBN 978-90-497-0098-0"* written by Geert Van Grieken and Published by Plantyn Uitgeverij **(https://www.plantyn.com)**.
 
-Copyright ©2025 Geert Van Grieken, 2200 Herentals, All rights reserved. No part of this publication may be reproduced or published in printed, acoustic, cinematorgraphic or any other form without the written permission of the author.
+Copyright ©2025 Geert Van Grieken, 2200 Herentals, All rights reserved. No part of this publication may be reproduced or published in printed, acoustic, cinematographic or any other form without the written permission of the author.
 
 ***Disclaimer***
 
-The author have taken great care with all texts and illustrations in this ebook. Nevertheless, errors can never be completely avoided. 
+The author have taken great care with all texts and illustrations in this eBook. Nevertheless, errors can never be completely avoided. 
 The author accept no liability, regardless of the legal basis, for damage resulting from the use of the programming examples and/or software designs.
 
 ***Additional Clauses***
