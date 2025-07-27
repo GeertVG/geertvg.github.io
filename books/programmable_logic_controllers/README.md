@@ -1,5 +1,7 @@
 # Programmable Logic Controllers
 
+![Industrial Automation 1](/ebook_front.png "Programmable Logic Controllers")
+
 ***Foreword***
 
 What started as an idea in the summer of 2017 has become a reality about 3 years later: an automation book for secondary education that explains industrial automation from 0 to software engineering.
@@ -10,7 +12,7 @@ The eBook is conceived as a narrative that unfolds across the chapters. It is no
 
 As a teacher, you are not bound to follow the order of the book. You can create your own learning track for your students, referring to the various sections. This makes industrial automation challenge for the students and the teacher!
 
-Finally, I would like to thank a number of people and organizations: BECKHOFF nv, SIEMENS nv, and Realgames for GIVING PERMISSION TO REPRODUCE INFORMATION FROM THEIR PRODUCTS. Annette Luyten for the support within the publisher, Linda Van den Broeck en Randy Geert for the proofreading, Mohamed Al Farisi for his critical feedback and my family for their patience and support.
+Finally, I would like to thank a number of people and organizations: BECKHOFF nv, SIEMENS nv, and Realgames for giving permission to reproduce information from their products. Annette Luyten for the support within the publisher, Linda Van den Broeck and Randy Geerts for the proofreading, Mohamed Al Farisi for his critical feedback and my family for their patience and support.
 
 ***Summary***
 
