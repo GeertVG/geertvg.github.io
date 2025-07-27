@@ -1,5 +1,3 @@
-# Areas
-
 **Automation** or **mechatronics** involves the automatic execution of tasks and/or commands by electrical devices, machines, or technical installations.
 
 To achieve this, these devices, machines, and installations require the following:
