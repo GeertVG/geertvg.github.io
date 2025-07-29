@@ -24,7 +24,7 @@ Micro-controllers are used when the system needs to be compact and/or where the 
 - Frequency controller
 - Displays
 
-A **PLC system consists** of a mounting rail on which various modules are mounted, such as:
+A **PLC** system consists of a mounting rail on which various modules are mounted, such as:
 - A processor module containing a processor, memory, and a network connection
 - A power supply module
 - An input module to which the sensors are connected
@@ -35,7 +35,7 @@ A **PLC system consists** of a mounting rail on which various modules are mounte
 
 PLC systems can be expanded by adding network components such as displays, frequency controllers, etc. They are primarily used in mechanical engineering and technical installations. Therefore, PLC systems are often installed in electrical cabinets.
 
-> PLC = Programmable Logic Controller
+> PLC = **P**rogrammable **L**ogic **C**ontroller
 
 ## Areas of expertise
 Industrial automation can be divided into two disciplines:
