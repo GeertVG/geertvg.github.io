@@ -1,5 +1,5 @@
 |Abbreviation| Declaration|
-| --- | ----- |
+| :--- | :----- |
 |AI| Analog Input|
 |AO| Analog Output|
 |ASCII| American Standard Code for Information Interchange|
