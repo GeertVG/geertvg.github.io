@@ -7,3 +7,5 @@
 		* [Areas](books/programmable_logic_controllers/chapter1/areas.md)
 		* [Process types](books/programmable_logic_controllers/chapter1/process_types.md)
 	* [Chapter 2 : Structure of an automated system](books/programmable_logic_controllers/chapter2/intro.md)
+		* [Learning goals](books/programmable_logic_controllers/chapter2/learning_goals.md)
+		* [Definition of terms](books/programmable_logic_controllers/chapter2/definition_of_terms.md)
