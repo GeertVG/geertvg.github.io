@@ -31,11 +31,11 @@ A **PLC** system consists of a mounting rail on which various modules are mounte
 - An output module to which the actuators are connected
 - A communications module if additional network connections are required
 
+> PLC = **P**rogrammable **L**ogic **C**ontroller
+
 ![Siemens S7-1500](/images/Siemens_s7_1500.png "S7-1500 PLC system, ©2020 Siemens") ![Beckhoff Cx](/images/Beckhoff_cx.png "CX PLC system, ©2020 Beckhoff")
 
 PLC systems can be expanded by adding network components such as displays, frequency controllers, etc. They are primarily used in mechanical engineering and technical installations. Therefore, PLC systems are often installed in electrical cabinets.
-
-> PLC = **P**rogrammable **L**ogic **C**ontroller
 
 ## Areas of expertise
 Industrial automation can be divided into two disciplines:
