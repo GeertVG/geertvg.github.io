@@ -24,18 +24,18 @@ Micro-controllers are used when the system needs to be compact and/or where the 
 - Frequency controller
 - Displays
 
-A **PLC[^1] system consists** of a mounting rail on which various modules are mounted, such as:
+A **PLC system consists** of a mounting rail on which various modules are mounted, such as:
 - A processor module containing a processor, memory, and a network connection
 - A power supply module
 - An input module to which the sensors are connected
 - An output module to which the actuators are connected
 - A communications module if additional network connections are required
 
-![Siemens S7-1500](/programmable_logic_controllers/chapter1/images/Siemens_s7_1500.png "S7-1500 PLC system, ©2020 Siemens") ![Beckhoff Cx](/chapter1/images/Beckhoff_cx.png "CX PLC system, ©2020 Beckhoff")
+![Siemens S7-1500](/images/Siemens_s7_1500.png "S7-1500 PLC system, ©2020 Siemens") ![Beckhoff Cx](/images/Beckhoff_cx.png "CX PLC system, ©2020 Beckhoff")
 
 PLC systems can be expanded by adding network components such as displays, frequency controllers, etc. They are primarily used in mechanical engineering and technical installations. Therefore, PLC systems are often installed in electrical cabinets.
 
-[^1]: PLC = Programmable Logic Controller
+> PLC = Programmable Logic Controller
 
 ## Areas of expertise
 Industrial automation can be divided into two disciplines:
@@ -50,6 +50,6 @@ The figures below illustrate both areas:
 - The physical properties (boiling point, physical state, coefficient of expansion, water absorption, etc.) of the various ingredients must be known to produce a soft drink = Process automation
 - Only the properties (weight, dimensions, material, etc.) of the bottles need to be known for processing (sorting, packaging, stacking on pallets, etc.) = Automation
 
-![Process automation](/programmable_logic_controllers/chapter1/images/Siemens_process_automation.png "Process Automation - Preparing Soft Drinks, ©2019 Siemens")
+![Process automation](/images/Siemens_process_automation.png "Process Automation - Preparing Soft Drinks, ©2019 Siemens")
 
-![Automation](/programmable_logic_controllers/chapter1/images/Siemens_automation.png "Automation – Processing filled bottles (soft drinks) , ©2019 Siemens")
+![Automation](/images/Siemens_automation.png "Automation – Processing filled bottles (soft drinks) , ©2019 Siemens")

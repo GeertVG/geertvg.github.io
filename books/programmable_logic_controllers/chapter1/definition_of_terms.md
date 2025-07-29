@@ -1,7 +1,7 @@
 # Definition of terms
 
 | Term | Description |
-| ---- | ----------- |
+| :---: | :---------- |
 | User program | The software project created by the user|
 | Processor | An electronic device that processes the user program |
 | Processing unit | The combination of memories and processors with the aim to control its environment recorded by the sensors |
