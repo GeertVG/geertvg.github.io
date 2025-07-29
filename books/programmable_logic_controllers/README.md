@@ -4,9 +4,9 @@
 
 ***Foreword***
 
-What started as an idea in the summer of 2017 has become a reality about 3 years later: an automation book for secondary education that explains industrial automation from 0 to software engineering.
+What started as an idea in the summer of 2017 has become a reality about 3 years later: an automation book for secondary education that explains industrial automation from 0 to software engineering. In 2025 this eBook has become reality.
 
-The idea arised because, as a lecturer in industrial automation at the AP university of applied sciences and arts, I noticed that PLC software engineering had not developed in the Flemish education program for several years. This is understandable, as this is often protected at companies, therefore limiting its reflection to education. My own experiences as an automation technician and lecturer were and added value when writing this book.
+The idea arised because, as a lecturer in industrial automation at the Antwerp AP University of Applied Sciences and Arts, I noticed that PLC software engineering had not developed in the Flemish education program for several years. This is understandable, as this is part of engineering is often protected at companies, therefore limiting its reflection to education. My own experiences as an automation technician and lecturer were and added value when writing this book.
 
 The eBook is conceived as a narrative that unfolds across the chapters. It is not a book with exercises, but more a handbook that explains industrial automation from guidelines and standards and how this is implemented by two automation manufactures: BECKHOFF & SIEMENS. It ends with the chapter on software engineering, where the innovation lies: the development of PLC software according to a software model.
 
