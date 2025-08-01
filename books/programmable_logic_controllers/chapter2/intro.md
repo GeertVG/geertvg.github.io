@@ -6,7 +6,11 @@ An **automated machine or technical installation** can be visualized schematical
 
 This clearly demonstrates the presence of feedback: when the actuators are activated, they influence the machine or system, causing the sensors to register a change.
 
-![Schematic overview](/images/overview.png "Schematic overview of a automated system")
+<figure>
+    <img src="/images/overview.png" width="500" height="405"
+         alt="Schematic overview">
+    <figcaption>Schematic overview of a automated system</figcaption>
+</figure>
 
 Sensor signals are processed by the PLC via PLC inputs. Actuators are controlled by the PLC via PLC outputs. The collection of PLC inputs and PLC outputs is called IO.
 
@@ -27,14 +31,7 @@ The **programming section** can be divided as showed in the next figure.
 
 | Overview | |
 | :---: | :--- |
-|![Schematic programming overview](/images/programming_overview.png "Schematic overview of the programming part") | 1 = Programming device |
-|  | 2 = PLC |
-|  | 3 = Siemens engineering application |
-|  | 4 = Beckhoff engineering application|
-|  | 5 = Download cable |
-|  | 6 = Compile |
-|  | 7 = Download |
-|  | 8 = Upload |
+|![Schematic programming overview](/images/programming_overview.png "Schematic overview of the programming part") | 1 = Programming device <br> 2 = PLC <br> 3 = Siemens engineering application <br> 4 = Beckhoff engineering application <br> 5 = Download cable <br> 6 = Compile <br> 7 = Download <br> 8 = Upload |
 
 The **user program** is designed in the manufacturer's ES package and stored in the programming device's memory (e.g., a computer's hard drive). This is called the OFFLINE user program.
 
