@@ -25,7 +25,7 @@ Because automated machines and technical installations involve hazards, **safety
 
 The **programming section** can be divided as showed in the next figure.
 
-| Overview | |
+| Overview | Item |
 | :---: | :--- |
 |![Schematic programming overview](/images/programming_overview.png "Schematic overview of the programming part") | 1 = Programming device <br> 2 = PLC <br> 3 = Siemens engineering application <br> 4 = Beckhoff engineering application <br> 5 = Download cable <br> 6 = Compile <br> 7 = Download <br> 8 = Upload |
 
