@@ -6,11 +6,7 @@ An **automated machine or technical installation** can be visualized schematical
 
 This clearly demonstrates the presence of feedback: when the actuators are activated, they influence the machine or system, causing the sensors to register a change.
 
-<figure>
-    <img src="/images/overview.png" width="500" height="405"
-         alt="Schematic overview">
-    <figcaption>Schematic overview of a automated system</figcaption>
-</figure>
+![Schematic overview](/images/overview.png "Schematic overview of a automated system")
 
 Sensor signals are processed by the PLC via PLC inputs. Actuators are controlled by the PLC via PLC outputs. The collection of PLC inputs and PLC outputs is called IO.
 
