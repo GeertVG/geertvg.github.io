@@ -15,4 +15,4 @@
 | BIT | A signal with two states: 0 or 1 / FALSE or TRUE |
 | WORD | An unbroken sequence of 16 BITs |
 
-> ES = **E**ngineering **S**oftware = The software programs needed to “program” a device
+> ES = **E**ngineering **S**oftware = The software application needed to “program” a device
