@@ -50,6 +50,4 @@ The figures below illustrate both areas:
 - The physical properties (boiling point, physical state, coefficient of expansion, water absorption, etc.) of the various ingredients must be known to produce a soft drink = Process automation
 - Only the properties (weight, dimensions, material, etc.) of the bottles need to be known for processing (sorting, packaging, stacking on pallets, etc.) = Automation
 
-![Process automation](/images/Siemens_process_automation.png "Process Automation - Preparing Soft Drinks, ©2019 Siemens")
-
-![Automation](/images/Siemens_automation.png "Automation – Processing filled bottles (soft drinks) , ©2019 Siemens")
+![Process automation](/images/Siemens_process_automation.png "Process Automation - Preparing Soft Drinks, ©2019 Siemens") ![Automation](/images/Siemens_automation.png "Automation – Processing filled bottles (soft drinks) , ©2019 Siemens")
