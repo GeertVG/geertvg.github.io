@@ -13,6 +13,8 @@ The interaction between humans and machinery is enabled by adding a Human Machin
 
 These components can be expanded and/or replaced using a programmable screen equipped with a processor, memory, and the necessary network connections. The term "HMI display" is often used to refer solely to the screen.
 
+![Basic Siemens HMI](/images/siemens_basic_hmi.png "Siemens Basic Panels, ©2020 Siemens") 
+
 Using an HMI display allows you to visually represent a machine/installation and display its status with dynamic colors. It is also possible to provide additional information. The following functionalities are programmable:
 - Displaying current alarms in a summary table and/or banner (**=Alarming**)
 - Displaying current messages in a summary table and/or banner (**=Events**)
@@ -23,8 +25,6 @@ Using an HMI display allows you to visually represent a machine/installation and
 > Dynamic colors = Colours that change depending on the status (e.g. red = fault / green = actuator on)
 
 ![CP62xx Beckhoff HMI](/images/Beckhoff_hmi1.png "CP62xx Beckhoff HMI, ©2020 Beckhoff") ![CP62xx Beckhoff HMI](/images/Beckhoff_hmi2.png "CP62xx Beckhoff HMI, ©2020 Beckhoff") ![CP62xx Beckhoff HMI](/images/Beckhoff_hmi3.png "CP62xx Beckhoff HMI, ©2020 Beckhoff") ![CP62xx Beckhoff HMI](/images/Beckhoff_hmi4.png "CP62xx Beckhoff HMI, ©2020 Beckhoff") 
-
-![Basic Siemens HMI](/images/siemens_basic_hmi.png "Siemens Basic Panels, ©2020 Siemens") 
 
 HMI displays are available in various sizes, ranging from 4 inches to 24 inches, and include features such as USB ports, function keys, industrial network connections, and single-touch, dual-touch, or multi-touch operation.
 
