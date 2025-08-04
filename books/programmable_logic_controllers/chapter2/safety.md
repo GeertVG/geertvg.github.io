@@ -17,7 +17,7 @@ Control systems must be designed and constructed in such a way as to prevent haz
 - Errors in the control system logic do not lead to hazardous situations,
 - reasonably foreseeable human error during operation does not lead to hazardous situations.
 
-Particular attention must be given to the following points:
+Particular attention must be given to the following points
 - The machinery must not start unexpectedly, even after a power failure. Startup may only occur through a deliberate action using a control device designed for this purpose (=start push button),
 - The machinery must be equipped with a control device that allows it to be stopped completely in a safe manner (=stop push button),
 - The machinery must not be prevented from stopping if the stop command has already been given (=if you press the start and stop buttons simultaneously, the machine should stop),
