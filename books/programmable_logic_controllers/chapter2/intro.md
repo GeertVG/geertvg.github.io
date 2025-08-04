@@ -1,16 +1,16 @@
 # Introduction
 
-An **automated machine or technical installation** can be visualized schematically. 
+**Automated machinery or a technical installation**, e.g. an automated warehouse, can be visualized schematically. 
 
-![Stacker crane](/images/stacker_crane.png "Impression of a automated warehouse, ©2020 Realgames")
+![Stacker crane](/images/stacker_crane.png "Impression of an automated warehouse, ©2020 Realgames")
 
 This clearly demonstrates the presence of feedback: when the actuators are activated, they influence the machine or system, causing the sensors to register a change.
 
-![Schematic overview](/images/overview.png "Schematic overview of a automated system")
+![Schematic overview](/images/overview.png "Schematic overview of an automated system")
 
-Sensor signals are processed by the PLC via PLC inputs. Actuators are controlled by the PLC via PLC outputs. The collection of PLC inputs and PLC outputs is called IO.
+Sensor signals are processed by the PLC via PLC inputs. Actuators are controlled by the PLC via PLC outputs.
 
-> IO or I/O = **I**nputs/**O**utputs
+> IO or I/O = Collection of PLC **I**nputs/**O**utputs
 
 It can be noted that a distinction is made between:
 - Control circuits and power circuits
@@ -30,6 +30,8 @@ The **programming section** can be divided as showed in the next figure.
 |![Schematic programming overview](/images/programming_overview.png "Schematic overview of the programming part") | 1 = Programming device <br> 2 = PLC <br> 3 = Siemens engineering application <br> 4 = Beckhoff engineering application <br> 5 = Download cable <br> 6 = Compile <br> 7 = Download <br> 8 = Upload |
 
 The **user program** is designed in the manufacturer's ES package and stored in the programming device's memory (e.g., a computer's hard drive). This is called the OFFLINE user program.
+
+> ES = **E**ngineering **S**oftware packages such as Siemens TIA Portal and Beckhoff TwinCAT
 
 Using a download cable, it is possible to transfer the OFFLINE user program to the PLC's memory. This is called **downloading**. The download is preceded by checking the user program for errors and preparing it for download. This is called **compiling**.
 The user program transferred to the PLC is called the ONLINE user program.
