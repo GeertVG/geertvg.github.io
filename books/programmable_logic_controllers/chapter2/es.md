@@ -18,7 +18,7 @@ The table below provides a brief overview of:
 
 | | Siemens | Beckhoff |
 | :--- | :---: | :---: |
-| Engineering software | TIA Portal V15 SP1 <br> ![TIA Portal V15.1](/images/TIA_icon.png )| TwinCAT® 3 XAE (2013) <br> ![TwinCAT 3 XAE](/images/Twincat_icon.png |
+| Engineering software | TIA Portal V15 SP1 <br> ![TIA Portal V15.1](/images/TIA_icon.png)| TwinCAT® 3 XAE (2013) <br> ![TwinCAT 3 XAE](/images/Twincat_icon.png) |
 | Hardware configurator | Devices/PLC | I/O / Devices |
 | Blocks configurator| Program blocks | PLC / POUs |
 | Network configurator| Networks | NA |
