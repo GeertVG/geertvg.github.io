@@ -9,7 +9,7 @@ To identify all hazards, a risk analysis is conducted. This analysis is then exp
 - Necessary protective measures for risks that cannot be eliminated,
 - Information in the form of pictograms, manuals, and possibly training courses that inform operators about residual risks and indicate whether personal protective equipment is required.
 
-## Summary of safety in the Machinery Directive:
+## Summary of safety in the Machinery Directive
 
 Control systems must be designed and constructed in such a way as to prevent hazardous situations from arising. Above all, they must be designed and constructed in such a way that:
 - They can withstand the intended operating stresses and external influences,
@@ -31,9 +31,9 @@ Particular attention must be given to the following points
 - The emergency stop device must stop a hazardous process as quickly as possible without creating additional (new) risks (**= e.g., a moving overhead crane must stop as quickly as possible in an emergency stop without the load to "swing**"),
 - Emergency stop devices must be a back-up to other safeguarding measures and not a substitute for them (**=an emergency stop is not a stop button**).
 
-| Start push button | Stop push button | Emergency stop button |
+| Start push button | Reset push button | Emergency stop button |
 | : --- : | : --- : | : --- : |
-| ![Start button](/images/start_button.png "SIRIUS ACT buttons, ©2020 Siemens") | ![Stop button](/images/stop_button.png "SIRIUS ACT buttons, ©2020 Siemens") | ![Emergency stop button](/images/emergency_button.png "SIRIUS ACT buttons, ©2020 Siemens") |
+| ![Start button](/images/start_button.png "SIRIUS ACT buttons, ©2020 Siemens") | ![Reset button](/images/reset_button.png "SIRIUS ACT buttons, ©2020 Siemens") | ![Emergency stop button](/images/emergency_button.png "SIRIUS ACT buttons, ©2020 Siemens") |
 
 If machinery is equipped with a red-yellow main switch, it is permitted to perform an emergency stop function by switching the main switch to the OFF-0 position.
 If a machine or technical installation is equipped with a main switch other than the red-yellow switch (e.g., black), it is not permitted to perform an emergency stop function using this main switch.
