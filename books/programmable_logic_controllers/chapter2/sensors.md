@@ -12,11 +12,11 @@ The **choice of a sensor** is determined by several factors:
 
 When selecting a sensor based on the distance between the sensor and the object, the sensing range should be considered, ensuring that the maximum and minimum distances between the sensor and the object are within the sensing range.
 
-![Sensing range of a sensor](/images/sensor_distance.png "Sensing range of a sensor"
+![Sensing range of a sensor](/images/sensor_distance.png "Sensing range of a sensor")
 
 The nominal sensing range is limited by the minimum and maximum measurement limits. However, manufacturers often ensure that a sensor can handle slightly more, allowing measurements outside the nominal sensing range. The area outside the nominal sensing range is called overrange.
 
-![Overrange of a sensor](/images/sensor_range.png "Overrange of a sensor"
+![Overrange of a sensor](/images/sensor_range.png "Overrange of a sensor")
 
 | ![Siemens limit switch 3SE5](/images/Siemens_3SE5.png "Siemens limit switch 3SE5, ©2020 Siemens") | Siemens limit switch 3SE5 <br> - Detects presence using a lever switch <br> - Digital signal <br> - Available for 24VDC, 115VAC and 230VAC <br> - Available in plastic or metal housing <br> - Available in 5 different dimensions | 
 | :---: | :--- |
