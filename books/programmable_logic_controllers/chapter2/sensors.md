@@ -1,5 +1,31 @@
 # Sensors
+
+The artificial senses of a machine or installation, called **sensors**, transmit the current status of machinery or technical installation to the central processing unit of the PLC via the PLC inputs.
+
 ## Conversion
+
+A sensor measures a physical quantity and converts it into an electrical signal so it can be processed by an electronic device. PLC input modules convert the electrical signal into a signal consisting of 0s and 1s. Such a signal is called a digital signal because it changes in steps (through the 0s and 1s).
+
+![Input conversion](/images/input_conversion.png "Input conversion")
+
+The electrical signal is called an analog signal because it can take any value (the number of digits after the decimal point is theoretically infinite).
+
+![Digital vs analog signals](/images/digital_vs_analog.png "Digital vs analog signals")
+
+In automation, however, digital and analog signals are defined based on the different states of the electrical signal:
+- Electrical signals with two states that are converted to a logical 0 or a logical 1 are called **digital input signals**.
+- Electrical signals with a continuous state between two extreme limits that are converted to a series of 0s and 1s are called **analog input signals**.
+
+![Overview automation input signals](/images/overview_input_signals.png "Overview automation input signals")
+
+Because a digital signal changes in steps, some information is lost when converting analog input signals. Furthermore, one must always work between two extreme values, namely the minimum and maximum sensing limits.
+Within the EU, electrical input signals are defined by standards and guidelines. The list below provides an overview of commonly used electrical signals in industrial automation:
+- 24 VDC and 0 VDC for digital signals and as a power supply for control signals
+- 0–20 mA and 4–20 mA for analog signals
+- 0–10 V for analog signals
+- Pt100: resistance measurement for analog signals
+
+> Pt100 = Resistance measurement that is exactly 100 Ohm at 0 °C and where the resistance increases with increasing temperature
 
 ## Sensor selection
 
@@ -32,8 +58,6 @@ The nominal sensing range is limited by the minimum and maximum measurement limi
 
 | ![Siemens SITRANS TS100 temperature sensor](/images/Siemens_TS100.png "Siemens SITRANS TS100 temperature sensor, ©2020 Siemens") | Siemens SITRANS TS100 temperature sensor <br> - Measures the temperature by resistance that depends on the temperature <br> - Analog signal <br> - Available for 24VDC, 115VAC and 230VAC <br> - Available with different connectors <br> - Available as Pt100 | 
 | :---: | :--- |
-
-> Pt100 = Resistance measurement that is exactly 100 Ohm at 0 °C and where the resistance increases with increasing temperature
 
 | ![Siemens SITRANS P200 pressure sensor](/images/Siemens_P200.png "Siemens SITRANS P200 pressure sensor, ©2020 Siemens") | Siemens SITRANS P200 pressure sensor <br> - Measures the relative or absolute pressure <br> - Analog signal <br> - Available for 4 .. 20mA / 0 .. 10VDC control signals <br> - Sensing range : 0 .. 2.5bar / 0 .. 4 bar / 0 .. 6bar / ... <br> - Available with different connectors | 
 | :---: | :--- |
