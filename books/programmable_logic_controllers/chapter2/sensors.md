@@ -10,9 +10,13 @@ The **choice of a sensor** is determined by several factors:
 - Mounting options and electrical characteristics
 - …
 
-When selecting a sensor based on the distance between the sensor and the object, the measurement range should be considered, ensuring that the maximum and minimum distances between the sensor and the object are within the measurement range.
+When selecting a sensor based on the distance between the sensor and the object, the sensing range should be considered, ensuring that the maximum and minimum distances between the sensor and the object are within the sensing range.
 
-The nominal measuring range is limited by the minimum and maximum measurement limits. However, manufacturers often ensure that a sensor can handle slightly more, allowing measurements outside the nominal measuring range. The area outside the nominal measuring range is called the overrange measuring range.
+![Sensing range of a sensor](/images/sensor_distance.png "Sensing range of a sensor"
+
+The nominal sensing range is limited by the minimum and maximum measurement limits. However, manufacturers often ensure that a sensor can handle slightly more, allowing measurements outside the nominal sensing range. The area outside the nominal sensing range is called overrange.
+
+![Overrange of a sensor](/images/sensor_range.png "Overrange of a sensor"
 
 ## Operator control selection according IEC 60204
 
