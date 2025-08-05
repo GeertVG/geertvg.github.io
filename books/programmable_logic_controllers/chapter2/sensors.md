@@ -26,14 +26,15 @@ Controls, such as push buttons, allow an operator to start or stop an action. A 
 	- …
 - Switch springs back to a specific position
 
-![Siemens operator control and signaling 3SB3](/images/Software_parts.png "Operator control and signaling 3SB3 ©2020 Siemens") Siemens 3SB3 Operator control <br> - Push buttons and switches <br> - Digital signal <br> - Available for 24VDC, 115VAC and 230VAC <br> - Available in plastic or metal housing <br> - Available in different dimensions <br> - Available in different colors
+| ![Siemens operator control and signaling 3SB3](/images/Siemens_SB3.png "Operator control and signaling 3SB3 ©2020 Siemens") | Siemens 3SB3 Operator control <br> - Push buttons and switches <br> - Digital signal <br> - Available for 24VDC, 115VAC and 230VAC <br> - Available in plastic or metal housing <br> - Available in different dimensions <br> - Available in different colors | 
+| :---: | :--- |
 
 The **color** of an **operator control** is determined by its function:
-- The colors for START/ON controls must be WHITE, GREY, BLACK, or GREEN, with WHITE preferred. RED must not be used.
+- The colors for **START/ON controls** must be WHITE, GREY, BLACK, or GREEN, with WHITE preferred. RED must not be used.
 RED must be used for emergency stop and emergency control devices (including power interruption if intended for emergency use). If there is a background directly around the actuator, this background must be YELLOW. The combination of a RED actuator with a YELLOW background must only be used for emergency control devices.
-- The colors for STOP/OFF controls must be BLACK, GREY, or WHITE, with BLACK preferred. GREEN must not be used. RED is permitted, but it is recommended that RED not be used near an emergency control device.
+- The colors for **STOP/OFF controls** must be BLACK, GREY, or WHITE, with BLACK preferred. GREEN must not be used. RED is permitted, but it is recommended that RED not be used near an emergency control device.
 - White, gray, or black are the preferred colors for actuators that alternate between START/ON and STOP/OFF controls. RED, YELLOW, or GREEN must not be used. WHITE, GREY, or BLACK are the preferred colors for controls that activate when pressed and stop when released (e.g., dead-man controls). RED, YELLOW, or GREEN must not be used.
-- Reset controls are BLUE, WHITE, GREY, or BLACK. Where they also function as a STOP/OFF control, WHITE, GREY, or BLACK are preferred, with BLACK being the primary preference. GREEN must not be used.
+- **Reset controls** are BLUE, WHITE, GREY, or BLACK. Where they also function as a STOP/OFF control, WHITE, GREY, or BLACK are preferred, with BLACK being the primary preference. GREEN must not be used.
 - YELLOW is reserved for use in abnormal conditions, for example, in the event of an abnormal process condition or to interrupt an automatic cycle.
 Where the same WHITE, GREY, or BLACK color is used for different functions (e.g., WHITE for START/ON and STOP/OFF controls), additional coding (e.g., shape, position, or symbol) must be used to identify the controls.
 
