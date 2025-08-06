@@ -19,6 +19,7 @@ In automation, however, digital and analog signals are defined based on the diff
 ![Overview automation input signals](/images/overview_input_signals.png "Overview automation input signals")
 
 Because a digital signal changes in steps, some information is lost when converting analog input signals. Furthermore, one must always work between two extreme values, namely the minimum and maximum sensing limits.
+
 Within the EU, electrical input signals are defined by standards and guidelines. The list below provides an overview of commonly used electrical signals in industrial automation:
 - 24 VDC and 0 VDC for digital signals and as a power supply for control signals
 - 0–20 mA and 4–20 mA for analog signals
