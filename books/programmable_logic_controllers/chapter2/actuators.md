@@ -45,8 +45,7 @@ The color of an operator control is determined by its function.
 | Yellow | Abnormal | Abnormal situation, situation may become critical | Monitoring and/or intervention (e.g. by restoring the intended function) |
 | Blue | Commandment | Indication of a situation in which operators must act | Intervention is required |
 | Green | Normal | Normal situation| If necessary |
-| White | Neutral | Other situations <br>
-Can be used when in doubt about the application of red, yellow, green, or blue | Monitoring |
+| White | Neutral | Other situations <br> Can be used when in doubt about the application of red, yellow, green, or blue | Monitoring |
 
 | ![Siemens SIRIUS signal column 8WD4](/images/Siemens_8WD4.png "Siemens SIRIUS signal column 8WD4, ©2020 Siemens") | Siemens SIRIUS signal column 8WD4 <br> - For remote signaling <br> - Digital signal <br> - Modular design up to 4 modules <br> - Available in 5 different colors and one buzzer module <br> - Available for 24VDC, 115VAC and 230VAC  <br> - Available in 2 different dimensions | 
 | :---: | :--- |
