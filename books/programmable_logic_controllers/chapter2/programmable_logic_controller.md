@@ -81,7 +81,7 @@ Digital input modules are available with 2, 4, 8, 16, or 32 digital inputs (depe
 
 ![Digital input conversion](/images/di_signals.png "Digital input conversion") 
 
-A digital input processes an "all" or "nothing" signal. This is called a BIT. The status of a BIT is often indicated as follows:
+A digital input processes an "all" or "nothing" signal. This is called a **BIT**. The status of a BIT is often indicated as follows:
 - TRUE / FALSE
 - 1 / 0
 - ON / OFF
@@ -110,6 +110,43 @@ A physical quantity consisting of negative and positive values (e.g., -10 V to +
 A physical quantity consisting only of positive values (e.g., 0 to 10 V) is called a unipolar signal. A unipolar signal may be equipped with a cable break detection. In this case, the lower limit is not equal to zero (e.g., 4 mA instead of 0 mA), and one can conclude that if no current flows, the electrical circuit is faulty.
 
 Analog input modules are available with 2, 4, or 8 analog inputs (depending on the manufacturer and PLC series) and are often referred to by the abbreviation AI<sup>8</sup>.
+
+![Analog input conversion](/images/ai_signals.png "Analog input conversion") 
+
+An analog input produces a consecutive sequence of 16 bits. This is called a **WORD**.
+
+Such a WORD can be represented arithmetically in several ways:
+- Binary (numbers with only 0s and 1s)
+- Decimal (integers)
+- …
+
+Using a WORD, an analog input can process a decimal integer between two limits, namely -32768 and +32767. The integer changes in steps:
+- By converting a physical quantity (decimal places) to an integer (no decimal places)
+- By the resolution of the analog input module, which determines how many BITs are used; unused BITs remain permanently set to 0.
+
+| Analog value    |         |       |      |      |      |      |     |     |     |    |    |    |    |    |    |    |
+|:----------------|:--------|:-----:|:----:|:----:|:----:|:----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Bits            | 15      | 14    | 13   | 12   | 11   | 10   | 9   | 8   | 7   | 6  | 5  | 4  | 3  | 2  | 1  | 0  |
+| Weight          | S       | 2<sup>14</sup>   | 2<sup>13</sup>  | 2<sup>12</sup>  | 2<sup>11</sup>  | 2<sup>10</sup>  | 2<sup>9</sup>  | 2<sup>8</sup>  | 2<sup>7</sup>  | 2<sup>6</sup> | 2<sup>5 | 2<sup>4 | 2<sup>3</sup> | 2<sup>2</sup> | 2<sup>1</sup> | 2<sup>0</sup> |
+| Numerical value | \+/-    | 16384 | 8192 | 4096 | 2048 | 1024 | 512 | 256 | 128 | 64 | 32 | 16 | 8  | 4  | 2  | 1  |
+
+The resolution of an analog input module is expressed in number of BITs and indicates how many BITs are used for the conversion to a decimal integer.
+
+![Analog input resolution](/images/ai_resolution.png.png "Analog input resolution")
+
+The unused BITs have the value FALSE / 0 (denoted by an x in the following table) for positive numbers.
+
+| Resolution in bits | Accuracy | Analog value  |
+|:---------------------:|:------------------:|:-------------------:|
+| 8                     | 128                | S000 0000 1xxx xxxx |
+| 9                     | 64                 | S000 0000 01xx xxxx |
+| 10                    | 32                 | S000 0000 001x xxxx |
+| 11                    | 16                 | S000 0000 0001 xxxx |
+| 12                    | 8                  | S000 0000 0000 1xxx |
+| 13                    | 4                  | S000 0000 0000 01xx |
+| 14                    | 2                  | S000 0000 0000 001x |
+| 15                    | 1                  | S000 0000 0000 0001 |
+
 
 <sup>5</sup> *RTD = **R**esistance **T**emperature **D**etector* <br>
 <sup>6</sup> *TC = **T**hermo**c**ouple* <br>
