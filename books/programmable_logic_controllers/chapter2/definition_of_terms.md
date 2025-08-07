@@ -14,5 +14,3 @@
 | Digital signal | A signal consisting of steps i.e. “0”s and “1”s |
 | BIT | A signal with two states: 0 or 1 / FALSE or TRUE |
 | WORD | An unbroken sequence of 16 BITs |
-
-> ES = **E**ngineering **S**oftware = The software application needed to “program” a device

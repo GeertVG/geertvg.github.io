@@ -9,8 +9,7 @@ This clearly demonstrates the presence of feedback: when the actuators are activ
 ![Schematic overview](/images/overview.png "Schematic overview of an automated system")
 
 Sensor signals are processed by the PLC via PLC inputs. Actuators are controlled by the PLC via PLC outputs.
-
-> IO or I/O = Collection of PLC **I**nputs/**O**utputs
+The collection of PLC **I**nputs/**O**utputs is abbreviated as IO or I/O.
 
 It can be noted that a distinction is made between:
 - Control circuits and power circuits
@@ -29,9 +28,7 @@ The **programming section** can be divided as showed in the next figure.
 | :---: | :--- |
 |![Schematic programming overview](/images/programming_overview.png "Schematic overview of the programming part") | 1 = Programming device <br> 2 = PLC <br> 3 = Siemens engineering application <br> 4 = Beckhoff engineering application <br> 5 = Download cable <br> 6 = Compile <br> 7 = Download <br> 8 = Upload |
 
-The **user program** is designed in the manufacturer's ES package and stored in the programming device's memory (e.g., a computer's hard drive). This is called the OFFLINE user program.
-
-> ES = **E**ngineering **S**oftware packages such as Siemens TIA Portal and Beckhoff TwinCAT
+The **user program** is designed in the manufacturer's ES <sup>1</sup> package and stored in the programming device's memory (e.g., a computer's hard drive). This is called the OFFLINE user program.
 
 Using a download cable, it is possible to transfer the OFFLINE user program to the PLC's memory. This is called **downloading**. The download is preceded by checking the user program for errors and preparing it for download. This is called **compiling**.
 The user program transferred to the PLC is called the ONLINE user program.
@@ -39,3 +36,5 @@ The user program transferred to the PLC is called the ONLINE user program.
 > Compiling at the Beckhoff engineering application is called "Build"
 
 If you don't have an offline user program, you can transfer an online user program to the programming device's memory. This is called **uploading**.
+
+<sup>1</sup> *ES = **E**ngineering **S**oftware packages such as Siemens TIA Portal and Beckhoff TwinCAT*

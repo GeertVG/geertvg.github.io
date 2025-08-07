@@ -70,9 +70,9 @@ Furthermore, the operating mode switch, SD memory, and Ethernet/PROFINET connect
 
 Finally, in both the Siemens and Beckhoff processing units, the other modules are primarily installed to the right of the processing unit.
 
-<sup>1</sup> *Central Processing Unit*
-<sup>2</sup> *Secure Digital*
-<sup>3</sup> *Compact Flash*
+<sup>1</sup> *Central Processing Unit* <br>
+<sup>2</sup> *Secure Digital* <br>
+<sup>3</sup> *Compact Flash* <br>
 
 ## Inputs
 

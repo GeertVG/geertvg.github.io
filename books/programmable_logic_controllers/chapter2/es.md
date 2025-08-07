@@ -20,12 +20,12 @@ The table below provides a brief overview of:
 | :--- | :---: | :---: |
 | Engineering software | TIA Portal V15 SP1 <br> ![TIA Portal V15.1](/images/TIA_icon.png)| TwinCAT® 3 XAE (2013) <br> ![TwinCAT 3 XAE](/images/Twincat_icon.png) |
 | Hardware configurator | Devices/PLC | I/O / Devices |
-| Blocks configurator| Program blocks | PLC / POUs |
-| Network configurator| Networks | NA |
+| Blocks configurator| Program blocks | PLC / POUs <sup>1</sup> |
+| Network configurator| Networks | NA <sup>2</sup> |
 | HMI configurator| Devices/HMI | TC3 HMI |
 
-> POU = **P**rogram **O**rganization **U**nit
-> NA = Not Available = The Beckhoff network configurator is integrated into the hardware configurator
+<sup>1</sup> *POU = **P**rogram **O**rganization **U**nit* <br>
+<sup>2</sup> *NA = Not Available = The Beckhoff network configurator is integrated into the hardware configurator*
 
 The configurations are worked out in projects which can contain multiple PLCs, HMIs and networks.
 
@@ -38,6 +38,4 @@ It is often possible to purchase expansion packages to enable:
 - Integrate drives (e.g., servo drives)
 - …
 
-![TIA Portal overview](/images/TIA_overview.png "TIA Portal overview ©2020 Siemens")
-
-![TwinCAT overview](/images/Twincat_overview.png "TwinCAT overview ©2020 Beckhoff")
+![TIA Portal overview](/images/TIA_overview.png "TIA Portal overview ©2020 Siemens") ![TwinCAT overview](/images/Twincat_overview.png "TwinCAT overview ©2020 Beckhoff")
