@@ -9,9 +9,7 @@ A PLC is primarily mounted in an electrical control cabinet. This involves a mod
 - Otherwise, it is called a **rack**. Such a rack is designed by the manufacturer and often intended for mounting a specific PLC series.
 
 
-![CX PLC on standard DIN C rail](/images/CX_on_rail.png "CX PLC on standard DIN C rail, ©2020 Beckhoff")
-
-![S7-1200 PLC on standard DIN C rail](/images/S7_1200_on_rail.png "S7-1200 PLC on standard DIN C rail, ©2020 Siemens") ![S7-1200 PLC on standard DIN C rail](/images/S7_1200_on_rail_bottom.png "S7-1200 PLC on standard DIN C rail, ©2020 Siemens")
+![CX PLC on standard DIN C rail](/images/CX_on_rail.png "CX PLC on standard DIN C rail, ©2020 Beckhoff") ![S7-1200 PLC on standard DIN C rail](/images/S7_1200_on_rail.png "S7-1200 PLC on standard DIN C rail, ©2020 Siemens") 
 
 Some racks are equipped with electronic connectors. These provide the connection between the various modules and the processing unit. If this is not provided, this task is performed by a connector supplied by the manufacturer, or the modules are equipped with connectors that are automatically connected during installation.
 
