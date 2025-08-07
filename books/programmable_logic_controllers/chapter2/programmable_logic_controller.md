@@ -79,9 +79,9 @@ Finally, in both the Siemens and Beckhoff processing units, the other modules ar
 A digital input module must enable the processing unit to read the logic state of sensors connected to the input module.
 Digital input modules are available with 2, 4, 8, 16, or 32 digital inputs (depending on the manufacturer and PLC series) and are often referred to by the abbreviation DI<sup>1</sup>.
 
-![Digital input conversion](/images/di_signals.png "Digital input conversion") A digital input processes an "all" or "nothing" signal. This is called a BIT.
+![Digital input conversion](/images/di_signals.png "Digital input conversion") 
 
-The status of a BIT is often indicated as follows:
+A digital input processes an "all" or "nothing" signal. This is called a BIT. The status of a BIT is often indicated as follows:
 - TRUE / FALSE
 - TRUE / FALSE
 - 1 / 0
