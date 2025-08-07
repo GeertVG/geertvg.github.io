@@ -19,13 +19,13 @@ Some racks are equipped with electronic connectors. These provide the connection
 
 ## Central Processing Unit
 
-The processing unit, or CPU <sup>1</sup>, consists of several parts. It not only executes the software code but also maintains the user program and the status of various variables and parameters.
+The processing unit, or CPU<sup>1</sup>, consists of several parts. It not only executes the software code but also maintains the user program and the status of various variables and parameters.
 
 | Part | Description |
 | :--- | :--- |
 | Processor | The processing of the user program is done by the processor |
 | Internal memory | The internal memory stores the user program and the status of various variables and parameters |
-| External memory | External memory is not included on every PLC type. If it is, it: <br> - Sometimes supplements the internal memory and can ensure that the status of variables is retained during a power failure <br> - Sometimes serves as a backup of the user program and is automatically downloaded when power is restored <br> - In some PLCs, it is necessary for the correct operation of the processing unit <br> <br> External memory is often offered in the form of an SD<sup>(2)</sup> or CF<sup>(3)</sup> card. |
+| External memory | External memory is not included on every PLC type. If it is, it: <br> - Sometimes supplements the internal memory and can ensure that the status of variables is retained during a power failure <br> - Sometimes serves as a backup of the user program and is automatically downloaded when power is restored <br> - In some PLCs, it is necessary for the correct operation of the processing unit <br> <br> External memory is often offered in the form of an SD<sup>2</sup> or CF<sup>3</sup> card. |
 
 A manufacturer often has several processing units available that have the same basic functionality, but differ in processing speed, software code capabilities, internal memory, external memory, communication capabilities, etc.
 It is equipped with various status LEDs. These LEDs indicate the operating mode and status. The operating mode can be set using a switch and/or the associated software package.
@@ -70,12 +70,26 @@ Furthermore, the operating mode switch, SD memory, and Ethernet/PROFINET connect
 
 Finally, in both the Siemens and Beckhoff processing units, the other modules are primarily installed to the right of the processing unit.
 
-<sup>1</sup> *Central Processing Unit* <br>
-<sup>2</sup> *Secure Digital* <br>
-<sup>3</sup> *Compact Flash* <br>
+<sup>1</sup> *CPU = **C**entral **P**rocessing **U**nit* <br>
+<sup>2</sup> *SD = **S**ecure **D**igital* <br>
+<sup>3</sup> *CF = **C**ompact **F**lash* <br>
 
 ## Inputs
+### Digital input modules (DI)
+
+A digital input module must enable the processing unit to read the logic state of sensors connected to the input module.
+Digital input modules are available with 2, 4, 8, 16, or 32 digital inputs (depending on the manufacturer and PLC series) and are often referred to by the abbreviation DI.
+
+<sup>1</sup> *DI = **D**igital **I**nput* <br>
+
+### Analog input modules (AI)
+
 
 ## Outputs
+### Digital output modules (DO)
+
+
+### Analog output modules (AO)
+
 
 ## Internal communication

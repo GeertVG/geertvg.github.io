@@ -42,7 +42,7 @@ The author accept no liability, regardless of the legal basis, for damage result
 - The author thanks the International Society of Automation (ISA) for permission to reproduce information from its International Standards. All extracts <sup>5</sup> are copyright of ISA, Durham, USA. All rights reserved. Further information about the ISA is available at **(www.isa.org)**. ISA is not responsible for the placement and context in which the extracts and content are reproduced by the author, nor is ISA in any way responsible for the other content or accuracy therein.
 
 <sup>1</sup> *©2006-2020 Real Games. All rights reserved. FACTORY I/O, HOME I/O & ITS PLC are registered trademarks of Realgames in Portugal and other countries* <br>
-<sup>2</sup> *IEC 60204-1 ed.6.0  “Copyright © 2016 IEC Geneva, Switzerland. (www.iec.ch)”  * <br>
-<sup>3</sup> *IEC 60848 ed.3.0  “Copyright © 2013 IEC Geneva, Switzerland. (www.iec.ch)” * <br>
-<sup>4</sup> *IEC 61131-3 ed.2.0  “Copyright © 2003 IEC Geneva, Switzerland. (www.iec.ch)” * <br>
+<sup>2</sup> *IEC 60204-1 ed.6.0  “Copyright © 2016 IEC Geneva, Switzerland. (www.iec.ch)”* <br>
+<sup>3</sup> *IEC 60848 ed.3.0  “Copyright © 2013 IEC Geneva, Switzerland. (www.iec.ch)”* <br>
+<sup>4</sup> *IEC 61131-3 ed.2.0  “Copyright © 2003 IEC Geneva, Switzerland. (www.iec.ch)”* <br>
 <sup>5</sup> *ANSI/ISA-88.01-1995 “Copyright © 1995 ISA Durham, United States of America. (www.isa.org)”*

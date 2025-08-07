@@ -20,12 +20,12 @@ The table below provides a brief overview of:
 | :--- | :---: | :---: |
 | Engineering software | TIA Portal V15 SP1 <br> ![TIA Portal V15.1](/images/TIA_icon.png)| TwinCAT® 3 XAE (2013) <br> ![TwinCAT 3 XAE](/images/Twincat_icon.png) |
 | Hardware configurator | Devices/PLC | I/O / Devices |
-| Blocks configurator| Program blocks | PLC / POUs <sup>1</sup> |
-| Network configurator| Networks | NA <sup>2</sup> |
+| Blocks configurator| Program blocks | PLC / POUs<sup>1</sup> |
+| Network configurator| Networks | NA<sup>2</sup> |
 | HMI configurator| Devices/HMI | TC3 HMI |
 
 <sup>1</sup> *POU = **P**rogram **O**rganization **U**nit* <br>
-<sup>2</sup> *NA = Not Available = The Beckhoff network configurator is integrated into the hardware configurator*
+<sup>2</sup> *NA = **N**ot **A**vailable = The Beckhoff network configurator is integrated into the hardware configurator*
 
 The configurations are worked out in projects which can contain multiple PLCs, HMIs and networks.
 

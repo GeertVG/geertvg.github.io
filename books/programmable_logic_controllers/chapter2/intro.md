@@ -28,7 +28,7 @@ The **programming section** can be divided as showed in the next figure.
 | :---: | :--- |
 |![Schematic programming overview](/images/programming_overview.png "Schematic overview of the programming part") | 1 = Programming device <br> 2 = PLC <br> 3 = Siemens engineering application <br> 4 = Beckhoff engineering application <br> 5 = Download cable <br> 6 = Compile <br> 7 = Download <br> 8 = Upload |
 
-The **user program** is designed in the manufacturer's ES <sup>1</sup> package and stored in the programming device's memory (e.g., a computer's hard drive). This is called the OFFLINE user program.
+The **user program** is designed in the manufacturer's ES<sup>1</sup> package and stored in the programming device's memory (e.g., a computer's hard drive). This is called the OFFLINE user program.
 
 Using a download cable, it is possible to transfer the OFFLINE user program to the PLC's memory. This is called **downloading**. The download is preceded by checking the user program for errors and preparing it for download. This is called **compiling**.
 The user program transferred to the PLC is called the ONLINE user program.

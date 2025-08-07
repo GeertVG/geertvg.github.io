@@ -24,7 +24,7 @@ Micro-controllers are used when the system needs to be compact and/or where the 
 - Frequency controller
 - Displays
 
-A **PLC** <sup>1</sup>system consists of a mounting rail on which various modules are mounted, such as:
+A **PLC**<sup>1</sup> system consists of a mounting rail on which various modules are mounted, such as:
 - A processor module containing a processor, memory, and a network connection
 - A power supply module
 - An input module to which the sensors are connected

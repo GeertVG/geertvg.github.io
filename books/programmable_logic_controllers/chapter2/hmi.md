@@ -6,7 +6,7 @@ The interaction between humans and machinery is enabled by adding a Human Machin
 - Lamps,
 - Light columns,
 - Horn or buzzer,
-- BCD <sup>1</sup> displays,
+- BCD<sup>1</sup> displays,
 - Thumb wheel switches.
 
 These components can be expanded and/or replaced using a programmable screen equipped with a processor, memory, and the necessary network connections. The term "HMI display" is often used to refer solely to the screen.
@@ -28,4 +28,4 @@ HMI displays are available in various sizes, ranging from 4 inches to 24 inches,
 
 Programming an HMI display is performed using the manufacturer's ES software package. For Beckhoff and Siemens software packages, the ES-HMI software package is integrated into the overarching ES software package (e.g., Beckhoff TwinCAT / Siemens TIA Portal).
 
-<sup>1</sup> *BCD = Binary Coded Decimal = Coding system for decimal numbers (often used in older displays)*
+<sup>1</sup> *BCD = **B**inary **C**oded **D**ecimal = Coding system for decimal numbers (often used in older displays)*
