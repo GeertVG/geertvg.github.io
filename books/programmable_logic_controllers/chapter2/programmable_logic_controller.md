@@ -92,6 +92,12 @@ There is a small time interval (in the order of µs/ms) between sensor activatio
 - Electronics to convert the analog signal to a digital signal
 - Filter to suppress interference pulses
 
+![KL1408/8 x DI in detail](/images/kl1408.png "KL1408/8 x DI in detail, ©2020 Beckhoff")
+
+![SM1223/16 x DI in detail](/images/sm1223.png "SM1223/16 x DI in detail, ©2020 Siemens")
+
+![SM521/32 x DI in detail](/images/sm521.png "SM521/32 x DI  in detail, ©2020 Siemens")
+
 <sup>4</sup> *DI = **D**igital **I**nput* <br>
 
 ### Analog input modules
