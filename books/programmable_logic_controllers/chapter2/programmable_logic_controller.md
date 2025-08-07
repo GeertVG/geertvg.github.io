@@ -138,7 +138,7 @@ Using a WORD, an analog input can process a decimal integer between two limits, 
 
 The resolution of an analog input module is expressed in number of BITs and indicates how many BITs are used for the conversion to a decimal integer.
 
-![Analog input resolution](/images/ai_resolution.png.png "Analog input resolution")
+![Analog input resolution](/images/ai_resolution.png "Analog input resolution")
 
 The unused BITs have the value FALSE / 0 (denoted by an x in the following table) for positive numbers.
 
