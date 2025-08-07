@@ -74,15 +74,14 @@ Finally, in both the Siemens and Beckhoff processing units, the other modules ar
 <sup>3</sup> *CF = **C**ompact **F**lash* <br>
 
 ## Inputs
-### Digital input modules (DI)
+### Digital input modules
 
 A digital input module must enable the processing unit to read the logic state of sensors connected to the input module.
-Digital input modules are available with 2, 4, 8, 16, or 32 digital inputs (depending on the manufacturer and PLC series) and are often referred to by the abbreviation DI<sup>1</sup>.
+Digital input modules are available with 2, 4, 8, 16, or 32 digital inputs (depending on the manufacturer and PLC series) and are often referred to by the abbreviation DI<sup>4</sup>.
 
 ![Digital input conversion](/images/di_signals.png "Digital input conversion") 
 
 A digital input processes an "all" or "nothing" signal. This is called a BIT. The status of a BIT is often indicated as follows:
-- TRUE / FALSE
 - TRUE / FALSE
 - 1 / 0
 - ON / OFF
@@ -93,16 +92,35 @@ There is a small time interval (in the order of µs/ms) between sensor activatio
 - Electronics to convert the analog signal to a digital signal
 - Filter to suppress interference pulses
 
-<sup>1</sup> *DI = **D**igital **I**nput* <br>
+<sup>4</sup> *DI = **D**igital **I**nput* <br>
 
-### Analog input modules (AI)
+### Analog input modules
 
+An analog input module allows the conversion of physical quantities such as voltage (V), current (I), or resistance (RTD<sup>5</sup> or TC<sup>6</sup>) into a digital signal. These physical quantities are defined within the EU using the SI<sup>7</sup> system (SI system, 2006).
+
+The list below provides an overview of commonly used quantities:
+- 0 to 20 mA: electrical current signal without cable break monitoring
+- 4 to 20 mA: electrical current signal with cable break monitoring
+- 0 to 10 V: electrical voltage signal without cable break monitoring
+- -10 to +10 V: electrical voltage signal without cable break monitoring
+- 1 to 5 V: electrical voltage signal with cable break monitoring
+- Pt100: resistance measurement
+
+A physical quantity consisting of negative and positive values (e.g., -10 V to +10 V) is called a bipolar signal.
+A physical quantity consisting only of positive values (e.g., 0 to 10 V) is called a unipolar signal. A unipolar signal may be equipped with a cable break detection. In this case, the lower limit is not equal to zero (e.g., 4 mA instead of 0 mA), and one can conclude that if no current flows, the electrical circuit is faulty.
+
+Analog input modules are available with 2, 4, or 8 analog inputs (depending on the manufacturer and PLC series) and are often referred to by the abbreviation AI<sup>8</sup>.
+
+<sup>5</sup> *RTD = **R**esistance **T**emperature **D**etector* <br>
+<sup>6</sup> *TC = **T**hermo**c**ouple* <br>
+<sup>7</sup> *SI = **S**ystéme **I**nternational* <br>
+<sup>8</sup> *AI = **A**nalog **I**nput* <br>
 
 ## Outputs
-### Digital output modules (DO)
+### Digital output modules
 
 
-### Analog output modules (AO)
+### Analog output modules
 
 
 ## Internal communication
