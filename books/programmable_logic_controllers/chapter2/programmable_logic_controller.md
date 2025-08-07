@@ -19,7 +19,7 @@ Some racks are equipped with electronic connectors. These provide the connection
 
 ## Central Processing Unit
 
-The processing unit, or CPU <sup>(1)</sup>, consists of several parts. It not only executes the software code but also maintains the user program and the status of various variables and parameters.
+The processing unit, or CPU <sup>1</sup>, consists of several parts. It not only executes the software code but also maintains the user program and the status of various variables and parameters.
 
 | Part | Description |
 | :--- | :--- |
