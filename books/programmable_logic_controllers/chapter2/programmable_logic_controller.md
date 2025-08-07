@@ -67,7 +67,6 @@ Siemens S7-1500 processing units are equipped with a display as standard. This d
 ![S7-1500 CPU at a glance](/images/S7_1500_at_a_glance.png "S7-1500 CPU at a glance, ©2020 Siemens")
 
 Furthermore, the operating mode switch, SD memory, and Ethernet/PROFINET connection(s) are only accessible by removing the front panel.
-
 Finally, in both the Siemens and Beckhoff processing units, the other modules are primarily installed to the right of the processing unit.
 
 <sup>1</sup> *CPU = **C**entral **P**rocessing **U**nit* <br>
@@ -78,7 +77,21 @@ Finally, in both the Siemens and Beckhoff processing units, the other modules ar
 ### Digital input modules (DI)
 
 A digital input module must enable the processing unit to read the logic state of sensors connected to the input module.
-Digital input modules are available with 2, 4, 8, 16, or 32 digital inputs (depending on the manufacturer and PLC series) and are often referred to by the abbreviation DI.
+Digital input modules are available with 2, 4, 8, 16, or 32 digital inputs (depending on the manufacturer and PLC series) and are often referred to by the abbreviation DI<sup>1</sup>.
+
+![Digital input conversion](/images/di_signals.png "Digital input conversion") A digital input processes an "all" or "nothing" signal. This is called a BIT.
+
+The status of a BIT is often indicated as follows:
+- TRUE / FALSE
+- TRUE / FALSE
+- 1 / 0
+- ON / OFF
+
+The state of each digital input signal is displayed using an indicator LED on the digital input module. A green LED will be activated if the state is TRUE.
+
+There is a small time interval (in the order of µs/ms) between sensor activation (e.g., status changes from FALSE to TRUE) and its registration by the processing unit. The length of this time interval is determined by the internal electronics in the input module:
+- Electronics to convert the analog signal to a digital signal
+- Filter to suppress interference pulses
 
 <sup>1</sup> *DI = **D**igital **I**nput* <br>
 
