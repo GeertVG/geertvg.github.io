@@ -25,7 +25,7 @@ The processing unit, or CPU <sup>1</sup>, consists of several parts. It not only
 | :--- | :--- |
 | Processor | The processing of the user program is done by the processor |
 | Internal memory | The internal memory stores the user program and the status of various variables and parameters |
-| External memory | External memory is not included on every PLC type. If it is, it: <br> - Sometimes supplements the internal memory and can ensure that the status of variables is retained during a power failure <br> - Sometimes serves as a backup of the user program and is automatically downloaded when power is restored <br> - In some PLCs, it is necessary for the correct operation of the processing unit <br> External memory is often offered in the form of an SD<sup>(2)</sup> or CF<sup>(3)</sup> card. |
+| External memory | External memory is not included on every PLC type. If it is, it: <br> - Sometimes supplements the internal memory and can ensure that the status of variables is retained during a power failure <br> - Sometimes serves as a backup of the user program and is automatically downloaded when power is restored <br> - In some PLCs, it is necessary for the correct operation of the processing unit <br> <br> External memory is often offered in the form of an SD<sup>(2)</sup> or CF<sup>(3)</sup> card. |
 
 A manufacturer often has several processing units available that have the same basic functionality, but differ in processing speed, software code capabilities, internal memory, external memory, communication capabilities, etc.
 It is equipped with various status LEDs. These LEDs indicate the operating mode and status. The operating mode can be set using a switch and/or the associated software package.
