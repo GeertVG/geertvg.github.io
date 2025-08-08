@@ -228,7 +228,7 @@ Due to the evolution of industrial networks, two types of internal communication
 - Serial communication
 - Ethernet communication
 
-> Serial = Older way of communicating with speeds of order of kilobit/s – megabit/s
+> Serial = Older way of communicating with speeds of order of kilobit/s – megabit/s <br>
 > Ethernet = newer way of communicating with speeds of order of megabit/s – gigabit/s
 
 Beckhoff PLCs can communicate internally using either serial or Ethernet communication. The CPU automatically detects the communication type. However, it is not possible to use both communication types interchangeably in a PLC configuration. The following communication types are distinguished in Beckhoff PLCs:
