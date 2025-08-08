@@ -149,6 +149,9 @@ The unused BITs have the value FALSE / 0 (denoted by an x in the following table
 | 14                    | 2                  | S000 0000 0000 001x |
 | 15                    | 1                  | S000 0000 0000 0001 |
 
+![KL3022/2 x AI [4 .. 20 mA] 12 BIT in detail](/images/kl3022.png "KL3022/2 x AI [4 .. 20 mA] 12 BIT in detail, ©2020 Beckhoff") ![SM1231/8 x AI [U/I 13 BIT] in detail](/images/sm1231.png "SM1231/8 x AI [U/I 13 BIT] in detail, ©2020 Siemens")
+
+![SM531/8 x AI [U/I/RTD/TC] 16 BIT in detail](/images/sm531.png "SM531/8 x AI [U/I/RTD/TC] 16 BIT in detail, ©2020 Siemens")
 
 <sup>5</sup> *RTD = **R**esistance **T**emperature **D**etector* <br>
 <sup>6</sup> *TC = **T**hermo**c**ouple* <br>
@@ -158,6 +161,38 @@ The unused BITs have the value FALSE / 0 (denoted by an x in the following table
 ## Outputs
 ### Digital output modules
 
+A digital output module must enable the processing unit to switch an actuator on or off.
+Digital output modules are available with 2, 4, 8, 16, or 32 outputs (depending on the manufacturer and PLC series) and are often referred to by the abbreviation DO<sup>9</sup>.
+
+![Digital output conversion](/images/do_signals.png "Digital output conversion")
+
+A digital output sends a BIT signal, which is often displayed as follows:
+- TRUE / FALSE
+- 1 / 0
+- ON / OFF
+
+The state of each digital output signal is displayed using an indicator LED on the digital output module. A green LED will be activated if the status is TRUE.
+
+There is a small time interval (in the order of µs/ms) between the software control of a digital output and the actual switching of the output (e.g., the status changes from FALSE to TRUE). The duration of this time interval is determined by the internal electronic components in the output module:
+- Transistor type
+- Relay type
+
+The following table shows the characteristics of both types.
+
+| Transistor type | Relay type |
+|:---:|:---:|
+| High switching frequency compared to relay type| Voltage-free contacts (potential-free) |
+| Long lifespan compared to relay type | Limited lifespan compared to transistor type |
+| Galvanic isolation possible | Galvanic isolated |
+| Switching frequency depends on load type (ohmic, coil or capacitor) | Switching capacity depending on load type (ohmic, coil or capacitor) |
+| Max. switching current = 0.5 .. 2 A (manufacturer and module dependent)| Max. switching current = 2 .. 16 A (manufacturer and module dependent) |
+| DC only | AC & DC |
+
+When switching inductive loads (e.g. a contactor), a quenching element (diode or varistor) must be provided parallel to the load to eliminate the inductive voltages that occur during switching off and thus avoid burning of contacts or breakdown of transistors.
+
+![Varistor](/images/varistor.png "Varistor")
+
+<sup>9</sup> *DO = **D**igital **O**utput* <br>
 
 ### Analog output modules
 
