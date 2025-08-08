@@ -188,6 +188,10 @@ The following table shows the characteristics of both types.
 | Max. switching current = 0.5 .. 2 A (manufacturer and module dependent)| Max. switching current = 2 .. 16 A (manufacturer and module dependent) |
 | DC only | AC & DC |
 
+![KL2408/8 x DO in detail](/images/kl2408.png "KL2408/8 x DO in detail, ©2020 Beckhoff") ![SM1222/16 x DO relay in detail](/images/sm1222.png "SM1222/16 x DO relay in detail, ©2020 Siemens")
+
+ ![SM522/32 x DO in detail](/images/sm522.png "SM522/32 x DO in detail, ©2020 Siemens")
+
 When switching inductive loads (e.g. a contactor), a quenching element (diode or varistor) must be provided parallel to the load to eliminate the inductive voltages that occur during switching off and thus avoid burning of contacts or breakdown of transistors.
 
 ![Varistor](/images/varistor.png "Varistor")
@@ -196,5 +200,51 @@ When switching inductive loads (e.g. a contactor), a quenching element (diode or
 
 ### Analog output modules
 
+An analog output module converts a digital signal into physical quantities such as voltage and current.
+Analog output modules are available with 2, 4, or 8 outputs (depending on the manufacturer and PLC series) and are designated by the abbreviation AO<sup>10</sup>.
+
+![Analog output conversion](/images/ao_signals.png "Analog output conversion")
+
+An analog output processes a consecutive series of 16 BITs, called a **WORD**.
+
+Just like an analog input, an analog output can process a decimal integer between -32768 and +32767 using a WORD. The integer changes in steps:
+- By converting it from an integer (no decimal places) to a physical quantity (decimal places)
+- By the resolution of the analog output module, which determines how many BITs are used; unused BITs remain permanently set to 0.
+
+![EL4004/4 x AO  in detail](/images/el4004.png "EL4004/4 x AO  in detail, ©2020 Beckhoff") ![SM1232/4 x AO in detail](/images/sm1232.png "SM1232/4 x AO in detail, ©2020 Siemens")
+
+ ![SM522/4 [U/I] x AO  in detail](/images/sm522_4.png "SM522/4 [U/I] x AO in detail, ©2020 Siemens")
+
+<sup>10</sup> *AO = **A**nalog **O**utput* <br>
 
 ## Internal communication
+
+Communication is provided between the central processing unit and the other modules to:
+- Communicate the status of the modules to the processing unit (e.g., if a module is in fault)
+- Communicate the status of the sensors to the processing unit via the input modules
+- Communicate the desired state of the actuators to the output modules via the user program
+
+Due to the evolution of industrial networks, two types of internal communication can be defined:
+- Serial communication
+- Ethernet communication
+
+> Serial = Older way of communicating with speeds of order of kilobit/s – megabit/s
+> Ethernet = newer way of communicating with speeds of order of megabit/s – gigabit/s
+
+Beckhoff PLCs can communicate internally using either serial or Ethernet communication. The CPU automatically detects the communication type. However, it is not possible to use both communication types interchangeably in a PLC configuration. The following communication types are distinguished in Beckhoff PLCs:
+- K-bus = serial communication = modules start with the letter K
+- E-bus = Ethernet communication = modules start with the letter E
+
+ ![Internal K-bus and E-bus communication in Beckhoff PLC](/images/Beckhoff_bus.png "Internal K-bus and E-bus communication in Beckhoff PLC, ©2020 Beckhoff")
+
+For Beckhoff E-bus and K-bus configurations, a "bus end" system module must always be installed last (rightmost module):
+- For serial communication, this module ensures that the K-bus is terminated with a terminating resistor and that the electrical contacts of the K-bus are shielded.
+- For Ethernet communication, the module ensures that the electrical contacts of the E-bus are shielded.
+
+For Siemens PLCs, the communication type is determined by the processing unit:
+- K-bus = serial communication = for CPUs of the S7-300/400 series
+- Backplane bus = Ethernet communication = for CPUs of the S7-1200/1500 series
+
+ ![Backplane bus communication on S7-1200 PLCs via connectors](/images/s7_1200_bus.png "Backplane bus communication on S7-1200 PLCs via connectors, ©2020 Siemens")
+
+  ![Backplane bus communication on S7-1500 PLCs via connectors](/images/s7_1500_bus.png "Backplane bus communication on S7-1500 PLCs via connectors, ©2020 Siemens")
