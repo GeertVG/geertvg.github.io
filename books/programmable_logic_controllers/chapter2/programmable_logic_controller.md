@@ -213,7 +213,7 @@ Just like an analog input, an analog output can process a decimal integer betwee
 
 ![EL4004/4 x AO  in detail](/images/el4004.png "EL4004/4 x AO  in detail, ©2020 Beckhoff") ![SM1232/4 x AO in detail](/images/sm1232.png "SM1232/4 x AO in detail, ©2020 Siemens")
 
- ![SM522/4 [U/I] x AO  in detail](/images/sm522_4.png "SM522/4 [U/I] x AO in detail, ©2020 Siemens")
+![SM522/4 [U/I] x AO  in detail](/images/sm522_4.png "SM522/4 [U/I] x AO in detail, ©2020 Siemens")
 
 <sup>10</sup> *AO = **A**nalog **O**utput* <br>
 
@@ -232,21 +232,19 @@ Due to the evolution of industrial networks, two types of internal communication
 > Ethernet = newer way of communicating with speeds of order of megabit/s .. gigabit/s
 
 Beckhoff PLCs can communicate internally using either serial or Ethernet communication. The CPU automatically detects the communication type. However, it is not possible to use both communication types interchangeably in a PLC configuration. The following communication types are distinguished in Beckhoff PLCs:
-
 - K-bus = serial communication = modules start with the letter K
 - E-bus = Ethernet communication = modules start with the letter E
 
- ![Internal K-bus and E-bus communication in Beckhoff PLC](/images/Beckhoff_bus.png "Internal K-bus and E-bus communication in Beckhoff PLC, ©2020 Beckhoff")
+![Internal K-bus and E-bus communication in Beckhoff PLC](/images/Beckhoff_bus.png "Internal K-bus and E-bus communication in Beckhoff PLC, ©2020 Beckhoff")
 
 For Beckhoff E-bus and K-bus configurations, a "bus end" system module must always be installed last (rightmost module):
 - For serial communication, this module ensures that the K-bus is terminated with a terminating resistor and that the electrical contacts of the K-bus are shielded.
 - For Ethernet communication, the module ensures that the electrical contacts of the E-bus are shielded.
 
 For Siemens PLCs, the communication type is determined by the processing unit:
-
 - K-bus = serial communication = for CPUs of the S7-300/400 series
 - Backplane bus = Ethernet communication = for CPUs of the S7-1200/1500 series
 
- ![Backplane bus communication on S7-1200 PLCs via connectors](/images/s7_1200_bus.png "Backplane bus communication on S7-1200 PLCs via connectors, ©2020 Siemens")
+![Backplane bus communication on S7-1200 PLCs via connectors](/images/s7_1200_bus.png "Backplane bus communication on S7-1200 PLCs via connectors, ©2020 Siemens")
 
-  ![Backplane bus communication on S7-1500 PLCs via connectors](/images/s7_1500_bus.png "Backplane bus communication on S7-1500 PLCs via connectors, ©2020 Siemens")
+![Backplane bus communication on S7-1500 PLCs via connectors](/images/s7_1500_bus.png "Backplane bus communication on S7-1500 PLCs via connectors, ©2020 Siemens")
