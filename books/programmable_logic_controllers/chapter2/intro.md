@@ -2,7 +2,7 @@
 
 **Automated machinery or a technical installation**, e.g. an automated warehouse, can be visualized schematically. 
 
-![Stacker crane](/images/stacker_crane.png "Impression of an automated warehouse, ©2020 Realgames")
+![Stacker crane](/images/stacker_crane.png "Impression of an automated warehouse, ©2020 Real Games")
 
 This clearly demonstrates the presence of feedback: when the actuators are activated, they influence the machine or system, causing the sensors to register a change.
 
