@@ -10,7 +10,7 @@ To identify all hazards, a risk analysis is conducted. This analysis is then exp
 - Information in the form of pictograms, manuals, and possibly training courses that inform operators about residual risks and indicate whether personal protective equipment is required.
 
 ## Summary of safety in the Machinery Directive
-
+---
 Control systems must be designed and constructed in such a way as to prevent hazardous situations from arising. Above all, they must be designed and constructed in such a way that:
 - They can withstand the intended operating stresses and external influences,
 - A fault in the hardware or the software of the control system does not lead to hazardous situations,

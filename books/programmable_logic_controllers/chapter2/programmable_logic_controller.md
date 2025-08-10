@@ -3,7 +3,7 @@
 A PLC is the "brain" of automated machinery. It is therefore equipped with a programmable controller that uses logical instructions, like AND & OR gates, to create the intelligence.
 
 ## Rack
-
+---
 A PLC is primarily mounted in an electrical control cabinet. This involves a modular PLC assembly on a mounting rail.
 - If this is a standard DIN C rail, it is called a **mounting rail**.
 - Otherwise, it is called a **rack**. Such a rack is designed by the manufacturer and often intended for mounting a specific PLC series.
@@ -16,7 +16,7 @@ Some racks are equipped with electronic connectors. These provide the connection
 ![S7-1500 PLC on rack](/images/S7_1500_on_rack.png "S7-1500 PLC on rack, ©2020 Siemens")
 
 ## Central Processing Unit
-
+---
 The processing unit, or CPU<sup>1</sup>, consists of several parts. It not only executes the software code but also maintains the user program and the status of various variables and parameters.
 
 | Part | Description |
@@ -72,6 +72,7 @@ Finally, in both the Siemens and Beckhoff processing units, the other modules ar
 <sup>3</sup> *CF = **C**ompact **F**lash* <br>
 
 ## Inputs
+---
 ### Digital input modules
 
 A digital input module must enable the processing unit to read the logic state of sensors connected to the input module.
@@ -159,6 +160,7 @@ The unused BITs have the value FALSE / 0 (denoted by an x in the following table
 <sup>8</sup> *AI = **A**nalog **I**nput* <br>
 
 ## Outputs
+---
 ### Digital output modules
 
 A digital output module must enable the processing unit to switch an actuator on or off.
@@ -218,7 +220,7 @@ Just like an analog input, an analog output can process a decimal integer betwee
 <sup>10</sup> *AO = **A**nalog **O**utput* <br>
 
 ## Internal communication
-
+---
 Communication is provided between the central processing unit and the other modules to:
 - Communicate the status of the modules to the processing unit (e.g., if a module is in fault)
 - Communicate the status of the sensors to the processing unit via the input modules
