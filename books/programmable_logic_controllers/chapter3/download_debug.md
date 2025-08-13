@@ -45,7 +45,7 @@ Icons are also used in Siemens TIA Portal for the status of operating modes.
 
 After this, the status is displayed with colors and dotted lines.
 
-|       |       |      |
+|  Condition | Example | Description |
 | :---: | :---: | :--- |
 | Condition 1 | ![Dotted blue lines](/images/TIA/condition1.png) | Both input A and input B are deactivated, causing output R to have the status FALSE because the result of the OR gate is FALSE |
 | Condition 2 | ![Full green lines](/images/TIA/condition2.png) | Input A is activated, causing output R to have a TRUE status because the result of the OR gate is TRUE |
