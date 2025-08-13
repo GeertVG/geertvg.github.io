@@ -1,4 +1,5 @@
 # Downloading and debugging
+---
 ## Siemens TIA Portal
 
 Transferring the device configuration and the created software is done by downloading them.
@@ -35,7 +36,7 @@ Icons are also used in Siemens TIA Portal for the status of operating modes.
 | ![STARTUP icon](/images/TIA/icon_startup.png) | STARTUP |
 | ![HOLD icon](/images/TIA/icon_hold.png) | HOLD |
 | ![DEFECTIVE icon](/images/TIA/icon_defective.png) | DEFECTIVE |
-| ![Unknown state icon](/images/TIA/icon_unknown.png) | Unknown state |
+| ![Unknown state icon](/images/TIA/icon_unkown.png) | Unknown state |
 | ![No state display icon](/images/TIA/icon_nostate.png) | Device does not allow state display |
 
 **User programs (SOFTWARE)** can be evaluated online for their functionality, but in Siemens TIA Portal this requires an additional action: the monitoring function must be enabled for each building block.
@@ -44,6 +45,7 @@ Icons are also used in Siemens TIA Portal for the status of operating modes.
 
 After this, the status is displayed with colors and dotted lines.
 
+|       |       |      |
 | :---: | :---: | :--- |
 | Condition 1 | ![Dotted blue lines](/images/TIA/condition1.png) | Both input A and input B are deactivated, causing output R to have the status FALSE because the result of the OR gate is FALSE |
 | Condition 2 | ![Full green lines](/images/TIA/condition2.png) | Input A is activated, causing output R to have a TRUE status because the result of the OR gate is TRUE |
