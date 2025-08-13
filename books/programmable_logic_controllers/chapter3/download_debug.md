@@ -78,3 +78,17 @@ What does "Activate configuration" do?
 4. TwinCAT 3 is restarted in Run Mode
 
 In Beckhoff TwinCAT 3, there is less reliance on icons for device **(HARDWARE)** malfunctions and instead, you should consult the *‘device diagnostic inputs’*, where you will find a status description.
+
+| Icon | Description |
+| :---: | :--- |
+| ![Input state](/images/TwinCAT/debug1.png) | S**EtherCAT Device** <br> <br> Inputs.DevState = status of Device 1 <br> - Link error detected <br> - I/O locked after link error (I/O reset required) <br> - At least one device indicates an error state <br> - … |
+| ![Axis state](/images/TwinCAT/debug2.png) | **EtherCAT Device** <br> <br> InfoData.State = extra information from Axis 7 <br> - Invalid vendorId, productCode... read <br> - Slave not present <br> - Slave signals error <br> - … |
+| ![Term state](/images/TwinCAT/debug3.png) | **EtherCAT Slave Device** <br> <br> WcState.WcState = status of Term 2 <br> - Status FALSE = EtherCAT connection OK <br> - Status TRUE = error EtherCAT connection |
+
+Furthermore, it's possible to consult the error list after compiling, which displays device failures and errors in the user program. Double-clicking an error displays the corresponding error.
+
+![TwinCAT 3 Error List](/images/TwinCAT/error_list.png "TwinCAT 3 Error List")
+
+In TwinCAT 3, the status of the **user program (SOFTWARE)** is also displayed with colors and dotted lines. Logging in to the RT user program automatically activates the monitoring function for all building blocks.
+
+In TwinCAT 3, it is not possible to compare the ES user program (OFFLINE) and the RT user program (ONLINE). It is also not possible to make changes in the RT user program (ONLINE).
