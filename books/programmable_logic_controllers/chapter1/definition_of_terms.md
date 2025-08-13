@@ -1,5 +1,5 @@
 # Definition of terms
-
+---
 | Term | Description |
 | :---: | :---------- |
 | User program | The software project created by the user|

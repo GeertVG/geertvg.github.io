@@ -1,5 +1,5 @@
 # Introduction
-
+---
 **Automated machinery or a technical installation**, e.g. an automated warehouse, can be visualized schematically. 
 
 ![Stacker crane](/images/stacker_crane.png "Impression of an automated warehouse, ©2020 Real Games")

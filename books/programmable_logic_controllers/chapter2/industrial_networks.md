@@ -1,5 +1,5 @@
 # Industrial networks
-
+---
 It is often necessary to provide a PLC with one or more industrial networks in order to establish communication with other devices (e.g. HMI display).
 
 ![EtherCAT network](/images/ethercat.png "EtherCAT network ©2020 Beckhoff") 

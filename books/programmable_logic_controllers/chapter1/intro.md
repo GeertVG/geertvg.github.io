@@ -1,5 +1,5 @@
 # Introduction
-
+---
 **Automation** or **mechatronics** involves the automatic execution of tasks and/or commands by electrical devices, machines, or technical installations.
 
 To achieve this, these devices, machines, and installations require the following:
@@ -8,6 +8,8 @@ To achieve this, these devices, machines, and installations require the followin
 - A **brain** to process the senses and control the power
 
 The artificial senses are called **sensors** and consist primarily of mechanical and electronic components that register physical quantities or a state and convert them into an electrical signal.
+
+![Our senses](/images/our_senses.png "Our senses") ![Machinery senses](/images/machinery_senses.png "Machinery senses")
 
 The **adjustable power** units, called actuators, consist, like the sensors, primarily of mechanical and electronic components. These components are often expanded with hydraulic, pneumatic, or electrical components to switch and/or control higher power levels.
 

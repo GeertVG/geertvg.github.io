@@ -1,5 +1,5 @@
 # Process types
-
+---
 The **type of process** can also be categorized. A distinction is made between:
 - Continuous processes
 - Sequential processes

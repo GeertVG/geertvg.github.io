@@ -1,5 +1,5 @@
 # Learning goals
-
+---
 > Level : Knowledge & insights
 > 
 > 1. You can define concepts related to the structure of an automated system

@@ -1,5 +1,5 @@
 # Definition of terms
-
+---
 | Term | Description |
 | :---: | :---------- |
 | Programming device | The device on which the user program is programmed, often this is a computer on which the necessary ES packages from the manufacturer are installed |

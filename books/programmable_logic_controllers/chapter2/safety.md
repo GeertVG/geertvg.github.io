@@ -1,5 +1,5 @@
 # Safety according Machine Directive 2006/42/EG
-
+---
 An automated machine or installation often poses hazards for operators as well as for people in the vicinity.
 
 To mitigate these dangerous situations, a machine or technical installation must comply with various laws. One of these laws is called the Machinery Directive and is mandatory (i.e., mandatory compliance) in all member states of the European Union.
@@ -10,7 +10,7 @@ To identify all hazards, a risk analysis is conducted. This analysis is then exp
 - Information in the form of pictograms, manuals, and possibly training courses that inform operators about residual risks and indicate whether personal protective equipment is required.
 
 ## Summary of safety in the Machinery Directive
----
+
 Control systems must be designed and constructed in such a way as to prevent hazardous situations from arising. Above all, they must be designed and constructed in such a way that:
 - They can withstand the intended operating stresses and external influences,
 - A fault in the hardware or the software of the control system does not lead to hazardous situations,

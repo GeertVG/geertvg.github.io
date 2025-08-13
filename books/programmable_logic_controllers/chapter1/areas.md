@@ -1,6 +1,7 @@
 # Areas
-## Areas of application
 ---
+## Areas of application
+
 The entire system, consisting of processor(s), memory(s), and other electronic components, can be found in various configurations, designs, and sizes.
 These include:
 - Micro-controllers
@@ -38,7 +39,7 @@ PLC systems can be expanded by adding network components such as displays, frequ
 <sup>1</sup> *PLC = **P**rogrammable **L**ogic **C**ontroller*
 
 ## Areas of expertise
----
+
 Industrial automation can be divided into two disciplines:
 - Automation
 - Process automation (also called measurement and control technology)

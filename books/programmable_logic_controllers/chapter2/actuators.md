@@ -1,9 +1,9 @@
 # Actuators
-
+---
 The central processing unit will control the "machinery power" via the PLC outputs and the control actuators. The digital signal from the processing unit is converted to an analog signal by the PLC output modules.
 
 ## Conversion
----
+
 Just as with sensors, digital and analog signals are defined based on the different states of the electrical signal:
 - Electrical signals with two states that are converted from a logical 0 or a logical 1 are called digital output signals.
 - Electrical signals with a continuous state between two limits that are converted from a series of 0s and 1s are called analog output signals.
@@ -19,7 +19,7 @@ Within the EU, electrical output signals are defined by standards. The list belo
 - 0–10 V for analog signals
 
 ## Actuator selection
----
+
 The **choice** of a **control actuator** depends on the power output:
 - Contactors for electrical power outputs, such as asynchronous motors and heating coils,
 - Relays for electrical control outputs (e.g., NO contact ON to a frequency converter),
@@ -36,7 +36,7 @@ The **choice** of a **control actuator** depends on the power output:
 | :---: | :--- |
 
 ## Operator control selection according IEC 60204
----
+
 The color of an operator control is determined by its function.
 
 | Color | Meaning | Declaration | Required action |

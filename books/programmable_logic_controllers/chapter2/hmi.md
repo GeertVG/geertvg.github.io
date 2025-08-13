@@ -1,5 +1,5 @@
 # Human Machine Interface (HMI)
-
+---
 The interaction between humans and machinery is enabled by adding a Human Machine Interface, or HMI for short. This interface primarily consists of the following components:
 - Push buttons and switches,
 - Potentiometers,

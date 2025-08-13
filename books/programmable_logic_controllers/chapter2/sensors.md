@@ -1,9 +1,9 @@
 # Sensors
-
+---
 The artificial senses of a machine or installation, called **sensors**, transmit the current status of machinery or technical installation to the central processing unit of the PLC via the PLC inputs.
 
 ## Conversion
----
+
 A sensor measures a physical quantity and converts it into an electrical signal so it can be processed by an electronic device. PLC input modules convert the electrical signal into a signal consisting of 0s and 1s. Such a signal is called a digital signal because it changes in steps (through the 0s and 1s).
 
 ![Input conversion](/images/input_conversion.png "Input conversion")
@@ -29,7 +29,7 @@ Within the EU, electrical input signals are defined by standards and guidelines.
 > Pt100 = Resistance measurement that is exactly 100 Ohm at 0 °C and where the resistance increases with increasing temperature
 
 ## Sensor selection
----
+
 The **choice of a sensor** is determined by several factors:
 - The properties of the object to be detected, such as shape and color
 - The distance between the sensor and the object
@@ -64,7 +64,7 @@ The nominal sensing range is limited by the minimum and maximum measurement limi
 | :---: | :--- |
 
 ## Operator control selection according IEC 60204
----
+
 Controls, such as push buttons, allow an operator to start or stop an action. A switch, for example, allows you to select and/or activate a specific operating mode, with a choice of different functionalities:
 - Two-position switch: 0-I
 - Three-position switch: II-0-I
