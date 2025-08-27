@@ -1,16 +1,12 @@
 # Variables
-## Direct representation according to IEC 61131
+## Direct representation according IEC 61131
 
-**Variables** <sup>1</sup> Ensure the identification of data objects whose content may
-change. For example, a variable can provide the identification of inputs,
-outputs and memory data objects.
+**Variables** <sup>1</sup> Ensure the identification of data objects whose content may change. For example, a variable can provide the identification of inputs, outputs and memory data objects.
 
-The **direct representation** of a variable creates a link to the absolute
-address in the PLC memory, to a PLC input or a PLC output. In other words, the
-direct representation allows you to check, for example, which PLC input a sensor
+The **direct representation** of a variable creates a link to the absolute address in the PLC memory, to a PLC input or a PLC output. In other words, the direct representation allows you to check, for example, which PLC input a sensor
 is connected to.
 
-The absolute address consists of several parts, namely:
+The direct address representation consists of several parts, namely:
 
 - “%” character
 - Operand
@@ -57,9 +53,7 @@ address consequently has multiple statuses, namely:
 - …
 - 1111 1111
 
-Since a BYTE consists of 8 BITS, each of which has 2 states, a BYTE therefore
-consists of 256 statuses (2⁸ = 256). Assigning a data type to this collection
-determines its meaning. This is because the meaning of these statuses has not
+Since a BYTE consists of 8 BITS, each of which has 2 states, a BYTE therefore consists of 256 statuses (2⁸ = 256). Assigning a data type to this collection determines its meaning. This is because the meaning of these statuses has not
 yet been determined.
 
 ```Examples
