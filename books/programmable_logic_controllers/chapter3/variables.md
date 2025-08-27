@@ -1,11 +1,9 @@
 # Variables
 ## Direct representation according to IEC 61131
 
-**Variables** <sub>1</sub> Ensure the identification of data objects whose content may
+**Variables** <sup>1</sup> Ensure the identification of data objects whose content may
 change. For example, a variable can provide the identification of inputs,
 outputs and memory data objects.
-
-
 
 The **direct representation** of a variable creates a link to the absolute
 address in the PLC memory, to a PLC input or a PLC output. In other words, the
@@ -27,7 +25,7 @@ The absolute address consists of several parts, namely:
 
 | Range | Size | Description size                          |
 |:-----:|:------:|:----------------------------------------|
-| X     | 1 bit  | 1 BIT = BOOL (Beckhoff / Siemens DBs<sub>2</sub>) |
+| X     | 1 bit  | 1 BIT = BOOL (Beckhoff/Siemens DBs<sup>2</sup>) |
 | none  | 1 bit  | 1 BIT = BOOL (Siemens)                  |
 | B     | 8 bit  | A set of 8 sequential BITs = **B**YTE   |
 | W     | 16 bit | A set of 16 sequential BITs = **W**ORD  |
@@ -40,8 +38,7 @@ The structure of the absolute address is different:
 
 ![Structure of absolute address](/images/direct_address.png "Structure of absolute address")
 
-```TAGs
-**Examples**
+```Examples
 - %Q8.0 Output 8.0 (Siemens)
 - %MD48 Double word on memory location 48
 - %QB8 Output byte 8
@@ -65,12 +62,12 @@ consists of 256 statuses (2⁸ = 256). Assigning a data type to this collection
 determines its meaning. This is because the meaning of these statuses has not
 yet been determined.
 
-Examples:
-
+```Examples
 - Is the status of the BYTE ‘1010 1010’ equal to the integer 170 [USINT] or
 - Is the status of the BYTE ‘1010 1010’ equal to the integer -86 [SINT] or
 - Is the status of the BYTE ‘1010 1010’ equal to the character ‘a’ [CHAR] or
 - …
+```
 
 By assigning a data type, one determines the representation, which is always limited between a minimum and a maximum value, which in turn depend on the number of bits.
 
@@ -87,29 +84,29 @@ The following table shows the different **elementary data types**, where the rep
 | WORD      | Set of 16 bits              | 16 bits | ---    |
 | DWORD     | Set of 32 bits (Double WORD)| 32 bits | ---    |
 | LWORD     | Set of 64 bits (Long WORD)  | 64 bits | ---    |
-| SINT      | Short Integer               | 8 bits  | -(2<sub>8-1</sub>) .. (2<sub>8-1</sub>) – 1          |
-| INT       | Integer                     | 16 bits | -(2<sub>16-1</sub>) .. (2<sub>16-1</sub>) – 1        |
-| DINT      | Double Integer              | 32 bits | -(2<sub>32-1</sub>) .. (2<sub>32-1</sub>) – 1        |
-| LINT      | Long Integer                | 64 bits | -(2<sub>64-1</sub>) .. (2<sub>64-1</sub>) – 1        |
-| USINT     | Unsigned Short Integer      | 8 bits  | 0 .. (2<sub>8</sub>) – 1                             |
-| UINT      | Unsigned Integer            | 16 bits | 0 .. (2<sub>16</sub>) – 1                            |
-| UDINT     | Unsigned Double Integer     | 32 bits | 0 .. (2<sub>32</sub>) – 1                            |
-| ULINT     | Unsigned Long Integer       | 64 bits | 0 .. (2<sub>64</sub>) – 1                            |
-| REAL      | Real number                 | 32 bits | -3.40E<sub>+38</sub> tot -1.18E<sub>-38</sub> en 1.18E<sub>-38</sub> tot 3.40E<sub>+38</sub> |
-| LREAL     | Long Real                   | 64 bits | -1.80E<sub>+308</sub> tot -4.94E<sub>-324</sub> en 4.94E<sub>-324</sub> tot 1.80E<sub>+308</sub> |
+| SINT      | Short Integer               | 8 bits  | -(2<sup>8-1</sup>) .. (2<sup>8-1</sup>) – 1          |
+| INT       | Integer                     | 16 bits | -(2<sup>16-1</sup>) .. (2<sup>16-1</sup>) – 1        |
+| DINT      | Double Integer              | 32 bits | -(2<sup>32-1</sup>) .. (2<sup>32-1</sup>) – 1        |
+| LINT      | Long Integer                | 64 bits | -(2<sup>64-1</sup>) .. (2<sup>64-1</sup>) – 1        |
+| USINT     | Unsigned Short Integer      | 8 bits  | 0 .. (2<sup>8</sup>) – 1                             |
+| UINT      | Unsigned Integer            | 16 bits | 0 .. (2<sup>16</sup>) – 1                            |
+| UDINT     | Unsigned Double Integer     | 32 bits | 0 .. (2<sup>32</sup>) – 1                            |
+| ULINT     | Unsigned Long Integer       | 64 bits | 0 .. (2<sup>64</sup>) – 1                            |
+| REAL      | Real number                 | 32 bits | -3.40E<sup>+38</sup> tot -1.18E<sup>-38</sup> en 1.18E<sup>-38</sup> tot 3.40E<sup>+38</sup> |
+| LREAL     | Long Real                   | 64 bits | -1.80E<sup>+308</sup> tot -4.94E<sup>-324</sup> en 4.94E<sup>-324</sup> tot 1.80E<sup>+308</sup> |
 | *Date & time data types* |              |         |                                                      |
 | TIME      | Time indication             | ---     | T\#0s                                                |
 | DATE      | Date                        | ---     | D\#1997-12-01                                        |
 | TIME_OF_DAY of TOD  | Time              | ---     | TOD\#23:59:59                                        |
 | DATE_AND_TIME of DT | Date & time       | ---     | DT\#1997-12-01-23:59:59                              |
 | *Textual data types*|                   |         |                                                      |
-| CHAR<sub>3</sub>    | ASCII character<sub>4</sub> | 8 bits  | ‘A’                                        |
+| CHAR<sup>3</sup>    | ASCII character<sup>4</sup> | 8 bits  | ‘A’                                        |
 | STRING    | Set of 8 bits ASCII characters  | Variable | ‘TEKST’                                         |
 | WSTRING   | Set of 16 bits ASCII characters | Variable | “TEKST”                                         |
 
 
 
-<sub>1</sub> *Synonyms for variable = TAG, Symbol*
-<sub>2</sub> *DBs = The use of the letter ‘X’ as a range is only applied in data blocks in Siemens PLCs*
-<sub>3</sub> *The CHAR data type is not included in the IEC 61131-3 standard*
-<sub>4</sub> *ASCII = American Standard Code for Information Interchange = A table that defines text characters*
+<sup>1</sup> *Synonyms for variable = TAG, Symbol* <br>
+<sup>2</sup> *DBs = The use of the letter ‘X’ as a range is only applied in data blocks in Siemens PLCs* <br>
+<sup>3</sup> *The CHAR data type is not included in the IEC 61131-3 standard* <br>
+<sup>4</sup> *ASCII = American Standard Code for Information Interchange = A table that defines text characters* 
