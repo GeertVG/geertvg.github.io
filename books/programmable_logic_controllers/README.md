@@ -12,7 +12,7 @@ The eBook is conceived as a narrative that unfolds across the chapters. It is no
 
 As a teacher, you are not bound to follow the order of the book. You can create your own learning track for your students, referring to the various sections. This makes industrial automation challenge for the students and the teacher!
 
-Finally, I would like to thank a number of people and organizations: BECKHOFF nv, SIEMENS nv, and Realgames for giving permission to reproduce information from their products. Annette Luyten for the support within the publisher, Linda Van den Broeck and Randy Geerts for the proofreading, Mohamed Al Farisi for his critical feedback and my family for their patience and support.
+Finally, I would like to thank a number of people and organizations: BECKHOFF nv, SIEMENS nv, and Realgames for giving permission to reproduce information from their products. Annette Luyten for the support within the publisher, Linda Van den Broeck and Randy Geerts for the proofreading, Mohamed Al Farisi for his critical feedback, Bart Van Mol for his assistance with the translation and my family for their patience and support.
 
 ***Summary***
 
