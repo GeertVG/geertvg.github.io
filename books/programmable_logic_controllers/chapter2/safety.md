@@ -31,7 +31,7 @@ Particular attention must be given to the following points
 - The emergency stop device must stop a hazardous process as quickly as possible without creating additional (new) risks (**= e.g., a moving overhead crane must stop as quickly as possible in an emergency stop without the load to "swing**"),
 - Emergency stop devices must be a back-up to other safeguarding measures and not a substitute for them (**=an emergency stop is not a stop button**).
 
-| Start push button | Reset push button | Emergency stop button |
+| Start-stop push button | Reset push button | Emergency stop button |
 | : --- : | : --- : | : --- : |
 | ![Start button](/images/start_button.png "SIRIUS ACT buttons, ©2020 Siemens") | ![Reset button](/images/reset_button.png "SIRIUS ACT buttons, ©2020 Siemens") | ![Emergency stop button](/images/emergency_button.png "SIRIUS ACT buttons, ©2020 Siemens") |
 
