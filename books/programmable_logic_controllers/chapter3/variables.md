@@ -79,39 +79,37 @@ The following table shows the different **elementary data types**, where the rep
 - displays the minimum and maximum values for numeric data types
 - provides an example for date, time and text data types
 
-| Type                   | Description                   | Number of BITs | Presentation                                        |
-|:-------------------:|---------------------------------|------------------|-------------------------------------------------------|
-| *Numerical data types*|                                 |                  |                                                       |
-| BOOL                | Boolean                         | 1 bit    | 0 of 1                                                |
-| BYTE                | Set of 8 bits                   | 8 bits   | \---                                                  |
-| WORD                | Set of 16 bits                  | 16 bits  | \---                                                  |
-| DWORD               | Set of 32 bits (Double WORD)    | 32 bits  | \---                                                  |
-| LWORD               | Set of 64 bits (Long WORD)      | 64 bits  | \---                                                  |
-| SINT                | Short Integer                   | 8 bits   | \- (28-1) .. (28-1) – 1                               |
-| INT                 | Integer                         | 16 bits  | \- (216-1) .. (216-1) – 1                             |
-| DINT                | Double Integer                  | 32 bits  | \- (232-1) .. (232-1) – 1                             |
-| LINT                | Long Integer                    | 64 bits  | \- (264-1) .. (264-1) – 1                             |
-| USINT               | Unsigned Short Integer          | 8 bits   | 0 .. (28) – 1                                         |
-| UINT                | Unsigned Integer                | 16 bits  | 0 .. (216) – 1                                        |
-| UDINT               | Unsigned Double Integer         | 32 bits  | 0 .. (232) – 1                                        |
-| ULINT               | Unsigned Long Integer           | 64 bits  | 0 .. (264) – 1                                        |
-| REAL                | Real number                     | 32 bits  | \-3.40E+38 tot -1.18E-38 en 1.18E-38 tot 3.40E+38     |
-| LREAL               | Long Real                       | 64 bits  | \-1.80E+308 tot -4.94E-324 en 4.94E-324 tot 1.80E+308 |
-| *Date & time data types* |                                 |     |                                                       |
-| TIME                | Time indication                 | \---     | T\#0s                                                 |
-| DATE                | Date                            | \---     | D\#1997-12-01                                         |
-| TIME_OF_DAY of TOD  | Time                            | \---     | TOD\#23:59:59                                         |
-| DATE_AND_TIME of DT | Date & time                     | \---     | DT\#1997-12-01-23:59:59                               |
-| *Textual data types*|                                 |          |                                                       |
-| CHAR[^1]            | (Extended) ASCII character[^2]  | 8 bits   | ‘A’                                                   |
-| STRING              | Set of 8 bits ASCII characters  | Variable | ‘TEKST’                                               |
-| WSTRING             | Set of 16 bits ASCII characters | Variable | “TEKST”                                               |
+| Type      | Description                 | Number of BITs | Presentation       |
+|:---------:|:---------------------------:|:--------------:|:-------------------|
+| *Numerical data types*|                 |         |        |
+| BOOL      | Boolean                     | 1 bit   | 0 of 1 |
+| BYTE      | Set of 8 bits               | 8 bits  | ---    |
+| WORD      | Set of 16 bits              | 16 bits | ---    |
+| DWORD     | Set of 32 bits (Double WORD)| 32 bits | ---    |
+| LWORD     | Set of 64 bits (Long WORD)  | 64 bits | ---    |
+| SINT      | Short Integer               | 8 bits  | -(2<sub>8-1</sub>) .. (2<sub>8-1</sub>) – 1          |
+| INT       | Integer                     | 16 bits | -(2<sub>16-1</sub>) .. (2<sub>16-1</sub>) – 1        |
+| DINT      | Double Integer              | 32 bits | -(2<sub>32-1</sub>) .. (2<sub>32-1</sub>) – 1        |
+| LINT      | Long Integer                | 64 bits | -(2<sub>64-1</sub>) .. (2<sub>64-1</sub>) – 1        |
+| USINT     | Unsigned Short Integer      | 8 bits  | 0 .. (2<sub>8</sub>) – 1                             |
+| UINT      | Unsigned Integer            | 16 bits | 0 .. (2<sub>16</sub>) – 1                            |
+| UDINT     | Unsigned Double Integer     | 32 bits | 0 .. (2<sub>32</sub>) – 1                            |
+| ULINT     | Unsigned Long Integer       | 64 bits | 0 .. (2<sub>64</sub>) – 1                            |
+| REAL      | Real number                 | 32 bits | -3.40E<sub>+38</sub> tot -1.18E<sub>-38</sub> en 1.18E<sub>-38</sub> tot 3.40E<sub>+38</sub> |
+| LREAL     | Long Real                   | 64 bits | -1.80E<sub>+308</sub> tot -4.94E<sub>-324</sub> en 4.94E<sub>-324</sub> tot 1.80E<sub>+308</sub> |
+| *Date & time data types* |              |         |                                                      |
+| TIME      | Time indication             | ---     | T\#0s                                                |
+| DATE      | Date                        | ---     | D\#1997-12-01                                        |
+| TIME_OF_DAY of TOD  | Time              | ---     | TOD\#23:59:59                                        |
+| DATE_AND_TIME of DT | Date & time       | ---     | DT\#1997-12-01-23:59:59                              |
+| *Textual data types*|                   |         |                                                      |
+| CHAR<sub>3</sub>    | ASCII character<sub>4</sub> | 8 bits  | ‘A’                                        |
+| STRING    | Set of 8 bits ASCII characters  | Variable | ‘TEKST’                                         |
+| WSTRING   | Set of 16 bits ASCII characters | Variable | “TEKST”                                         |
 
-[^1]: The CHAR data type is not included in the IEC 61131-3 standard.
-
-[^2]: ASCII = American Standard Code for Information Interchange = A table that
-defines text characters
 
 
 <sub>1</sub> *Synonyms for variable = TAG, Symbol*
 <sub>2</sub> *DBs = The use of the letter ‘X’ as a range is only applied in data blocks in Siemens PLCs*
+<sub>3</sub> *The CHAR data type is not included in the IEC 61131-3 standard*
+<sub>4</sub> *ASCII = American Standard Code for Information Interchange = A table that defines text characters*
