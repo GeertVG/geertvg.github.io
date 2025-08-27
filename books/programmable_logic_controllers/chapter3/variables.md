@@ -10,7 +10,7 @@ The direct address representation consists of several parts, namely:
 
 - “%” character
 - Operand
-- Range
+- Size
 - Unique sequence number or a series of sequence numbers with a unique  combination
 
 | Operand | Description operand  |
