@@ -64,8 +64,7 @@ yet been determined.
 ```
 
 By assigning a data type, one determines the representation, which is always limited between a minimum and a maximum value, which in turn depend on the number of bits.
-
-The following table shows the different **elementary data types**, where the representation
+The following table shows the different **elementary data types, IEC 61131, 2003**, where the representation
 
 - displays the minimum and maximum values for numeric data types
 - provides an example for date, time and text data types
@@ -95,8 +94,8 @@ The following table shows the different **elementary data types**, where the rep
 | DATE_AND_TIME of DT | Date & time       | ---     | DT\#1997-12-01-23:59:59                              |
 | *Textual data types*|                   |         |                                                      |
 | CHAR<sup>3</sup>    | ASCII character<sup>4</sup> | 8 bits  | ‘A’                                        |
-| STRING    | Set of 8 bits ASCII characters  | Variable | ‘TEKST’                                         |
-| WSTRING   | Set of 16 bits ASCII characters | Variable | “TEKST”                                         |
+| STRING    | Set of 8 bits ASCII characters  | Variable | ‘TEXT’                                         |
+| WSTRING   | Set of 16 bits ASCII characters | Variable | “TEXT”                                         |
 
 
 
