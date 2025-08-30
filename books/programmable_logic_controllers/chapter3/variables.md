@@ -353,6 +353,9 @@ The binary or two-part system has two different digits, namely 0 and 1, so the b
 To increase the readability of binary numbers, the digits are often grouped into groups of 4 digits.
 Using the conversion formula, it is possible to determine the decimal value of a binary number.
 
+```Examples
+•	(101)₂ = 1·2² + 0·2ⁱ + 1·2⁰ = 4 + 0 + 1 = (5)₁₀
+```
 
 ### Hexadecimal number system 
 
@@ -386,6 +389,11 @@ Since 4 bits can be combined in 16 possible ways, each hexadecimal digit can rep
 ![Hexadecimal numbers](/images/hexa.png)
 
 To convert a hexadecimal number to a decimal number, you can use the conversion formula.
+
+```Examples
+•	(101)₁₆ = 1·16² + 0·16ⁱ + 1·16⁰ = 256 + 0 + 1 = (257)₁₀
+•	(18FA)₁₆ = 1·16³ + 8·16² + 15·16ⁱ + 10·16⁰ = 4096 + 2048 + 240 + 10 = (6394)₁₀
+```
 
 ## Arranging bytes
 
