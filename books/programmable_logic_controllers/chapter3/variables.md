@@ -179,7 +179,7 @@ Is there a difference between natural, whole numbers and ANY_INT numbers?
 The set of natural numbers is infinite and extends from:
  	{0 , 1 , 2 , 3, …}
  
-The set of ANY_INT numbers without a sign bit is finite and is limited by the number of BITS needed to construct the numerical value (see Table 4 4 : Elementary data types (IEC 61131, 2003):
+The set of ANY_INT numbers without a sign bit is finite and is limited by the number of BITS needed to construct the numerical value :
 •	{0 , 1 , 2 , 3, … , 255} - USINT
 •	{0 , 1 , 2 , 3, … , 65535} - UINT 
 •	{0 , 1 , 2 , 3, … , 4294967295} - UDINT
@@ -188,7 +188,7 @@ The set of ANY_INT numbers without a sign bit is finite and is limited by the nu
  The set of integers   is infinite and extends from:
  	{…, -3, -2 , -1, 0 , 1 , 2 , 3, …}
  
-The collection of ANY_INT numbers with sign bit is finite and is limited by the number of BITS needed to construct the numerical value (see Table 4 4 : Elementary data types (IEC 61131, 2003): 
+The collection of ANY_INT numbers with sign bit is finite and is limited by the number of BITS needed to construct the numerical value : 
 •	{-128, …, -2, -1, 0 , 1 , 2 , …, 127} - SINT
 •	{-32768, …, -2, -1, 0 , 1 , 2 , …, 32767} - INT
 •	{-2147483648, …, -2, -1, 0 , 1 , 2 , …, 2147483647} - DINT
@@ -205,11 +205,12 @@ The ANY_REAL data types are used in comparison instructions and arithmetic instr
 Is there a difference between real numbers and ANY_REAL numbers?
  
 The set of real numbers   is infinite and contains rational and irrational  numbers.
-The set of ANY_REAL numbers is finite, with the boundaries determined by the number of BITS. This allows an ANY_REAL  number to approximate an irrational number. 
+The set of ANY_REAL numbers is finite, with the boundaries determined by the number of BITS. 
+This allows an ANY_REAL  number to approximate an irrational number. 
  
 An example of this is the irrational number π, which has an infinite number of digits after the decimal point:
-• With a REAL number, it is possible to approximate the irrational number π to 7 digits after the decimal point.
-• With an LREAL number, it is possible to approximate the irrational number π to 16 digits after the decimal point.
+•	With a REAL number, it is possible to approximate the irrational number π to 7 digits after the decimal point.
+•	With an LREAL number, it is possible to approximate the irrational number π to 16 digits after the decimal point.
 ```
 
 The structure of an ANY_REAL data type is described in the IEEE 754 standard and is shown in the figure below.
@@ -272,8 +273,9 @@ These data types are used when date and time need to be processed in the user pr
 
 ```Examples
 Examples of date and time applications in PLC user programs
-•  Switching power on and off when no production is planned (e.g. weekends, holiday periods, public holidays, etc.)
-•   Initializing a production machine at the start of a shift (e.g. resetting the number of parts produced to zero at the start of the shift)
+
+•	Switching power on and off when no production is planned (e.g. weekends, holiday periods, public holidays, etc.)
+•	Initializing a production machine at the start of a shift (e.g. resetting the number of parts produced to zero at the start of the shift)
 ```
 
 ### ANY_STRING
@@ -297,3 +299,39 @@ The first two WORDS of a WSTRING contain the “header”:
 ![Structure of a WSTRING data type](/images/wstring.png "Structure of a WSTRING data type")
 
 It is possible to specify the number of characters in a WSTRING so that its length can be limited. This is done by typing the length between square brackets.
+
+## Arranging bytes
+
+Within the binary representation of a BYTE, the order of the BITS is fixed. The number is constructed from right to left.
+
+![MSB and LSB bit in a BYTE](/images/msb_lsb.png "MSB and LSB bit in a BYTE")
+
+Within a BYTE, it is possible to determine the BIT with
+- The most significant value = MSB BIT = **M**ost **S**ignificant **B**IT
+- The least significant value = LSB BIT = **L**east **S**ignificant **B**IT
+
+```Trivia
+How to determine the MSB and LSB BIT?
+
+If we assume that all bits in a byte contain the value 0, then we can say that (0000 0000)<sub>2<sub/> = (0)<sub>10<sub/>.
+•	If only 1 BIT of state is changed to obtain the largest possible decimal number, the MSB BIT is determined, i.e. (1000 0000)<sub>2<sub/> = (128)<sub>10<sub/>
+•	If you change only 1 BIT of state to obtain the smallest possible decimal number,you have determined the LSB BIT, i.e. (0000 0001)<sub>2<sub/> = (1)<sub>10<sub/>
+```
+The binary representation of a WORD, DWORD and LWORD is also fixed, but there are two different notations in use, namely:
+- The Little Endian representation, which originated from Motorola processors
+- The Big Endian representation, which originated from Intel processors
+
+Here, the BYTES are structured internally in the same way (from right to left), but there is a difference in the location of the BYTES.
+
+| Big Endian (Siemens) | Little Endian (Beckhoff) |
+|:--------------------:|:------------------------:|
+| ![Big Endian](/images/big_endian.png) | ![Little Endian](/images/little_endian.png) |
+
+There are also examples of both systems in spoken language:
+- The number 24 = Big Endian in English = twenty-four
+- The number 24 = Little Endian in Dutch = vier-en-twintig (four-and-twenty)
+
+Little Endian is often used in PCs because they use Intel processors (or similar). Because a Beckhoff PLC is equipped with a Microsoft Windows Embedded environment internally, these PLCs operate internally according to the Little Endian system.
+
+Siemens PLCs, on the other hand, have used a Motorola processor (or similar) since their early years, which means that these PLCs operate internally according to the Big Endian system.
+
