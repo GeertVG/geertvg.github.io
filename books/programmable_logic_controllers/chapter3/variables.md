@@ -420,8 +420,8 @@ There are also examples of both systems in spoken language:
 
 Little Endian is often used in PCs because they use Intel processors (or similar). Because a Beckhoff PLC is equipped with a Microsoft Windows Embedded environment internally, these PLCs operate internally according to the Little Endian system.
 
-[Example endian system at Beckhoff](/images/TwinCAT/endian.png)
+![Example endian system at Beckhoff](/images/TwinCAT/endian.png)
 
 Siemens PLCs, on the other hand, have used a Motorola processor (or similar) since their early years, which means that these PLCs operate internally according to the Big Endian system.
 
-[Example endian system at Siemens](/images/TIA/endian.png)
+![Example endian system at Siemens](/images/TIA/endian.png)
