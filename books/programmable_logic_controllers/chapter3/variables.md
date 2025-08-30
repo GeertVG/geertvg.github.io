@@ -160,7 +160,7 @@ Both Beckhoff and Siemens offer the option of creating multiple PLC tags/GVL fil
 ## Structure of data types according IEC 61131
 ### ANY_INT
 
-ANY_INT data types are used in comparison instructions and arithmetic instructions involving whole numbers and natural numbers<sup>1<sup/>.
+ANY_INT data types are used in comparison instructions and arithmetic instructions involving whole numbers and natural numbers<sup>1<sup/> <br>.
 The structure of an ANY_INT variable can be divided into two groups, namely:
 
 -   De group of ANY_INT preceded by “+/-“ (signed)
@@ -195,7 +195,7 @@ The collection of ANY_INT numbers with sign bit is finite and is limited by the 
 •	{-9223372036854775808, …, -1, 0 , 1, …, 9223372036854775807} - LINT
 ```
 
-<sup>1<sup/> *Numbers without fractional or decimal components* <br>
+<sup>1</sup> *Numbers without fractional or decimal components* <br>
 
 ### ANY_REAL
 
@@ -222,8 +222,8 @@ The size of the exponent and mantissa is determined by the chosen data type:
 -	LREAL 	: Exponent = 11 BIT, mantissa = 52 BIT
 
 The exponent is constructed according to the binary number system, but a shift has been applied, which means that the decimal value must be reduced by a starting value, namely:
--	REAL 	: Start value of 127 	= 0 = (0111 1111)<sub>2<sub/> 		
--	LREAL 	: Start value of 1023 	= 0 = (0011 1111 1111)<sub>2<sub/> 	
+-	REAL 	: Start value of 127 	= 0 = (0111 1111)<sub>2</sub> 		
+-	LREAL 	: Start value of 1023 	= 0 = (0011 1111 1111)<sub>2</sub> 	
 
 The mantissa is constructed from left to right and always starts with the binary value 1, which is not present in the whole (called the hidden BIT).
 
@@ -234,13 +234,13 @@ The sign bit is 1 BIT in size and has the following meaning:
 -	TRUE 	= Negative number
 
 The numerical value of the ANY_REAL number is determined using the following formula:
-- +/- MANTISSA x 2 <sup>+/- EXPONENT<sup/>
+- +/- MANTISSA x 2 <sup>+/- EXPONENT</sup>
 
 | Value (REAL)                       | Sign bit | Exponent | Mantissa                     |
 |:-----------------------------------|:--------:|:--------:|:----------------------------:|
-| 0,5 = 1 x 1 x 2<sup>-1<sup/>       | 0        | 01111110 | **1**00000000000000000000000 |
-| 50 = 1 x 1.5625 x 2<sup>5<sup/>    | 0        | 10000100 | **1**10010000000000000000000 |
-| \-5,1 = -1 x 1.275 x 2<sup>2<sup/> | 1        | 10000001 | **1**01000110011001100110011 |
+| 0,5 = 1 x 1 x 2<sup>-1</sup>       | 0        | 01111110 | **1**00000000000000000000000 |
+| 50 = 1 x 1.5625 x 2<sup>5</sup>    | 0        | 10000100 | **1**10010000000000000000000 |
+| \-5,1 = -1 x 1.275 x 2<sup>2</sup> | 1        | 10000001 | **1**01000110011001100110011 |
 
 ### TIME
 
@@ -314,11 +314,11 @@ To avoid confusion between number systems, brackets and a base number are used t
 -	Base number 10 = decimal number system
 -	Base number 16 = hexadecimal number system
 
-*(110)<sub>10<sub/> \<\> (110)<sub>2<sub/> \<\> (110)<sub>16<sub/>*
+*(110)<sub>10</sub> \<\> (110)<sub>2</sub> \<\> (110)<sub>16</sub>*
 
 When converting a non-decimal number system to the decimal number system, the following conversion formula can be used:
 
-*(abc,de)<sub>X<sub/> = (a.X<sup>2<sup/> + b.X<sup>1<sup/> + C.X<sup>0<sup/> + d.X<sup>-1<sup/> + e.X<sup>-2<sup/>)<sub>10<sub/>*
+*(abc,de)<sub>X</sub> = (a.X<sup>2</sup> + b.X<sup>1</sup>> + C.X<sup>0</sup> + d.X<sup>-1</sup> + e.X<sup>-2</sup>)<sub>10</sub>*
 
 
 ### Binary number system
@@ -396,9 +396,9 @@ Within a BYTE, it is possible to determine the BIT with
 ```Trivia
 How to determine the MSB and LSB BIT?
 
-If we assume that all bits in a byte contain the value 0, then we can say that (0000 0000)<sub>2<sub/> = (0)<sub>10<sub/>.
-•	If only 1 BIT of state is changed to obtain the largest possible decimal number, the MSB BIT is determined, i.e. (1000 0000)<sub>2<sub/> = (128)<sub>10<sub/>
-•	If you change only 1 BIT of state to obtain the smallest possible decimal number,you have determined the LSB BIT, i.e. (0000 0001)<sub>2<sub/> = (1)<sub>10<sub/>
+If we assume that all bits in a byte contain the value 0, then we can say that (0000 0000)<sub>2</sub> = (0)<sub>10</sub>.
+•	If only 1 BIT of state is changed to obtain the largest possible decimal number, the MSB BIT is determined, i.e. (1000 0000)<sub>2</sub> = (128)<sub>10</sub>
+•	If you change only 1 BIT of state to obtain the smallest possible decimal number,you have determined the LSB BIT, i.e. (0000 0001)<sub>2</sub> = (1)<sub>10</sub>
 ```
 The binary representation of a WORD, DWORD and LWORD is also fixed, but there are two different notations in use, namely:
 - The Little Endian representation, which originated from Motorola processors
