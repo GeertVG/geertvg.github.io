@@ -275,3 +275,25 @@ Examples of date and time applications in PLC user programs
 •  Switching power on and off when no production is planned (e.g. weekends, holiday periods, public holidays, etc.)
 •   Initializing a production machine at the start of a shift (e.g. resetting the number of parts produced to zero at the start of the shift)
 ```
+
+###ANY_STRING
+
+ANY_STRING data types are used for instructions relating to text.
+A STRING is a collection of ASCII characters, with a maximum of 254 single BYTE characters stored in a single STRING. Each character is stored in a BYTE and is represented between single quotation marks. 
+
+The first two BYTES of a STRING contain the “header”:
+- The first BYTE contains the maximum length (default 256 BYTES)
+- The second BYTE contains the number of BYTES used
+
+![Structure of a STRING data type](/images/string.png "Structure of a STRING data type")
+
+It is possible to specify the number of characters in a STRING so that its length can be limited. This is done by typing the length between square brackets.
+
+A WSTRING is a collection of ASCII characters in which up to 254 double BYTE characters are stored in a single WSTRING. Compared to a STRING, a WSTRING stores 2 characters in a single WORD, which are displayed between double quotation marks. 
+The first two WORDS of a WSTRING contain the “header”:
+- The first WORD contains the maximum length (default 256 WORDS)
+- The second WORD contains the number of WORDS used
+
+![Structure of a WSTRING data type](/images/wstring.png "Structure of a WSTRING data type")
+
+It is possible to specify the number of characters in a WSTRING so that its length can be limited. This is done by typing the length between square brackets.
