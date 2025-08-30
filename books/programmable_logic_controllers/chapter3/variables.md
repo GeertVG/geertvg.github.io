@@ -320,6 +320,10 @@ When converting a non-decimal number system to the decimal number system, the fo
 
 *(abc,de)<sub>X</sub> = (a.X<sup>2</sup> + b.X<sup>1</sup>> + C.X<sup>0</sup> + d.X<sup>-1</sup> + e.X<sup>-2</sup>)<sub>10</sub>*
 
+```Examples
+•	(321)₁₀ = 3·10² + 2·10ⁱ + 1·10⁰ = 300 + 20 + 1
+•	(101)₁₀ = 1·10² + 0·10ⁱ + 1·10⁰ = 100 + 0 + 1
+```
 
 ### Binary number system
 
@@ -396,9 +400,9 @@ Within a BYTE, it is possible to determine the BIT with
 ```Trivia
 How to determine the MSB and LSB BIT?
 
-If we assume that all bits in a byte contain the value 0, then we can say that (0000 0000)<sub>2</sub> = (0)<sub>10</sub>.
-•	If only 1 BIT of state is changed to obtain the largest possible decimal number, the MSB BIT is determined, i.e. (1000 0000)<sub>2</sub> = (128)<sub>10</sub>
-•	If you change only 1 BIT of state to obtain the smallest possible decimal number,you have determined the LSB BIT, i.e. (0000 0001)<sub>2</sub> = (1)<sub>10</sub>
+If we assume that all bits in a byte contain the value 0, then we can say that (0000 0000)₂ = (0)₁₀.
+•	If only 1 BIT of state is changed to obtain the largest possible decimal number, the MSB BIT is determined, i.e. (1000 0000)₂ = (128)₁₀
+•	If you change only 1 BIT of state to obtain the smallest possible decimal number,you have determined the LSB BIT, i.e. (0000 0001)₂ = (1)₁₀
 ```
 The binary representation of a WORD, DWORD and LWORD is also fixed, but there are two different notations in use, namely:
 - The Little Endian representation, which originated from Motorola processors
