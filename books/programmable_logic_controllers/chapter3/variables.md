@@ -235,3 +235,43 @@ The sign bit is 1 BIT in size and has the following meaning:
 The numerical value of the ANY_REAL number is determined using the following formula:
 - +/- MANTISSA x 2 <sup>+/- EXPONENT<sup/>
 
+| Value (REAL)                       | Sign bit | Exponent | Mantissa                     |
+|:-----------------------------------|:--------:|:--------:|:----------------------------:|
+| 0,5 = 1 x 1 x 2<sup>-1<sup/>       | 0        | 01111110 | **1**00000000000000000000000 |
+| 50 = 1 x 1.5625 x 2<sup>5<sup/>    | 0        | 10000100 | **1**10010000000000000000000 |
+| \-5,1 = -1 x 1.275 x 2<sup>2<sup/> | 1        | 10000001 | **1**01000110011001100110011 |
+
+### TIME
+
+The TIME data type is used for timer time instructions. The characteristics of the TIME data type are shown in the table below.
+
+Time can be defined using one or more time units, which are applied in the correct order. It is not necessary to use all time units.
+-	d: day
+-	h: hour
+-	m: minute
+-	s: second
+-	ms: millisecond
+
+| Manufacturer | Notation               | Min. & max. value                                    |
+|:------------:|:----------------------:|:----------------------------------------------------:|
+| Beckhoff     | T\#10d20h30m20s630ms or TIME\#10d20h30m20s630ms         | T\#0ms to T\#71582m47s295ms                            |
+| Siemens      | T\#10d_20h_30m_20s_630ms or TIME\#10d_20h_30m_20s_630ms | T\#-24d_20h_31m_23s_648ms to T\#+24d_20h_31m_23s_647ms |
+
+### DATE, TIME_OF_DAY & DATE_AND_TIME
+
+These data types are used when date and time need to be processed in the user program. The data types DATE, TIME_OF_DAY and DATE_AND_TIME can be used for this purpose. The structure of these data types depends on the manufacturer.
+
+| Data type       | Manufacturer   | Characteristics                                                                                                                        |
+|:-----------------:|:----------------:|:----------------------------------------------------------------------------------------------------------------------------------------:|
+| DATE              | Beckhoff         | 4 BYTE / Year-month-day 1970-01-01 / 2106-02-07 notation: D\#1972-03-29                                                                  |
+| DATE              | Siemens          | 2 BYTE / year-month-day 1990-01-01 / 2169-06-06 notation: D\#2009-12-31                                                                  |
+| TIME_OF_DAY TOD   | Beckhoff Siemens | 4 BYTE / hour:min:sec:msec 00:00:00:000 / 23:59:59:999 notation: TOD\#15:36:30.123                                                       |
+| DATE_AND_TIME DT  | Beckhoff         | 4 BYTE / year-month-day- hour:min:sec 1970-01-01, 00:00 / 2106-02-07, 06:28:15 notation: DT\#1996-05-06-15:36:30                         |
+| DATE_AND_TIME DTL | Siemens S7-1200  | 12 BYTE / year-month-day- hour:min:sec:µsec 1970-01-01-00:00:00.0 / 2262-04-11-23:47:16.854775807 notation: DTL\#2008-12-16-20:30:20.250 |
+| DATE_AND_TIME DT  | Siemens S7-300   | 8 BYTE / year-month-day- hour:min:sec:msec 1990-01-01-00:00:00.000 / 2089-12-31-23:59:59.999 notation: DT\#2008-10-25-08:12:34.567       |
+
+```Examples
+Examples of date and time applications in PLC user programs
+•  Switching power on and off when no production is planned (e.g. weekends, holiday periods, public holidays, etc.)
+•   Initializing a production machine at the start of a shift (e.g. resetting the number of parts produced to zero at the start of the shift)
+```
