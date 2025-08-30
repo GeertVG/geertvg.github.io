@@ -217,7 +217,15 @@ The size of the exponent and mantissa is determined by the chosen data type:
 -	LREAL 	: Exponent = 11 BIT, Mantisse = 52 BIT
 
 The exponent is constructed according to the binary number system, but a shift has been applied, which means that the decimal value must be reduced by a starting value, namely:
--	REAL 	: Start value of 127 	: (0111 1111)<sub>2<sub/> 		= 0
--	LREAL 	: Start value of 1023 	: (0011 1111 1111)<sub>2<sub/> 	= 0
+-	REAL 	: Start value of 127 	= 0 = (0111 1111)<sub>2<sub/> 		
+-	LREAL 	: Start value of 1023 	= 0 = (0011 1111 1111)<sub>2<sub/> 	
 
 The mantissa is constructed from left to right and always starts with the binary value 1, which is not present in the whole (called the hidden BIT).
+
+The sign bit is 1 BIT in size and has the following meaning:
+-	FALSE / 0	= Value 1
+-	TRUE / 1	= Value -1
+
+The numerical value of the ANY_REAL number is determined using the following formula:
++/- MANTISSA x 2 <sup>+/- EXPONENT<sup/>
+
