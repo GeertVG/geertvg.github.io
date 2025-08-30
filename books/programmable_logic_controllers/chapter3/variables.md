@@ -300,6 +300,89 @@ The first two WORDS of a WSTRING contain the “header”:
 
 It is possible to specify the number of characters in a WSTRING so that its length can be limited. This is done by typing the length between square brackets.
 
+##	Number systems
+### Decimal number system
+
+A number consists of a number of characters. The decimal number system is one of the best-known number systems, using 10 different characters, namely the digits 0 to 9.
+
+However, there are other number systems besides the decimal number system that use more or fewer characters. In the field of (process) automation, the following are often used in addition to the decimal number system:
+- The binary number system with 2 different characters
+- The hexadecimal number system with 16 different characters
+
+To avoid confusion between number systems, brackets and a base number are used to indicate the number system used:
+-	Base number 2 = binary number system
+-	Base number 10 = decimal number system
+-	Base number 16 = hexadecimal number system
+
+*(110)<sub>10<sub/> \<\> (110)<sub>2<sub/> \<\> (110)<sub>16<sub/>*
+
+When converting a non-decimal number system to the decimal number system, the following conversion formula can be used:
+
+*(abc,de)<sub>X<sub/> = (a.X<sup>2<sup/> + b.X<sup>1<sup/> + C.X<sup>0<sup/> + d.X<sup>-1<sup/> + e.X<sup>-2<sup/>)<sub>10<sub/>*
+
+
+### Binary number system
+
+The binary or two-part system has two different digits, namely 0 and 1, so the base number of this number system is 2. To represent numbers, digits are added in the same way as in the decimal number system.
+
+| Decimal | Binary  |
+|:-------:|:-------:|
+| 0       | 0000 0000 |
+| 1       | 0000 0001 |
+| 2       | 0000 0010 |
+| 3       | 0000 0011 |
+| 4       | 0000 0100 |
+| 5       | 0000 0101 |
+| 6       | 0000 0110 |
+| 7       | 0000 0111 |
+| 8       | 0000 1000 |
+| 9       | 0000 1001 |
+| 10      | 0000 1010 |
+| 11      | 0000 1011 |
+| 12      | 0000 1100 |
+| 13      | 0000 1101 |
+| 14      | 0000 1110 |
+| 15      | 0000 1111 |
+| 16      | 0001 0000 |
+| 17      | 0001 0001 |
+
+To increase the readability of binary numbers, the digits are often grouped into groups of 4 digits.
+Using the conversion formula, it is possible to determine the decimal value of a binary number.
+
+
+### Hexadecimal number system 
+
+In the hexadecimal number system, the base number is 16 and the characters used are the digits 0, 1, 2, 3, 4, 5...9 and the letters A, B, C, D, E and F.
+
+The hexadecimal system is often used because it is easy to convert to the binary number system and because a relatively small number can represent many bits.
+
+| Decimal | Binary  | Hexadecimal |
+|:-------:|:-------:|:-----------:|
+| 0       | 0000 0000 | 0         |
+| 1       | 0000 0001 | 1         |
+| 2       | 0000 0010 | 2         |
+| 3       | 0000 0011 | 3         |
+| 4       | 0000 0100 | 4         |
+| 5       | 0000 0101 | 5         |
+| 6       | 0000 0110 | 6         |
+| 7       | 0000 0111 | 7         |
+| 8       | 0000 1000 | 8         |
+| 9       | 0000 1001 | 9         |
+| 10      | 0000 1010 | A         |
+| 11      | 0000 1011 | B         |
+| 12      | 0000 1100 | C         |
+| 13      | 0000 1101 | D         |
+| 14      | 0000 1110 | E         |
+| 15      | 0000 1111 | F         |
+| 16      | 0001 0000 | 10        |
+| 17      | 0001 0001 | 11        |
+
+Since 4 bits can be combined in 16 possible ways, each hexadecimal digit can represent a group of 4 bits. This makes it easy to convert a hexadecimal number into a binary number.
+
+![Hexadecimal numbers](/images/hexa.png)
+
+To convert a hexadecimal number to a decimal number, you can use the conversion formula.
+
 ## Arranging bytes
 
 Within the binary representation of a BYTE, the order of the BITS is fixed. The number is constructed from right to left.
@@ -333,5 +416,8 @@ There are also examples of both systems in spoken language:
 
 Little Endian is often used in PCs because they use Intel processors (or similar). Because a Beckhoff PLC is equipped with a Microsoft Windows Embedded environment internally, these PLCs operate internally according to the Little Endian system.
 
+[Example endian system at Beckhoff](/images/TwinCAT/endian.png)
+
 Siemens PLCs, on the other hand, have used a Motorola processor (or similar) since their early years, which means that these PLCs operate internally according to the Big Endian system.
 
+[Example endian system at Siemens](/images/TIA/endian.png)
