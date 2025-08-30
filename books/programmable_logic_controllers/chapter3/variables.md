@@ -114,7 +114,7 @@ Not all punctuation marks and symbols are permitted (IEC 61131, 2003).
 - No distinction is made between upper and lower case letters, so the symbolic variables abc, ABC, aBC and Abc are considered to be the same,
 - A distinction is made when using an underscore ‘\_’, so the symbolic variables A_BC, AB_C and \_ABC are considered to be different.
 
-```Remark
+```Trivia
 Siemens allows the use of special characters when constructing symbolic variables but does not recommend it. 
 So are the special characters ! \# \$ & ' ( ) \* , - . / : ; \< = \> ? \@ [ \\ ] \^ \` { \| } \~ ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ - ® ¯ ° ± ² ³ ´ μ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿ + permitted. 
 ```
@@ -160,7 +160,7 @@ Both Beckhoff and Siemens offer the option of creating multiple PLC tags/GVL fil
 ## Structure of data types according to IEC 61131
 ### ANY_INT
 
-De ANY_INT data types are used in comparison instructions and arithmetic instructions involving whole numbers and natural numbers<sup>1<sup/>.
+ANY_INT data types are used in comparison instructions and arithmetic instructions involving whole numbers and natural numbers<sup>1<sup/>.
 The structure of an ANY_INT variable can be divided into two groups, namely:
 
 -   De group of ANY_INT preceded by “+/-“ (signed)
@@ -173,25 +173,27 @@ The group of ANY_INT data types without a sign bit is used when working with nat
 
 ![Structure of an ANY_INT data type without a plus sign/minus sign](/images/any_int2.png "Structure of an ANY_INT data type without a plus sign/minus sign")
 
-> **Is there a difference between natural, whole numbers and ANY_INT numbers?**
-> 
-> The set of natural numbers is infinite and extends from:
-> 	{0 , 1 , 2 , 3, …}
-> 
-> The set of ANY_INT numbers without a sign bit is finite and is limited by the number of BITS needed to construct the > numerical value (see Table 4 4 : Elementary data types (IEC 61131, 2003):
-> •	{0 , 1 , 2 , 3, … , 255} - USINT
-> •	{0 , 1 , 2 , 3, … , 65535} - UINT 
-> •	{0 , 1 , 2 , 3, … , 4294967295} - UDINT
-> •	{0 , 1 , 2 , 3, … , 18446744073709551615} - ULINT
-> 
-> The set of integers   is infinite and extends from:
-> 	{…, -3, -2 , -1, 0 , 1 , 2 , 3, …}
-> 
-> The collection of ANY_INT numbers with sign bit is finite and is limited by the number of BITS needed to construct the numerical value (see Table 4 4 : Elementary data types (IEC 61131, 2003): 
-> •	{-128, …, -2, -1, 0 , 1 , 2 , …, 127} - SINT
-> •	{-32768, …, -2, -1, 0 , 1 , 2 , …, 32767} - INT
-> •	{-2147483648, …, -2, -1, 0 , 1 , 2 , …, 2147483647} - DINT
-> •	{-9223372036854775808, …, -1, 0 , 1, …, 9223372036854775807} - LINT
+```Trivia
+Is there a difference between natural, whole numbers and ANY_INT numbers?
+ 
+The set of natural numbers is infinite and extends from:
+ 	{0 , 1 , 2 , 3, …}
+ 
+The set of ANY_INT numbers without a sign bit is finite and is limited by the number of BITS needed to construct the numerical value (see Table 4 4 : Elementary data types (IEC 61131, 2003):
+•	{0 , 1 , 2 , 3, … , 255} - USINT
+•	{0 , 1 , 2 , 3, … , 65535} - UINT 
+•	{0 , 1 , 2 , 3, … , 4294967295} - UDINT
+•	{0 , 1 , 2 , 3, … , 18446744073709551615} - ULINT
+ 
+ The set of integers   is infinite and extends from:
+ 	{…, -3, -2 , -1, 0 , 1 , 2 , 3, …}
+ 
+The collection of ANY_INT numbers with sign bit is finite and is limited by the number of BITS needed to construct the numerical value (see Table 4 4 : Elementary data types (IEC 61131, 2003): 
+•	{-128, …, -2, -1, 0 , 1 , 2 , …, 127} - SINT
+•	{-32768, …, -2, -1, 0 , 1 , 2 , …, 32767} - INT
+•	{-2147483648, …, -2, -1, 0 , 1 , 2 , …, 2147483647} - DINT
+•	{-9223372036854775808, …, -1, 0 , 1, …, 9223372036854775807} - LINT
+```
 
 <sup>1<sup/> *Numbers without fractional or decimal components* <br>
 
@@ -199,22 +201,24 @@ The group of ANY_INT data types without a sign bit is used when working with nat
 
 The ANY_REAL data types are used in comparison instructions and arithmetic instructions involving real numbers.
 
-> **Is there a difference between real numbers and ANY_REAL numbers?**
-> 
-> The set of real numbers   is infinite and contains rational and irrational  numbers.
-> The set of ANY_REAL numbers is finite, with the boundaries determined by the number of BITS. This allows an ANY_REAL > number to approximate an irrational number. 
-> 
-> An example of this is the irrational number π, which has an infinite number of digits after the decimal point:
-> • With a REAL number, it is possible to approximate the irrational number π to 7 digits after the decimal point.
-> • With an LREAL number, it is possible to approximate the irrational number π to 16 digits after the decimal point.
+```Trivia
+Is there a difference between real numbers and ANY_REAL numbers?
+ 
+The set of real numbers   is infinite and contains rational and irrational  numbers.
+The set of ANY_REAL numbers is finite, with the boundaries determined by the number of BITS. This allows an ANY_REAL  number to approximate an irrational number. 
+ 
+An example of this is the irrational number π, which has an infinite number of digits after the decimal point:
+• With a REAL number, it is possible to approximate the irrational number π to 7 digits after the decimal point.
+• With an LREAL number, it is possible to approximate the irrational number π to 16 digits after the decimal point.
+```
 
 The structure of an ANY_REAL data type is described in the IEEE 754 standard and is shown in the figure below.
 
 ![Structure of an ANY_REAL data type](/images/any_real.png "Structure of an ANY_REAL data type")
 
 The size of the exponent and mantissa is determined by the chosen data type:
--	REAL 	: Exponent = 8 BIT, Mantisse = 23 BIT
--	LREAL 	: Exponent = 11 BIT, Mantisse = 52 BIT
+-	REAL 	: Exponent = 8 BIT, mantissa = 23 BIT
+-	LREAL 	: Exponent = 11 BIT, mantissa = 52 BIT
 
 The exponent is constructed according to the binary number system, but a shift has been applied, which means that the decimal value must be reduced by a starting value, namely:
 -	REAL 	: Start value of 127 	= 0 = (0111 1111)<sub>2<sub/> 		
@@ -222,10 +226,12 @@ The exponent is constructed according to the binary number system, but a shift h
 
 The mantissa is constructed from left to right and always starts with the binary value 1, which is not present in the whole (called the hidden BIT).
 
+![Structure of mantissa in an ANY_REAL data type](/images/mantissa.png "Structure of mantissa in an ANY_REAL data type")
+
 The sign bit is 1 BIT in size and has the following meaning:
--	FALSE / 0	= Value 1
--	TRUE / 1	= Value -1
+-	FALSE	= Positive number
+-	TRUE 	= Negative number
 
 The numerical value of the ANY_REAL number is determined using the following formula:
-+/- MANTISSA x 2 <sup>+/- EXPONENT<sup/>
+- +/- MANTISSA x 2 <sup>+/- EXPONENT<sup/>
 
