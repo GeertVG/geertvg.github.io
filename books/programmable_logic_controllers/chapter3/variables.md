@@ -115,7 +115,8 @@ Not all punctuation marks and symbols are permitted (IEC 61131, 2003).
 - A distinction is made when using an underscore ‘\_’, so the symbolic variables A_BC, AB_C and \_ABC are considered to be different.
 
 ```Remark
-Siemens allows the use of special characters when constructing symbolic variables but does not recommend it. So are the special characters ! \# \$ & ' ( ) \* , - . / : ; \< = \> ? \@ [ \\ ] \^ \` { \| } \~ ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ - ® ¯ ° ± ² ³ ´ μ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿ + permitted. 
+Siemens allows the use of special characters when constructing symbolic variables but does not recommend it. 
+So are the special characters ! \# \$ & ' ( ) \* , - . / : ; \< = \> ? \@ [ \\ ] \^ \` { \| } \~ ¡ ¢ £ ¤ ¥ ¦ § ¨ © ª « ¬ - ® ¯ ° ± ² ³ ´ μ ¶ · ¸ ¹ º » ¼ ½ ¾ ¿ + permitted. 
 ```
 How is the link to a logical or direct address established? This depends on the manufacturer.
 
@@ -159,9 +160,7 @@ Both Beckhoff and Siemens offer the option of creating multiple PLC tags/GVL fil
 ## Structure of data types according to IEC 61131
 ### ANY_INT
 
-De ANY_INT data types are used in comparison instructions and arithmetic
-instructions involving whole numbers and natural numbers<sup>1<sup/>.
-
+De ANY_INT data types are used in comparison instructions and arithmetic instructions involving whole numbers and natural numbers<sup>1<sup/>.
 The structure of an ANY_INT variable can be divided into two groups, namely:
 
 -   De group of ANY_INT preceded by “+/-“ (signed)
@@ -176,7 +175,7 @@ The group of ANY_INT data types without a sign bit is used when working with nat
 
 > **Is there a difference between natural, whole numbers and ANY_INT numbers?**
 > 
-> The set of natural numbers   is infinite and extends from:
+> The set of natural numbers is infinite and extends from:
 > 	{0 , 1 , 2 , 3, …}
 > 
 > The set of ANY_INT numbers without a sign bit is finite and is limited by the number of BITS needed to construct the > numerical value (see Table 4 4 : Elementary data types (IEC 61131, 2003):
@@ -214,11 +213,11 @@ The structure of an ANY_REAL data type is described in the IEEE 754 standard and
 ![Structure of an ANY_REAL data type](/images/any_real.png "Structure of an ANY_REAL data type")
 
 The size of the exponent and mantissa is determined by the chosen data type:
--	REAL 	: Exponent = 8 BIT, MANTISSE = 23 BIT
--	LREAL 	: Exponent = 11 BIT, MANTISSE = 52 BIT
+-	REAL 	: Exponent = 8 BIT, Mantisse = 23 BIT
+-	LREAL 	: Exponent = 11 BIT, Mantisse = 52 BIT
 
 The exponent is constructed according to the binary number system, but a shift has been applied, which means that the decimal value must be reduced by a starting value, namely:
--	REAL 	: Start value van 127 	: (0111 1111)<sub>2<sub/> 		= 0
--	LREAL 	: Start value van 1023 	: (0011 1111 1111)<sub>2<sub/> 	= 0
+-	REAL 	: Start value of 127 	: (0111 1111)<sub>2<sub/> 		= 0
+-	LREAL 	: Start value of 1023 	: (0011 1111 1111)<sub>2<sub/> 	= 0
 
 The mantissa is constructed from left to right and always starts with the binary value 1, which is not present in the whole (called the hidden BIT).
