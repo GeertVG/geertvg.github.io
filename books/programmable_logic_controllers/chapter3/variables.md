@@ -103,7 +103,7 @@ The following table shows the different **elementary data types, IEC 61131, 2003
 <sup>3</sup> *The CHAR data type is not included in the IEC 61131-3 standard* <br>
 <sup>4</sup> *ASCII = American Standard Code for Information Interchange = A table that defines text characters* 
 
-## Symbolic representation according to IEC 61131
+## Symbolic representation according IEC 61131
 
 In a symbolic representation of a variable, there is no direct link to the logical or absolute address, but the variable is characterized by a unique text.
 
@@ -157,7 +157,7 @@ Both Beckhoff and Siemens offer the option of creating multiple PLC tags/GVL fil
 
 ![Multiple variable files in TIA Portal](/images/gvl1.png "Multiple variable files TIA Portal, ©2020 Siemens") ![Multiple variable files in TwinCAT 3](/images/gvl2.png "Multiple variable files TIA Portal, ©2020 Beckhoff")
 
-## Structure of data types according to IEC 61131
+## Structure of data types according IEC 61131
 ### ANY_INT
 
 ANY_INT data types are used in comparison instructions and arithmetic instructions involving whole numbers and natural numbers<sup>1<sup/>.
@@ -276,7 +276,7 @@ Examples of date and time applications in PLC user programs
 •   Initializing a production machine at the start of a shift (e.g. resetting the number of parts produced to zero at the start of the shift)
 ```
 
-###ANY_STRING
+### ANY_STRING
 
 ANY_STRING data types are used for instructions relating to text.
 A STRING is a collection of ASCII characters, with a maximum of 254 single BYTE characters stored in a single STRING. Each character is stored in a BYTE and is represented between single quotation marks. 
