@@ -16,7 +16,7 @@ The execution of a program organization units is carried out by a task. This det
 | Beckhoff | Siemens  |
 | :------: | :------: |
 | ![Create POU](/images/TwinCAT/main_pou.png) | ![Create OB](/images/TIA/main_ob.png) |
-| The MAIN program organization unit is linked to the PlcTask task, whose settings can be found under SYSTEM/Tasks | The task is linked to the number and description of the organization block |
+| The MAIN program organization unit is linked to the PlcTask task, <br> whose settings can be found under SYSTEM/Tasks | The task is linked to the number and description of the organization block |
 
 ## Functions (FC)
 
