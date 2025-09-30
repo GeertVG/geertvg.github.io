@@ -1,9 +1,7 @@
 # Processing software
 ## Execution of blocks
 
-The execution of blocks in RT starts in the program organization units (POU or OB) in which functions and function blocks are called up. 
-The instructions are executed from top to bottom.
-
+The execution of blocks in RT starts in the program organization units (POU or OB) in which functions and function blocks are called up. The instructions are executed from top to bottom.
 If a function or function block is present (e.g. FC1), the instructions in this block are first executed before the other instructions of the program organization unit are executed.
 
 ![Execution of blocks](/images/execution_blocks.png "Execution of blocks") 
