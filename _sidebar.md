@@ -22,7 +22,7 @@
 		* [Device configuration](books/programmable_logic_controllers/chapter3/device_configuration.md)
 		* [Variables](books/programmable_logic_controllers/chapter3/variables.md)
 		* [Blocks according IEC 61131](books/programmable_logic_controllers/chapter3/blocks.md)
-		* [Processing](books/programmable_logic_controllers/chapter3/processing.md)
+		* [Processing software](books/programmable_logic_controllers/chapter3/processing.md)
 		* [Programming according IEC 61131](books/programmable_logic_controllers/chapter3/programming.md)
 		* [Basic control circuits](books/programmable_logic_controllers/chapter3/basic_control_circuits.md)
 		* [GRAFCET](books/programmable_logic_controllers/chapter3/GRAFCET.md)
