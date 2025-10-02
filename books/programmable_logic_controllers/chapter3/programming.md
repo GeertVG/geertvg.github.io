@@ -99,8 +99,8 @@ The NOT-instruction ensures that a BOOL signal is inverted and represented by a 
 
 |          | IEC view | Mathematical view              |
 |:--------:|:---------|:------------------------------:|
-| Input    | ![NOT as input](/images/Prog/not_in.png)   | R = \\overset{\\overline{}}{A} |
-| Output   | ![NOT as output](/images/Prog/not_out.png) |                                |
+| Input    | ![NOT as input](/images/Prog/not_in.png)   | R = $\overline{A}$ |
+| Output   | ![NOT as output](/images/Prog/not_out.png) |                    |
 
 <u>Truth table</u>
 
@@ -120,11 +120,11 @@ If you invert the same signal twice, you get the original signal.
 
 | IEC view | Mathematical view |
 |:--------:|:-----------------:|
-| ![NOT is //NOT](/images/Prog/not_is_not.png) | A = \overset{}{A}  |
+| ![NOT is //NOT](/images/Prog/not_is_not.png) | A = $\overline\overline{A}$  |
 
 ### AND instruction (AND)
 
-With the AND instruction, all inputs must be TRUE to activate the ~~output~~ (R).
+With the AND instruction, all inputs must be TRUE to activate the output (R).
 
 <u>Graphic representation</u>
 
