@@ -99,7 +99,7 @@ The NOT-instruction ensures that a BOOL signal is inverted and represented by a 
 
 |          | IEC view | Mathematical view              |
 |:--------:|:---------|:------------------------------:|
-| Input    | ![NOT as input](/images/Prog/not_in.png)   | R = $\overline{A}$ |
+| Input    | ![NOT as input](/images/Prog/not_in.png)   | ![NOT](/images/Math/not.png)  |
 | Output   | ![NOT as output](/images/Prog/not_out.png) |                    |
 
 <u>Truth table</u>
@@ -120,7 +120,7 @@ If you invert the same signal twice, you get the original signal.
 
 | IEC view | Mathematical view |
 |:--------:|:-----------------:|
-| ![NOT is //NOT](/images/Prog/not_is_not.png) | A = $\overline\overline{A}$  |
+| ![NOT is //NOT](/images/Prog/not_is_not.png) | ![NOT is //NOT](/images/Math/not_is_not.png)  |
 
 ### AND instruction (AND)
 
@@ -130,7 +130,7 @@ With the AND instruction, all inputs must be TRUE to activate the output (R).
 
 | IEC view | Mathematical view |
 |:--------:|:-----------------:|
-| ![AND](/images/Prog/and.png) | R = A.B  |
+| ![AND](/images/Prog/and.png) | ![AND](/images/Math/and.png)  |
 
 <u>Truth table</u>
 
@@ -167,7 +167,7 @@ An AND gate whose output signal is inverted is called a NAND gate.
 
 | IEC view | Mathematical view |
 |:--------:|:-----------------:|
-| ![NAND](/images/Prog/nand.png) | R=A+B=(A ̅.B ̅ ) ̅  |
+| ![NAND](/images/Prog/nand.png) | ![NAND](/images/Math/nand.png) |
 
 ### OR instruction (OR)
 
