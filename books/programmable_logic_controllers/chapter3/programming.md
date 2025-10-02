@@ -122,9 +122,30 @@ If you invert the same signal twice, you get the original signal.
 
 | IEC view | Mathematical view |
 |:--------:|:-----------------:|
-| ![NOT is //NOT](/images/Prog/not_is_not.png) | R = A.B       |
+| ![NOT is //NOT](/images/Prog/not_is_not.png) | A = \overset{}{A}  |
 
 ### AND instruction (AND)
+
+With the AND instruction, all inputs must be TRUE to activate the ~~output~~ (R).
+
+<u>Graphic representation</u>
+
+| IEC view | Mathematical view |
+|:--------:|:-----------------:|
+| ![AND](/images/Prog/and.png) | R = A.B  |
+
+<u>Truth table</u>
+
+| A   | B   | R   |
+|:---:|:---:|:---:|
+| 0   | 0   | 0   |
+| 0   | 1   | 0   |
+| 1   | 0   | 0   |
+| 1   | 1   | 1   |
+
+<u>Programming examples</u>
+
+
 
 ### OR instruction (OR)
 
