@@ -98,7 +98,7 @@ The NOT-instruction ensures that a BOOL signal is inverted and represented by a 
 <u>Graphic representation</u>
 
 |          | IEC view | Mathematical view              |
-|:--------:|:---------|:------------------------------:|
+|:--------:|:--------:|:------------------------------:|
 | Input    | ![NOT as input](/images/Prog/not_in.png)   | ![NOT](/images/Math/not.png)  |
 | Output   | ![NOT as output](/images/Prog/not_out.png) |                    |
 
@@ -171,9 +171,113 @@ An AND gate whose output signal is inverted is called a NAND gate.
 
 ### OR instruction (OR)
 
+In the OR instruction, there must be at least one TRUE input to activate the output (R).
+
+<u>Graphic representation</u>
+
+| IEC view | Mathematical view |
+|:--------:|:-----------------:|
+| ![OR](/images/Prog/or.png) | ![OR](/images/Math/or.png)  |
+
+<u>Truth table</u>
+
+| A   | B   | R   |
+|:---:|:---:|:---:|
+| 0   | 0   | 0   |
+| 0   | 1   | 1   |
+| 1   | 0   | 1   |
+| 1   | 1   | 1   |
+
+<u>Programming examples</u>
+
+| Manufacturer | FBD | LD equivalent |
+|:------------:|:---:|:-------------:|
+| Beckhoff     | ![OR](/images/TwinCAT/fbd_or.png) | ![OR](/images/TwinCAT/lad_or.png) |
+| Siemens      | ![OR](/images/TIA/fbd_or.png)     | ![OR](/images/TIA/lad_or.png)     |
+
+It is possible to expand the number of input signals in FBD:
+- Beckhoff: OR (3 inputs) or via pop-up menu
+- Siemens: Add by clicking on the yellow star or via pop-up menu
+
+If the number of input signals is insufficient (FBD), multiple OR gates can be connected together.
+
+![Multiple ORs](/images/TwinCAT/multiple_or.png)
+
+If all input signals and the output signal of an OR gate are inverted, the result is the operation of an AND gate. An OR gate whose output signal is inverted is called a NOR gate.
+
+| IEC view | Mathematical view |
+|:--------:|:-----------------:|
+| ![NOR](/images/Prog/nor.png) | ![NOR](/images/Math/nor.png) |
+
 ### Exclusive OR instruction (XOR)
 
+With the XOR instruction, only one input signal may be TRUE in order to activate the output (R).
+
+| IEC view | Mathematical view |
+|:--------:|:-----------------:|
+| ![XOR](/images/Prog/xor.png) | ![XOR](/images/Math/xor.png)  |
+
+<u>Truth table</u>
+
+| A   | B   | R   |
+|:---:|:---:|:---:|
+| 0   | 0   | 0   |
+| 0   | 1   | 1   |
+| 1   | 0   | 1   |
+| 1   | 1   | 0   |
+
+<u>Programming examples</u>
+
+| Manufacturer | FBD | LD equivalent |
+|:------------:|:---:|:-------------:|
+| Beckhoff     | ![XOR](/images/TwinCAT/fbd_xor.png) | ![XOR](/images/TwinCAT/lad_xor.png) |
+| Siemens      | ![XOR](/images/TIA/fbd_xor.png)     | ![XOR](/images/TIA/lad_xor.png)     |
+
+It is possible to expand the number of input signals in FBD at Siemens by clicking on the yellow star or by using the pop-up menu. The output result (R) will be TRUE if an odd number of input signals are TRUE.
+
+If the number of input signals is insufficient (FBD), multiple XOR gates can be connected together.
+
+![Multiple XORs](/images/TwinCAT/multiple_xor.png)
+
+An XOR gate whose output signal is inverted is called an XNOR gate.
+
+| IEC view | Mathematical view |
+|:--------:|:-----------------:|
+| ![XNOR](/images/Prog/xnor.png) | ![XNOR](/images/Math/xnor.png)  
+
+What if an XOR gate contains more than two input signals?
+- The result is TRUE if the number of TRUE input signals is odd
+- In all other cases, the result is FALSE
+
 ### Assignment (COIL)
+
+The COIL instruction ensures that a PLC memory variable (%M) or a PLC output variable (%Q) of the BOOL data type continuously has the value TRUE or FALSE depending on the logical result for the COIL instruction.
+
+<u>Programming examples</u>
+
+| Manufacturer | FBD | LD equivalent |
+|:------------:|:---:|:-------------:|
+| Beckhoff     | ![COIL](/images/TwinCAT/fbd_coil.png) | ![COIL](/images/TwinCAT/lad_coil.png) |
+| Siemens      | ![COIL](/images/TIA/fbd_coil.png)     | ![COIL](/images/TIA/lad_coil.png)     |
+
+The COIL instruction does not exist in Beckhoff's FBD programming language, but it is possible to immediately assign a variable to an output result (e.g. AND instruction) using the ‘Assignment’ instruction, which has the same effect as the COIL instruction.
+
+| Condition   | Online view | Comment |
+|:-----------:|:---:|:-----------------------------------------------------------------------------------------------------------------------------:|
+| Condition 1 | ![Condition 1](/images/TIA/cond1.png) | Both input A and input B are deactivated, <br> causing output R to have the status FALSE <br> because the result of the OR gate is FALSE |
+| Condition 2 | ![Condition 2](/images/TIA/cond2.png) | Input A is activated, causing output R to <br> have the status TRUE because the result <br> of the OR gate is TRUE |
+| Condition 3 | ![Condition 3](/images/TIA/cond3.png) | Input B is activated, output R retains the <br> TRUE status |
+| Condition 4 | ![Condition 4](/images/TIA/cond4.png) | Input A and input B are deactivated, <br> causing output R to have the status FALSE <br> because the result of the OR gate is FALSE |
+| Condition 5 | ![Condition 5](/images/TIA/cond5.png) | Input B is activated, causing output R to <br> have the status TRUE because the result of <br> the OR gate is TRUE |
+
+It is possible to add a NOT instruction to a COIL instruction or to use a negating COIL instruction.
+
+<u>Programming examples</u>
+
+| Manufacturer | FBD | LD equivalent |
+|:------------:|:---:|:-------------:|
+| Beckhoff     | ![NOT COIL](/images/TwinCAT/fbd_ncoil.png) | ![NOT COIL](/images/TwinCAT/lad_ncoil.png) |
+| Siemens      | ![NOT COIL](/images/TIA/fbd_ncoil.png)     | ![NOT COIL](/images/TIA/lad_ncoil.png)     |
 
 ### FlipFlop (SR/RS)
 
