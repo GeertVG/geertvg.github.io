@@ -75,11 +75,9 @@ Overview of establishing a virtual connection:
 **Instructions** can be inserted into building blocks using an instruction toolbox. Instructions can be dragged and dropped into the desired network.
 
 If the desired instruction is not immediately visible in the instruction toolbox, it is possible to insert an ‘empty box’ or empty instruction. By clicking on the empty instruction, it is possible to select and insert the desired instruction from a list (Siemens) or to open various libraries (Beckhoff).
-
 Using basic instructions (NOT, AND, OR, XOR, COIL, FlipFlop and edges), it is possible to design a user program (also known as programming) using only instructions that process BOOLs.
 
 The following chapters explain the various basic logical instructions and use letters to represent a bit signal. Here, signals A and B are BOOL input signals and R is a BOOL output signal (the result).
-
 The operation of different instructions is explained using a truth table that shows the result for each possible input combination.
 
 | Beckhoff | Siemens |
@@ -99,8 +97,8 @@ The NOT-instruction ensures that a BOOL signal is inverted and represented by a 
 
 <u>Graphic representation</u>
 
-| IEC view | Mathematical view |                                |
-|:--------:|:-----------------:|:------------------------------:|
+|          | IEC view | Mathematical view              |
+|:--------:|:---------|:------------------------------:|
 | Input    | ![NOT as input](/images/Prog/not_in.png)   | R = \\overset{\\overline{}}{A} |
 | Output   | ![NOT as output](/images/Prog/not_out.png) |                                |
 
@@ -113,7 +111,7 @@ The NOT-instruction ensures that a BOOL signal is inverted and represented by a 
 
 <u>Programming examples</u>
 
-| Manufacturer | FBD |*LD equivalent |
+| Manufacturer | FBD | LD equivalent |
 |:------------:|:---:|:-------------:|
 | Beckhoff     | ![NOT](/images/TwinCAT/fbd_not.png) | ![NOT](/images/TwinCAT/lad_not.png) |
 | Siemens      | ![NOT](/images/TIA/fbd_not.png)     | ![NOT](/images/TIA/lad_not.png)     |
