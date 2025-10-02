@@ -143,7 +143,31 @@ With the AND instruction, all inputs must be TRUE to activate the output (R).
 
 <u>Programming examples</u>
 
+| Manufacturer | FBD | LD equivalent |
+|:------------:|:---:|:-------------:|
+| Beckhoff     | ![AND](/images/TwinCAT/fbd_and.png) | ![AND](/images/TwinCAT/lad_and.png) |
+| Siemens      | ![AND](/images/TIA/fbd_and.png)     | ![AND](/images/TIA/lad_and.png)     |
 
+It is possible to expand the number of input signals in FBD:
+- Beckhoff: AND (3 inputs) or via pop-up menu
+- Siemens: Add by clicking on the yellow star or via pop-up menu
+
+The pop-up menu can be opened by selecting the AND instruction and then clicking on the other mouse button.
+
+| Beckhoff | Siemens |
+|:--------:|:-------:|
+| ![Beckhoff expand input](/images/TwinCAT/expand_input.png)| ![Siemens expand input](/images/TIA/expand_input.png)|
+
+If the number of input signals is insufficient (FBD), multiple AND gates can be connected together.
+
+![Multiple ANDs](/images/TwinCAT/multiple_and.png)
+
+If all input signals and the output signal of an AND gate are inverted, the result is the operation of an OR gate. 
+An AND gate whose output signal is inverted is called a NAND gate.
+
+| IEC view | Mathematical view |
+|:--------:|:-----------------:|
+| ![NAND](/images/Prog/nand.png) | R=A+B=(A ̅.B ̅ ) ̅  |
 
 ### OR instruction (OR)
 
