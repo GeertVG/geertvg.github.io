@@ -12,8 +12,13 @@ Features of the start-stop switch:
 
 | Manufacturer | FBD                         |
 |:------------:|:---------------------------:|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Start-stop circuit](/images/TwinCAT/start_stop_fbd.png) |
+| Siemens      | ![Start-stop circuit](/images/TIA/start_stop_fbd.png) |
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     | ![Start-stop circuit](/images/TwinCAT/start_stop_lad.png) |
+| Siemens      | ![Start-stop circuit](/images/TIA/start_stop_lad.png) |
 
 ```TAGs
 •	iSB_DkStart_S1 = digital input – start push button [-S1] on the control panel
@@ -21,11 +26,22 @@ Features of the start-stop switch:
 •	oSB_LmpStart_H1 = digital output – start lamp [-H1] on the control panel
 •	mGestart = memory flag – started
 ```
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     | ![Start-stop circuit](/images/TwinCAT/start_stop_fbd_call.png) |
+| Siemens      | ![Start-stop circuit](/images/TIA/start_stop_fbd_call.png) |
 
 | Manufacturer | LD                          |
 |:------------:|:---------------------------:|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Start-stop circuit](/images/TwinCAT/start_stop_lad_call.png) |
+| Siemens      | ![Start-stop circuit](/images/TIA/start_stop_lad_call.png) |
+
+```TAGs
+•	iSB_DkStart_S1 = digital input – start push button [-S1] on the control panel
+•	iSB_DkStop_S2 = digital input – stop push button [-S2] on the control panel
+•	oSB_LmpStart_H1 = digital output – start lamp [-H1] on the control panel
+•	ID_Gestart = Instance data – started
+```
 
 > **What does the Machinery Directive 2006/42/EG describes about start-stop switches?**
 > 
@@ -271,7 +287,7 @@ The difference between the switch-on and switch-off threshold values is called h
 •	mHystDiv2 = memory flag = Hysteresis/2.0
 •	mW = memory flag = Setpoint
 •	mBovengrens = memory flag = Switch off threshold or upper limit
-•   mBovengrens = memory flag = Switch on threshold or lower limit
+•	mBovengrens = memory flag = Switch on threshold or lower limit
 ```
 
 | Manufacturer | LD                          |
