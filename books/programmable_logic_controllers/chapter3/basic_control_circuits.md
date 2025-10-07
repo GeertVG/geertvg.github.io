@@ -11,12 +11,12 @@ Features of the start-stop switch:
 -	The stop function has priority over the start function. In other words, if both push buttons are pressed simultaneously, the output result will be FALSE.
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     | ![Start-stop circuit](/images/TwinCAT/start_stop_fbd.png) |
 | Siemens      | ![Start-stop circuit](/images/TIA/start_stop_fbd.png) |
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     | ![Start-stop circuit](/images/TwinCAT/start_stop_lad.png) |
 | Siemens      | ![Start-stop circuit](/images/TIA/start_stop_lad.png) |
 
@@ -27,12 +27,12 @@ Features of the start-stop switch:
 •	mGestart = memory flag – started
 ```
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     | ![Start-stop circuit](/images/TwinCAT/start_stop_fbd_call.png) |
 | Siemens      | ![Start-stop circuit](/images/TIA/start_stop_fbd_call.png) |
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     | ![Start-stop circuit](/images/TwinCAT/start_stop_lad_call.png) |
 | Siemens      | ![Start-stop circuit](/images/TIA/start_stop_lad_call.png) |
 
@@ -65,7 +65,7 @@ Features of the reverse circuit:
 -	The stop function takes precedence over the left and right functions. In other words, if the stop button is pressed simultaneously with a left and/or right button, the output results will be FALSE.
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -82,7 +82,7 @@ Features of the reverse circuit:
 ```
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -103,7 +103,7 @@ Features of the star-delta circuit:
 -	The stop function has priority over the start function. In other words, if the stop push button is pressed simultaneously with the start push button, the output results will be FALSE.
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -120,7 +120,7 @@ Features of the star-delta circuit:
 ```
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -146,7 +146,7 @@ An alarm is activated by a cause (e.g. contact from a motor circuit breaker) and
 An alarm is programmed using a flip-flop, with the SET instruction taking priority.
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -158,7 +158,7 @@ An alarm is programmed using a flip-flop, with the SET instruction taking priori
 ```
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -187,7 +187,7 @@ Operation in manual mode depends on the control design:
 -	Dead man's control: An actuator will only be activated when the corresponding push button is pressed. When switching from automatic mode to manual mode, the actuator will stop.
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -199,7 +199,7 @@ Operation in manual mode depends on the control design:
 ```
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -210,7 +210,7 @@ With a latching circuit, it is possible to switch a light on and off using an im
 The circuit is characterized by the use of an XOR instruction (only in FBD) in combination with a rising edge of the push button, whereby the result is fed back to the XOR instruction.
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -221,7 +221,7 @@ The circuit is characterized by the use of an XOR instruction (only in FBD) in c
 ```
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -249,7 +249,7 @@ The operation can be explained using a truth table across multiple PLC cycles.
 A flashing light circuit makes it possible to make a lamp flash. The time that the lamp is on can differ from the time that the lamp is off. The ratio between the time that the lamp is on and the total period of time is called the ‘duty cycle’.
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -260,7 +260,7 @@ A flashing light circuit makes it possible to make a lamp flash. The time that t
 ```
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -278,7 +278,7 @@ An on-off circuit is used to switch a loop manipulated value output LMN [BOOL] o
 The difference between the switch-on and switch-off threshold values is called hysteresis. The following mathematical formulas apply:
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -291,14 +291,14 @@ The difference between the switch-on and switch-off threshold values is called h
 ```
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
 If the measured value is lower than the switch-on threshold, the control output will be switched on. As soon as the switch-off threshold is reached, the control output will be disabled.
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -309,7 +309,7 @@ If the measured value is lower than the switch-on threshold, the control output 
 ```
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -318,13 +318,13 @@ If the measured value is lower than the switch-on threshold, the control output 
 With the Always TRUE circuit it is possible to obtain a result that always has the value TRUE. An Always FALSE circuit, on the other hand, has a result that is always FALSE.
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -335,7 +335,7 @@ The normalization circuit, abbreviated NORM, is used to convert an INT number li
 To convert an INT number to a REAL number, a conversion instruction must be used. The mathematical formula below is then used to convert the number to a value between 0.0 and 1.0.
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -346,7 +346,7 @@ To convert an INT number to a REAL number, a conversion instruction must be used
 ```
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -359,7 +359,7 @@ The mathematical formula below is used to convert the number to a value between 
 The scale circuit is often used in combination with the normalization circuit to convert an analogue input value, which is a decimal integer between two extremes (-32768 and +32767), to a decimal number in an SI unit.
 
 | Manufacturer | FBD                         |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
 
@@ -370,6 +370,6 @@ The scale circuit is often used in combination with the normalization circuit to
 ```
 
 | Manufacturer | LD                          |
-|:------------:|:---------------------------:|
+|:------------:|:----------------------------|
 | Beckhoff     |                             |
 | Siemens      |                             |
