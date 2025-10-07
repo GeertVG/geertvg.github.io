@@ -213,6 +213,8 @@ If all input signals and the output signal of an OR gate are inverted, the resul
 
 With the XOR instruction, only one input signal may be TRUE in order to activate the output (R).
 
+<u>Graphic representation</u>
+
 | IEC view | Mathematical view |
 |:--------:|:-----------------:|
 | ![XOR](/images/Prog/xor.png) | ![XOR](/images/Math/xor.png)  |
@@ -243,7 +245,7 @@ An XOR gate whose output signal is inverted is called an XNOR gate.
 
 | IEC view | Mathematical view |
 |:--------:|:-----------------:|
-| ![XNOR](/images/Prog/xnor.png) | ![XNOR](/images/Math/xnor.png)  
+| ![XNOR](/images/Prog/xnor.png) | ![XNOR](/images/Math/xnor.png) |
 
 What if an XOR gate contains more than two input signals?
 - The result is TRUE if the number of TRUE input signals is odd
@@ -281,9 +283,99 @@ It is possible to add a NOT instruction to a COIL instruction or to use a negati
 
 ### FlipFlop (SR/RS)
 
+Using a flip-flop instruction, it is possible to assign the status TRUE or FALSE to a PLC memory (%M) or a PLC output variable (%Q) of the data type BOOL and to retain this status even if the logical result is no longer TRUE. This creates a kind of ‘memory function’.
+
+To achieve this, a flip-flop is provided with two input variables:
+- SET (S) = Activate the TRUE status
+- RESET (R) = Activate the FALSE status
+
+<u>Graphic representation</u>
+
+| IEC view | Mathematical view |
+|:--------:|:-----------------:|
+| ![SR](/images/Prog/sr.png) | ![SR](/images/Math/sr.png) |
+
+<u>Truth table</u>
+
+| A (S1) | B (R)  | Q1   |
+|:------:|:------:|:----:|
+| 0      | 0      | On changed |
+| 0      | 1      | 1   |
+| 1      | X      | 1   |
+
+As soon as one of the input variables has the status TRUE, the status of the flip-flop instruction is adjusted. If the status of both input variables is FALSE, the status of the flip-flop instruction will not be changed. 
+
+If the status of both input variables is TRUE, the status of the flip-flop instruction will be determined by the priority input marked with the number 1.
+
+<u>Graphic representation</u>
+
+| IEC view | Mathematical view |
+|:--------:|:-----------------:|
+| ![RS](/images/Prog/rs.png) | ![RS](/images/Math/rs.png) |
+
+<u>Truth table</u>
+
+| A (S1) | B (R)  | Q1   |
+|:------:|:------:|:----:|
+| 0      | 0      | On changed |
+| X      | 1      | 0   |
+| 1      | 0      | 1   |
+
+<u>Programming examples</u>
+
+| Manufacturer | Priority SET  | Priority RESET |
+|:------------:|:-------------:|:--------------:|
+| Beckhoff     | ![SR](/images/TwinCAT/sr.png)  | ![RS](/images/TwinCAT/rs.png) | 
+| Siemens      | ![RS](/images/TIA/rs.png)      | ![SR](/images/TIA/sr.png)     | 
+
+When creating a flip-flop in Beckhoff, the ES software package asks you to create the corresponding instance data, which is displayed above the flip-flop instruction. In Siemens, no instance data is created, but a free PLC memory (%M) BOOL variable must be assigned. However, the operation is similar to that of instance data (making the status of the internal variable unique). Using the instance data/free memory flag, the CPU can store the status of the flip-flop instruction during RT.
+
+To link the output result of a flip-flop instruction to a PLC memory flag (%M) or a PLC output variable (%Q) of the BOOL data type, the COIL instruction must be used.
+
+| Condition   | Online view | Comment |
+|:-----------:|:---:|:-----------------------------------------------------------------------------------------------------------------------------:|
+| Condition 1 | ![Condition 1](/images/TIA/flipflop1.png) | Input A, input B and output R are deactivated |
+| Condition 2 | ![Condition 2](/images/TIA/flipflop2.png) | Output R is TRUE because the SET input of <br> the flip-flop has been activated. <br> This causes the status of the flip-flop <br> to become TRUE, which is presented at output Q |
+| Condition 3 | ![Condition 3](/images/TIA/flipflop3.png) | The SET input of the flip-flop has the status <br> FALSE, but the status of the flip-flop remains TRUE! <br> As a result, the output R retains the status TRUE |
+| Condition 4 | ![Condition 4](/images/TIA/flipflop4.png) |The status of output R is FALSE because the <br> RESET input of the flip-flop has been activated. <br>
+This causes the status of the flip-flop <br> to become FALSE, which is presented at output Q |
+
 ### Edge detection (R_TRIG/F_TRIG)
 
+Flank detection is used to detect the change in state of a BOOL variable. A distinction is made between:
+- Positive edge detection = variable that changes from FALSE to TRUE, also know as positive edge
+- Negative edge detection = variable that changes from TRUE to FALSE, also know as negative edge
+
+<u>Graphic representation</u>
+
+|              | IEC view LD | IEC view FBD |
+|:------------:|:-----------:|:------------:|
+| Rising edge  | ![RE](/images/Prog/re_lad.png) | ![RE](/images/Prog/re_fbd.png) |
+| Falling edge | ![FE](/images/Prog/fe_lad.png) | ![RE](/images/Prog/fe_fbd.png) |
+
+The output of an edge instruction will only be TRUE at the moment the transition is detected (order of magnitude ms). To determine this, the instruction requires a PLC memory flag (%M) at Siemens. Beckhoff uses instance data.
+
+<u>Programming examples</u>
+
+| Manufacturer | FBD | LD equivalent |
+|:------------:|:---:|:-------------:|
+| Beckhoff     | ![RE & FE](/images/TwinCAT/fbd_trig.png) | ![RE & FE](/images/TwinCAT/lad_trig.png) |
+| Siemens      | ![RE & FE](/images/TIA/fbd_trig.png)     | ![RE & FE](/images/TIA/lad_trig.png)     |
+
 ### Copy (MOVE)
+
+Using the MOVE instruction, it is possible to copy the contents of an input variable to an output variable. The input and output variables are of the type BYTE, WORD, DWORD, LWORD or ANY_NUM, whereby the data types of both variables can be the same or different.
+
+The MOVE instruction is executed as soon as the status of the AND input is TRUE. If no variable is assigned to the AND input, the instruction is executed continuously.
+
+<u>Programming examples</u>
+
+| Manufacturer | FBD & LD | 
+|:------------:|:---:|
+| Beckhoff     | ![MOVE](/images/TwinCAT/move.png) | 
+| Siemens      | ![MOVE](/images/TIA/move.png)     | 
+
+Siemens offers the option of expanding the number of output variables, making it possible to copy the value of the input variable to multiple output variables simultaneously.
 
 ### IEC Timers (TON/TOF/TP)
 
@@ -295,6 +387,18 @@ It is possible to add a NOT instruction to a COIL instruction or to use a negati
 
 ### Conversion instructions
 
-
 ## Programming in ST
 
+### General
+
+### Structure
+
+### Control structure IF ... THEN ... ELSE
+
+### Control structure CASE ... OF ... ELSE
+
+### Control structure WHILE ... DO
+
+### Control structure REPEAT ... UNTIL
+
+### Control structure FOR ... TO ... BY 

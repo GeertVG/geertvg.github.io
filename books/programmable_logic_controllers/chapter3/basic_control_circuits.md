@@ -10,6 +10,23 @@ Features of the start-stop switch:
 -	The output result becomes FALSE as soon as the stop push button is pressed or if the stop push button is defective (contact is not closed),
 -	The stop function has priority over the start function. In other words, if both push buttons are pressed simultaneously, the output result will be FALSE.
 
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```TAGs
+•	iSB_DkStart_S1 = digital input – start push button [-S1] on the control panel
+•	iSB_DkStop_S2 = digital input – stop push button [-S2] on the control panel
+•	oSB_LmpStart_H1 = digital output – start lamp [-H1] on the control panel
+•	mGestart = memory flag – started
+```
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
 > **What does the Machinery Directive 2006/42/EG describes about start-stop switches?**
 > 
 > Following items are listed in the machine directives:
@@ -31,6 +48,28 @@ Features of the reverse circuit:
 -	The output results become FALSE as soon as the stop push button is pressed or if the stop push button is defective (contact is not closed),
 -	The stop function takes precedence over the left and right functions. In other words, if the stop button is pressed simultaneously with a left and/or right button, the output results will be FALSE.
 
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```TAGs
+•	iSB_DkR_S1 = digital input – Clockwise push button [-S1] on the control panel
+•	iSB_DkL_S2 = digital input – Counter clockwise push button [-S2] on the control panel
+•	iSB_DkStop_S3 = digital input – stop push button [-S3] on the control panel
+•	oSB_ConR_K1 = digital output – contact clockwise  [-K1] on the control panel
+•	oSB_ConL_K2 = digital output – contact counter clockwise  [-K2] on the control panel
+•	ID_TOF_L= Instance data – stop delay counter clockwise
+•	ID_TOF_R = Instance data – stop delay clockwise
+•	ID_SR_L and ID_RS_L = Instance data – Flipflop memory to the counter clockwise
+•	ID_SR_R and ID_RS_R = Instance data – Flipflop memory to the clockwise
+```
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
 ## Star-delta circuit
 
 The star-delta circuit is used for three-phase asynchronous motors where the power of these motors is so high that a direct start-up in delta causes a voltage drop in the electrical supply network.
@@ -46,6 +85,28 @@ Features of the star-delta circuit:
 -	The output results become FALSE as soon as the stop push button is pressed or if the stop push button is defective (contact is not closed),
 -	Restarting after a stop function is limited by a waiting time which limits the number of starts per hour,
 -	The stop function has priority over the start function. In other words, if the stop push button is pressed simultaneously with the start push button, the output results will be FALSE.
+
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```TAGs
+•	iSB_DkStart_S1 = digital input – start push button [-S1] on the control panel
+•	iSB_DkStop_S3 = digital input – stop push button [-S3] on the control panel
+•	oSB_ConL_K1 = digital output – main line contactor [-K1] on the control panel
+•	oSB_ConS_K2 = digital output – star contactor  [-K2] on the control panel
+•	oSB_ConD_K3 = digital output – delta contactor  [-K3] on the control panel
+•	ID_TON_S = Instance data – startup time in star
+•	ID_TON_SD= Instance data – idle time van star to delta
+•	ID_TOF = Instance data – Holding time restart
+•	ID_Gestart = Instance data – motor started
+```
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
 
 ## Alarm circuit
 
@@ -67,6 +128,23 @@ The list below provides an overview of common alarms and abnormal conditions:
 An alarm is activated by a cause (e.g. contact from a motor circuit breaker) and is deactivated by the operator. To do this, the operator must first resolve the cause of the alarm, after which the alarm is deactivated using a push button (e.g. reset push button). Activating the alarm has priority over deactivating the alarm. In other words, if the alarm is activated and deactivated simultaneously, the alarm must remain active.
 
 An alarm is programmed using a flip-flop, with the SET instruction taking priority.
+
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```TAGs
+•	iTB01_Mbv_Q1 = digital input – motor circuit breaker [-Q1] conveyor 1
+•	mReset = memory flag – reset signal
+•	mA003 = memory flag – alarm no. 003 = motor protection circuit breaker TB01 [-Q1] disabled
+•	ID_A003 = Instance data - flipflop memory of alarm no. 3
+```
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
 
 > **What does the Machinery Directive 2006/42/EG  describes about alarms?**
 > 
@@ -92,11 +170,44 @@ Operation in manual mode depends on the control design:
 -	Start-stop control: The actuators are started and stopped with separate push buttons. When switching from automatic mode to manual mode, the last operating state of an actuator is retained (=Bump less control transfer).
 -	Dead man's control: An actuator will only be activated when the corresponding push button is pressed. When switching from automatic mode to manual mode, the actuator will stop.
 
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```TAGs
+•	iHAL_DkLmp_S10 = digital input – push button light in the hall [-S10]
+•	oHAL_Lmp_H10 = digital output = lamp in the hall [-H10]
+•	mHAL_PfLmp_S10 = memory flag – rising edge on the push button light in the hall
+•	mHAL_Lmp_S10 = memory flag – switch on the lamp in the hall
+```
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
 ## Latching circuit
 
 With a latching circuit, it is possible to switch a light on and off using an impulse. To achieve this, a spring-return switch or a push button is used, whereby the push button is pressed once to switch the light on and again to switch it off.
 
 The circuit is characterized by the use of an XOR instruction (only in FBD) in combination with a rising edge of the push button, whereby the result is fed back to the XOR instruction.
+
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```TAGs
+•	iSB_SelAuto_S1 = digital input – switch automatic mode [-S1]
+•	ID_TOF_M003 = Instance data – stop delay event no. 003
+•	mM003 = memory flag – event no. 003 = installation in automatic mode
+```
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
 
 The operation can be explained using a truth table across multiple PLC cycles.
 
@@ -121,6 +232,27 @@ The operation can be explained using a truth table across multiple PLC cycles.
 
 A flashing light circuit makes it possible to make a lamp flash. The time that the lamp is on can differ from the time that the lamp is off. The ratio between the time that the lamp is on and the total period of time is called the ‘duty cycle’.
 
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```TAGs
+•	oLmp_H1 = digital output – Lamp [-H1]
+•	ID_TON_Aan = Instance data – Time lamp on
+•	ID_TON_Uit = Instance data – Time lamp off
+```
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```Example
+Cars are equipped with orange direction indicators to indicate a change of direction. If the right direction indicator is activated, the right direction indicators (front, rear and on the sides/mirrors) will be enabled and disabled at regular intervals.
+-	The direction indicators flash (=flashing light) 
+```
+
 ## On-off circuit
 
 An on-off circuit is used to switch a loop manipulated value output LMN [BOOL] on or off depending on a process value PV [REAL] and a setpoint value SP [REAL]. The on-off circuit ensures that the actuator does not switch on and off too often by using two threshold values, namely:
@@ -129,18 +261,78 @@ An on-off circuit is used to switch a loop manipulated value output LMN [BOOL] o
 
 The difference between the switch-on and switch-off threshold values is called hysteresis. The following mathematical formulas apply:
 
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```TAGs
+•	mHyst = memory flag = Hysteresis
+•	mHystDiv2 = memory flag = Hysteresis/2.0
+•	mW = memory flag = Setpoint
+•	mBovengrens = memory flag = Switch off threshold or upper limit
+•   mBovengrens = memory flag = Switch on threshold or lower limit
+```
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
 
 If the measured value is lower than the switch-on threshold, the control output will be switched on. As soon as the switch-off threshold is reached, the control output will be disabled.
+
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```TAGs
+•	mX = memory flag = Process value
+•	ID_Y = Instance data – Loop manipulated value
+•	oY = analog output = Loop manipulated value
+```
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
 
 ## Always TRUE & Always FALSE circuits
 
 With the Always TRUE circuit it is possible to obtain a result that always has the value TRUE. An Always FALSE circuit, on the other hand, has a result that is always FALSE.
+
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
 
 ## Normalization circuit
 
 The normalization circuit, abbreviated NORM, is used to convert an INT number limited between a minimum and maximum value to a REAL number limited between the values 0.0 and 1.0 (or 0% and 100%).
 
 To convert an INT number to a REAL number, a conversion instruction must be used. The mathematical formula below is then used to convert the number to a value between 0.0 and 1.0.
+
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```TAGs
+•	mX = memory flag = Process value
+•	ID_Y = Instance data – Loop manipulated value
+•	oY = analog output = Loop manipulated value
+```
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
 
 ## Scale circuit
 
@@ -150,3 +342,18 @@ The mathematical formula below is used to convert the number to a value between 
 
 The scale circuit is often used in combination with the normalization circuit to convert an analogue input value, which is a decimal integer between two extremes (-32768 and +32767), to a decimal number in an SI unit.
 
+| Manufacturer | FBD                         |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
+
+```TAGs
+•	mX = memory flag = Process value
+•	ID_Y = Instance data – Loop manipulated value
+•	oY = analog output = Loop manipulated value
+```
+
+| Manufacturer | LD                          |
+|:------------:|:---------------------------:|
+| Beckhoff     |                             |
+| Siemens      |                             |
