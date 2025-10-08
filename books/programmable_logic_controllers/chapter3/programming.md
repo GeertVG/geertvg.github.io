@@ -291,7 +291,7 @@ To achieve this, a flip-flop is provided with two input variables:
 
 <u>Graphic representation</u>
 
-| IEC view | Mathematical view |
+| IEC view | Explanation |
 |:--------:|:-----------------:|
 | ![SR](/images/Prog/sr.png) | ![SR](/images/Math/sr.png) |
 
@@ -309,7 +309,7 @@ If the status of both input variables is TRUE, the status of the flip-flop instr
 
 <u>Graphic representation</u>
 
-| IEC view | Mathematical view |
+| IEC view | Explanation |
 |:--------:|:-----------------:|
 | ![RS](/images/Prog/rs.png) | ![RS](/images/Math/rs.png) |
 
@@ -337,8 +337,7 @@ To link the output result of a flip-flop instruction to a PLC memory flag (%M) o
 | Condition 1 | ![Condition 1](/images/TIA/flipflop1.png) | Input A, input B and output R are deactivated |
 | Condition 2 | ![Condition 2](/images/TIA/flipflop2.png) | Output R is TRUE because the SET input of <br> the flip-flop has been activated. <br> This causes the status of the flip-flop <br> to become TRUE, which is presented at output Q |
 | Condition 3 | ![Condition 3](/images/TIA/flipflop3.png) | The SET input of the flip-flop has the status <br> FALSE, but the status of the flip-flop remains TRUE! <br> As a result, the output R retains the status TRUE |
-| Condition 4 | ![Condition 4](/images/TIA/flipflop4.png) |The status of output R is FALSE because the <br> RESET input of the flip-flop has been activated. <br>
-This causes the status of the flip-flop <br> to become FALSE, which is presented at output Q |
+| Condition 4 | ![Condition 4](/images/TIA/flipflop4.png) | The status of output R is FALSE because the <br> RESET input of the flip-flop has been activated. <br> This causes the status of the flip-flop <br> to become FALSE, which is presented at output Q |
 
 ### Edge detection (R_TRIG/F_TRIG)
 
@@ -379,7 +378,129 @@ Siemens offers the option of expanding the number of output variables, making it
 
 ### IEC Timers (TON/TOF/TP)
 
+A timer with an on-delay or **on-delay timer** will ensure that the output [Q] is activated a certain time or Preset Time [PT] later than the input signal [IN].
+
+<u>Graphic representation</u>
+
+| IEC view | Explanation |
+|:--------:|:-----------------:|
+| ![TON](/images/Prog/ton.png) | ![TON](/images/Math/ton.png) |
+
+![TON](/images/Math/ton_scheme.png)
+
+<u>Programming examples</u>
+
+| Manufacturer | Timer | FBD example | 
+|:------------:|:-----:|:-----------:|
+| Beckhoff     | ![TON](/images/TwinCAT/ton1.png) | ![TON](/images/TwinCAT/ton2.png) |  
+| Siemens      | ![TON](/images/TIA/ton1.png)     | ![TON](/images/TIA/ton2.png) | 
+
+When creating a timer, the ES software package asks you to create the corresponding instance data. Using the instance data, the CPU can store the remaining time in the PLC memory during RT.
+
+```Example
+In some cars, the low beam is automatically switched on by a light sensor. 
+As soon as the light sensor no longer detects any light during a certain waiting period, the low beam is switched on.
+
+The waiting period is necessary to prevent the low beam from being switched on every time you drive under a bridge, for example.
+-	The low beams switch on with a delay 
+```
+
+A timer with delay or **off-delay timer** ensures that the output [Q] remains activated for a certain time or Preset Time [PT] after the input signal [IN] has been deactivated.
+
+<u>Graphic representation</u>
+
+| IEC view | Explanation |
+|:--------:|:-----------------:|
+| ![TOF](/images/Prog/tof.png) | ![TOF](/images/Math/tof.png) |
+
+![TOF](/images/Math/tof_scheme.png)
+
+<u>Programming examples</u>
+
+| Manufacturer | Timer | 
+|:------------:|:-----:|
+| Beckhoff     | ![TOF](/images/TwinCAT/tof.png) |  
+| Siemens      | ![TOF](/images/TIA/tof.png)     | 
+
+```Example
+Some cars are equipped with a ‘Coming Home’ function. 
+This causes the car's low beam headlights to remain on for about 30 seconds after the key has been removed from the ignition.
+-	The low beams switch off with a delay.
+```
+
+A **pulse timer** ensures that the output signal [Q] is activated for exactly the set time or Preset Time [PT] as soon as the input signal [IN] is activated.
+
+<u>Graphic representation</u>
+
+| IEC view | Explanation |
+|:--------:|:-----------------:|
+| ![TP](/images/Prog/tp.png) | ![TP](/images/Math/tp.png) |
+
+![TP](/images/Math/tp_scheme.png)
+
+<u>Programming examples</u>
+
+| Manufacturer | Timer | 
+|:------------:|:-----:|
+| Beckhoff     | ![TP](/images/TwinCAT/tp.png) |  
+| Siemens      | ![TP](/images/TIA/tp.png)     | 
+
+```Example
+If a car is driving too fast, it may be caught by a speed camera. 
+
+The flash must work correctly. 
+If it flashes for too short a time, the photo will be underexposed (the photo will be too dark = black will dominate), 
+but if it flashes for too long, the photo will be overexposed (the photo will be too bright = white will dominate).
+-	The flash lamp should not be too short or too long.
+```
+
 ### IEC Counters (CTU/CTD/CTUD)
+
+A counter is used to increment or decrement a decimal number by one. The decimal number can be of the following data types:
+–	INT – Integer
+–	DINT – Double integer
+–	LINT – Long integer
+–	UDINT – Unsigned double integer
+–	ULINT – Unsigned long integer
+
+The minimum and maximum values of the decimal number depend on the selected data type.
+An **up counter** will increment a decimal number by one whenever a rising edge signal (internal to the device) is detected at the count-up [CU] input. Once the current counter value is greater than or equal to the preset value [PV] input, the output [Q] will be activated.
+
+The counter value can be set to 0 by activating the reset [R] input. The current counter value is provided at the current value [CV] output.
+
+| IEC view | Explanation |
+|:--------:|:-----------------:|
+| ![CTU](/images/Prog/ctu.png) | ![CTU](/images/Math/ctu.png) |
+
+```Example
+A waiting room is often equipped with a display and a ticket machine. 
+The next customer or patient's turn is shown on the display, which displays a queue number. 
+Each customer or patient has taken a paper queue number from the ticket machine.
+-	Each time the operator presses the ‘next customer’ button, the display increases by 1
+-	When the maximum value is reached, it starts again with number 0 or 1
+```
+
+| Type      | Explanation                                      |
+|:---------:|:-------------------------------------------------|
+| CTU       | Counting up a INT number <br> *Count-Up INT*     |
+| CTU_DINT  | Counting up a DINT number <br> *Count-Up DINT*   |
+| CTU_LINT  | Counting up a LINT number <br> *Count-Up LINT*   |
+| CTU_UDINT | Counting up a UDINT number <br> *Count-Up UDINT* |
+| CTU_ULINT | Counting up a ULINT number <br> *Count-Up ULINT* |
+
+<u>Programming examples</u>
+
+| Manufacturer | Timer | FBD example | 
+|:------------:|:-----:|:-----------:|
+| Beckhoff     | ![CTU](/images/TwinCAT/ctu1.png) | ![CTU](/images/TwinCAT/ctu2.png) |  
+| Siemens      | ![CTU](/images/TIA/ctu1.png)     | ![CTU](/images/TIA/ctu2.png) | 
+
+When creating a counter, the ES software package prompts you to create the corresponding instance data. Using this instance data, the CPU can store the current counter value in the PLC memory during RT.
+
+A **down counter** will decrease a decimal number by one whenever a rising edge signal (internally the module) is detected at the countdown [CD] input. As soon as the current counter value is less than or equal to zero, the output [Q] will be activated.
+
+The counter value can be set to the preset value [PV] by activating the load [LD] input. The current counter value is presented at the current value [CV] output.
+
 
 ### Mathematical instructions
 

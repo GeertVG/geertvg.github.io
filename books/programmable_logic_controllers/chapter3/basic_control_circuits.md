@@ -265,7 +265,10 @@ A flashing light circuit makes it possible to make a lamp flash. The time that t
 | Siemens      |                             |
 
 ```Example
-Cars are equipped with orange direction indicators to indicate a change of direction. If the right direction indicator is activated, the right direction indicators (front, rear and on the sides/mirrors) will be enabled and disabled at regular intervals.
+Cars are equipped with orange direction indicators to indicate a change of direction. 
+
+If the right direction indicator is activated, the right direction indicators (front, rear and on the sides/mirrors) 
+will be enabled and disabled at regular intervals.
 -	The direction indicators flash (=flashing light) 
 ```
 
