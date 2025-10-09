@@ -548,7 +548,8 @@ A **combination counter** is a combination of an upward and a downward counter.
 | Siemens      | ![CTUD](/images/TIA/ctud.png)     | 
 
 ```Example
-Paid parking lots often have one or more displays showing how many empty parking spaces are available. 
+Paid parking often have one or more displays showing how many empty parking spaces are available. 
+
 The number of cars is counted at the point where they enter the lot (pass through the barrier and take a ticket) 
 and at the point where they exit the lot (pass through the barrier and insert a paid ticket).
 -	The number of empty parking spaces decreases every time a car enters the parking lot.
@@ -625,11 +626,63 @@ For trigonometric functions, the angle must be represented in radians instead of
 Comparison instructions are used to compare two numbers. The result of a comparison is either TRUE or FALSE and is therefore of the BOOL data type.
 Comparison statements are executed between ANY_NUM variables of the same data type.
 
+<u>Graphic representation</u>
+
+| IEC view | Explanation |
+|:--------:|:-----------:|
+| ![Comparison instructions](/images/Prog/comp.png) | ![Comparison instructions](/images/Math/comp.png) |
+
+It is not possible to expand the number of inputs for comparison instructions.
+
+| Type instruction | Function            | Description              |
+|:----------------:|:-------------------:|:-------------------------|
+| GT_\*            | OUT := IN1 \> IN2   | Bigger then              |
+| GE_\*            | OUT := IN1 \>= IN2  | Bigger than or equal to  |
+| LT_\*            | OUT := IN1 \< IN2   | Smaller than             |
+| LE_\*            | OUT := IN1 \<= IN2  | Smaller than or equal to |
+| EQ_\*            | OUT := IN1 = IN2    | Equal to                 |
+| NE_\*            | OUT := IN1 \<\> IN2 | Different then           |
 
 ### Conversion instructions
 
-## Programming in ST
+It is often necessary to convert ANY_NUM variables, which have a specific numeric data type, to another numeric data type. This can be done using conversion instructions.
 
+<u>Graphic representation</u>
+
+| IEC view | Explanation |
+|:--------:|:-----------:|
+| ![Conversion instructions](/images/Prog/conv.png) | ![Conversion instructions](/images/Math/conv.png) |
+
+| Type instruction                   | Description                                                                    |
+|:----------------------------------:|:-------------------------------------------------------------------------------|
+| *General conversion instructions*  |                                                                                |
+| IN**\_TO\_**OUT                    | E.g. from SINT to DINT = SINT_TO_DINT <br> E.g. from INT to REAL = INT_TO_REAL |
+| *Specific conversion instructions* |                                                                                |
+| ROUND                              | REAL to INT & round to the next whole (even) number                            |
+| CEIL                               | REAL to INT & round to the upper integer                                       |
+| FLOOR                              | REAL to INT & round to the lowest integer                                      |
+| TRUNC                              | REAL to INT & dropping decimal places                                          |
+| ABS                                | Absolute number                                                                |
+
+The table below shows the different results when using specific conversion instructions.
+
+| Number | ROUND | CEIL | FLOOR | TRUNC |
+|:------:|:-----:|:----:|:-----:|:-----:|
+| 1,01   | 1     | 2    | 1     | 1     |
+| 1,00   | 1     | 1    | 1     | 1     |
+| 0,99   | 1     | 1    | 0     | 0     |
+| 0,51   | 1     | 1    | 0     | 0     |
+| 0,50   | 0     | 1    | 0     | 0     |
+| 0,49   | 0     | 1    | 0     | 0     |
+| 0,00   | 0     | 0    | 0     | 0     |
+| -0,49  | 0     | 0    | -1    | 0     |
+| -0,50  | 0     | 0    | -1    | 0     |
+| -0,51  | -1    | 0    | -1    | 0     | 
+| -0,99  | -1    | 0    | -1    | 0     |
+| -1,00  | -1    | -1   | -1    | -1    |
+| -1,01  | -1    | -1   | -2    | -1    |
+
+## Programming in ST
 ### General
 
 ### Structure
