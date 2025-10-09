@@ -694,7 +694,39 @@ Note that Siemens uses the abbreviation SCL<sup>4</sup> instead of ST<sup>5</sup
 <sup>4</sup> *SCL = Structured Control Language* <br>
 <sup>5</sup> *ST = Structured Text* <br>
 
+![Creating Siemens SCL block](/images/TIA/scl_block.png) ![Creating Beckhoff ST block](/images/TwinCAT/st_block.png)
+
+Flowcharts are often used to build software in a structured way in the ST programming language. This is a graphical analysis method for analyzing a process and/or a software problem. The final drawing is the graphical solution to the problem and must be converted into an ES software program.
+
+| Symbol                                   | Description |
+|:----------------------------------------:|:-----------:|
+| ![End](/images/Prog/end.png)             | The start and end of a (sub)program are shown <br> using a rectangle with rounded corners           |
+| ![Action](/images/Prog/action.png)       | Processes (or actions) are shown in a rectangle                                                     |
+| ![Condition](/images/Prog/condition.png) | Decisions are shown in a diamond and always <br> contain a condition with a result of TRUE or FALSE |
+| ![Input](/images/Prog/input.png)         | Data input is represented by a parallelogram.                                                       |
+| ![Subprogram](/images/Prog/sub.png)      | A subprogram is represented by a rectangle with <br> two additional vertical lines, indicating that a <br> separate process section is being executed. <br> This separate section is clearly defined (e.g. <br> separate flowchart and separate software block) |
+| ![Arrow](/images/Prog/arrow.png)         | Arrows are used to connect the different sections, <br> with the arrow showing how the different sections <br> are run through |
+
 ### Structure
+
+A building block made in ST programming language keeps the structure of:
+- Interface section
+- Programming section
+
+The programming section is displayed textually in one section (no networks), distinguishing between:
+- Comments
+- Variables
+- Instructions, control structures, etc.
+- Constants (e.g. TRUE, FALSE)
+
+The distinction is shown using text formatting.
+
+| Manufacturer | General text colors  |                         |
+|--------------|----------------------|-------------------------|
+| Beckhoff     | Comment <br> Absolute variables <br> Symbolic variables <br> Instructions <br> Constants | Green of blue (cursive) and start with // <br> Purple <br> Black <br> Blue (bold) <br> Dark yellow |
+| Siemens      | Comment <br> Absolute variables <br> Symbolic variables <br> Instructions <br> Constants | Green and start with // <br> Purple <br> Purple <br> Blue <br> Dark cyan |
+
+Comments, instructions, etc. are entered line by line, with each line having a unique sequence number. This sequence number can be found on the left-hand side of the programming section.
 
 ### Control structure IF ... THEN ... ELSE
 

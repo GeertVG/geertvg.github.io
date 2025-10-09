@@ -1158,10 +1158,10 @@ body .markdown-body
 <h2 id="programming-in-ldfbd">Programming in LD/FBD<a class="headerlink" href="#programming-in-ldfbd" title="Permanent link"></a></h2>
 <h3 id="general">General<a class="headerlink" href="#general" title="Permanent link"></a></h3>
 <p><strong>Instructions</strong> can be inserted into building blocks using an instruction toolbox. Instructions can be dragged and dropped into the desired network.</p>
-<p>If the desired instruction is not immediately visible in the instruction toolbox, it is possible to insert an ‘empty box’ or empty instruction. By clicking on the empty instruction, it is possible to select and insert the desired instruction from a list (Siemens) or to open various libraries (Beckhoff).</p>
-<p>Using basic instructions (NOT, AND, OR, XOR, COIL, FlipFlop and edges), it is possible to design a user program (also known as programming) using only instructions that process BOOLs.</p>
-<p>The following chapters explain the various basic logical instructions and use letters to represent a bit signal. Here, signals A and B are BOOL input signals and R is a BOOL output signal (the result).</p>
-<p>The operation of different instructions is explained using a truth table that shows the result for each possible input combination.</p>
+<p>If the desired instruction is not immediately visible in the instruction toolbox, it is possible to insert an ‘empty box’ or empty instruction. By clicking on the empty instruction, it is possible to select and insert the desired instruction from a list (Siemens) or to open various libraries (Beckhoff).
+Using basic instructions (NOT, AND, OR, XOR, COIL, FlipFlop and edges), it is possible to design a user program (also known as programming) using only instructions that process BOOLs.</p>
+<p>The following chapters explain the various basic logical instructions and use letters to represent a bit signal. Here, signals A and B are BOOL input signals and R is a BOOL output signal (the result).
+The operation of different instructions is explained using a truth table that shows the result for each possible input combination.</p>
 <table>
 <thead>
 <tr>
@@ -1187,16 +1187,16 @@ Using an empty instruction, you can insert the missing instructions from the Fun
 <table>
 <thead>
 <tr>
+<th align="center"></th>
 <th align="center">IEC view</th>
 <th align="center">Mathematical view</th>
-<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="center">Input</td>
 <td align="center"><img alt="NOT as input" src="/images/Prog/not_in.png" /></td>
-<td _92_overline_="\overline{" align="center">R = \overset</td>
+<td align="center"><img alt="NOT" src="/images/Math/not.png" /></td>
 </tr>
 <tr>
 <td align="center">Output</td>
@@ -1230,7 +1230,7 @@ Using an empty instruction, you can insert the missing instructions from the Fun
 <tr>
 <th align="center">Manufacturer</th>
 <th align="center">FBD</th>
-<th align="center">*LD equivalent</th>
+<th align="center">LD equivalent</th>
 </tr>
 </thead>
 <tbody>
@@ -1257,20 +1257,1356 @@ Using an empty instruction, you can insert the missing instructions from the Fun
 <tbody>
 <tr>
 <td align="center"><img alt="NOT is //NOT" src="/images/Prog/not_is_not.png" /></td>
-<td align="center">R = A.B</td>
+<td align="center"><img alt="NOT is //NOT" src="/images/Math/not_is_not.png" /></td>
 </tr>
 </tbody>
 </table>
 <h3 id="and-instruction-and">AND instruction (AND)<a class="headerlink" href="#and-instruction-and" title="Permanent link"></a></h3>
+<p>With the AND instruction, all inputs must be TRUE to activate the output (R).</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Mathematical view</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="AND" src="/images/Prog/and.png" /></td>
+<td align="center"><img alt="AND" src="/images/Math/and.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><u>Truth table</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">FBD</th>
+<th align="center">LD equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="AND" src="/images/TwinCAT/fbd_and.png" /></td>
+<td align="center"><img alt="AND" src="/images/TwinCAT/lad_and.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="AND" src="/images/TIA/fbd_and.png" /></td>
+<td align="center"><img alt="AND" src="/images/TIA/lad_and.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>It is possible to expand the number of input signals in FBD:
+- Beckhoff: AND (3 inputs) or via pop-up menu
+- Siemens: Add by clicking on the yellow star or via pop-up menu</p>
+<p>The pop-up menu can be opened by selecting the AND instruction and then clicking on the other mouse button.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Beckhoff</th>
+<th align="center">Siemens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="Beckhoff expand input" src="/images/TwinCAT/expand_input.png" /></td>
+<td align="center"><img alt="Siemens expand input" src="/images/TIA/expand_input.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>If the number of input signals is insufficient (FBD), multiple AND gates can be connected together.</p>
+<p><img alt="Multiple ANDs" src="/images/TwinCAT/multiple_and.png" /></p>
+<p>If all input signals and the output signal of an AND gate are inverted, the result is the operation of an OR gate. 
+An AND gate whose output signal is inverted is called a NAND gate.</p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Mathematical view</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="NAND" src="/images/Prog/nand.png" /></td>
+<td align="center"><img alt="NAND" src="/images/Math/nand.png" /></td>
+</tr>
+</tbody>
+</table>
 <h3 id="or-instruction-or">OR instruction (OR)<a class="headerlink" href="#or-instruction-or" title="Permanent link"></a></h3>
+<p>In the OR instruction, there must be at least one TRUE input to activate the output (R).</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Mathematical view</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="OR" src="/images/Prog/or.png" /></td>
+<td align="center"><img alt="OR" src="/images/Math/or.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><u>Truth table</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">FBD</th>
+<th align="center">LD equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="OR" src="/images/TwinCAT/fbd_or.png" /></td>
+<td align="center"><img alt="OR" src="/images/TwinCAT/lad_or.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="OR" src="/images/TIA/fbd_or.png" /></td>
+<td align="center"><img alt="OR" src="/images/TIA/lad_or.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>It is possible to expand the number of input signals in FBD:
+- Beckhoff: OR (3 inputs) or via pop-up menu
+- Siemens: Add by clicking on the yellow star or via pop-up menu</p>
+<p>If the number of input signals is insufficient (FBD), multiple OR gates can be connected together.</p>
+<p><img alt="Multiple ORs" src="/images/TwinCAT/multiple_or.png" /></p>
+<p>If all input signals and the output signal of an OR gate are inverted, the result is the operation of an AND gate. An OR gate whose output signal is inverted is called a NOR gate.</p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Mathematical view</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="NOR" src="/images/Prog/nor.png" /></td>
+<td align="center"><img alt="NOR" src="/images/Math/nor.png" /></td>
+</tr>
+</tbody>
+</table>
 <h3 id="exclusive-or-instruction-xor">Exclusive OR instruction (XOR)<a class="headerlink" href="#exclusive-or-instruction-xor" title="Permanent link"></a></h3>
+<p>With the XOR instruction, only one input signal may be TRUE in order to activate the output (R).</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Mathematical view</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="XOR" src="/images/Prog/xor.png" /></td>
+<td align="center"><img alt="XOR" src="/images/Math/xor.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><u>Truth table</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">FBD</th>
+<th align="center">LD equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="XOR" src="/images/TwinCAT/fbd_xor.png" /></td>
+<td align="center"><img alt="XOR" src="/images/TwinCAT/lad_xor.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="XOR" src="/images/TIA/fbd_xor.png" /></td>
+<td align="center"><img alt="XOR" src="/images/TIA/lad_xor.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>It is possible to expand the number of input signals in FBD at Siemens by clicking on the yellow star or by using the pop-up menu. The output result (R) will be TRUE if an odd number of input signals are TRUE.</p>
+<p>If the number of input signals is insufficient (FBD), multiple XOR gates can be connected together.</p>
+<p><img alt="Multiple XORs" src="/images/TwinCAT/multiple_xor.png" /></p>
+<p>An XOR gate whose output signal is inverted is called an XNOR gate.</p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Mathematical view</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="XNOR" src="/images/Prog/xnor.png" /></td>
+<td align="center"><img alt="XNOR" src="/images/Math/xnor.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>What if an XOR gate contains more than two input signals?
+- The result is TRUE if the number of TRUE input signals is odd
+- In all other cases, the result is FALSE</p>
 <h3 id="assignment-coil">Assignment (COIL)<a class="headerlink" href="#assignment-coil" title="Permanent link"></a></h3>
+<p>The COIL instruction ensures that a PLC memory variable (%M) or a PLC output variable (%Q) of the BOOL data type continuously has the value TRUE or FALSE depending on the logical result for the COIL instruction.</p>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">FBD</th>
+<th align="center">LD equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="COIL" src="/images/TwinCAT/fbd_coil.png" /></td>
+<td align="center"><img alt="COIL" src="/images/TwinCAT/lad_coil.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="COIL" src="/images/TIA/fbd_coil.png" /></td>
+<td align="center"><img alt="COIL" src="/images/TIA/lad_coil.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>The COIL instruction does not exist in Beckhoff&rsquo;s FBD programming language, but it is possible to immediately assign a variable to an output result (e.g. AND instruction) using the ‘Assignment’ instruction, which has the same effect as the COIL instruction.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Condition</th>
+<th align="center">Online view</th>
+<th align="center">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Condition 1</td>
+<td align="center"><img alt="Condition 1" src="/images/TIA/cond1.png" /></td>
+<td align="center">Both input A and input B are deactivated, <br> causing output R to have the status FALSE <br> because the result of the OR gate is FALSE</td>
+</tr>
+<tr>
+<td align="center">Condition 2</td>
+<td align="center"><img alt="Condition 2" src="/images/TIA/cond2.png" /></td>
+<td align="center">Input A is activated, causing output R to <br> have the status TRUE because the result <br> of the OR gate is TRUE</td>
+</tr>
+<tr>
+<td align="center">Condition 3</td>
+<td align="center"><img alt="Condition 3" src="/images/TIA/cond3.png" /></td>
+<td align="center">Input B is activated, output R retains the <br> TRUE status</td>
+</tr>
+<tr>
+<td align="center">Condition 4</td>
+<td align="center"><img alt="Condition 4" src="/images/TIA/cond4.png" /></td>
+<td align="center">Input A and input B are deactivated, <br> causing output R to have the status FALSE <br> because the result of the OR gate is FALSE</td>
+</tr>
+<tr>
+<td align="center">Condition 5</td>
+<td align="center"><img alt="Condition 5" src="/images/TIA/cond5.png" /></td>
+<td align="center">Input B is activated, causing output R to <br> have the status TRUE because the result of <br> the OR gate is TRUE</td>
+</tr>
+</tbody>
+</table>
+<p>It is possible to add a NOT instruction to a COIL instruction or to use a negating COIL instruction.</p>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">FBD</th>
+<th align="center">LD equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="NOT COIL" src="/images/TwinCAT/fbd_ncoil.png" /></td>
+<td align="center"><img alt="NOT COIL" src="/images/TwinCAT/lad_ncoil.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="NOT COIL" src="/images/TIA/fbd_ncoil.png" /></td>
+<td align="center"><img alt="NOT COIL" src="/images/TIA/lad_ncoil.png" /></td>
+</tr>
+</tbody>
+</table>
 <h3 id="flipflop-srrs">FlipFlop (SR/RS)<a class="headerlink" href="#flipflop-srrs" title="Permanent link"></a></h3>
+<p>Using a flip-flop instruction, it is possible to assign the status TRUE or FALSE to a PLC memory (%M) or a PLC output variable (%Q) of the data type BOOL and to retain this status even if the logical result is no longer TRUE. This creates a kind of ‘memory function’.</p>
+<p>To achieve this, a flip-flop is provided with two input variables:
+- SET (S) = Activate the TRUE status
+- RESET (R) = Activate the FALSE status</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="SR" src="/images/Prog/sr.png" /></td>
+<td align="center"><img alt="SR" src="/images/Math/sr.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><u>Truth table</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">A (S1)</th>
+<th align="center">B (R)</th>
+<th align="center">Q1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">On changed</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">X</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>As soon as one of the input variables has the status TRUE, the status of the flip-flop instruction is adjusted. If the status of both input variables is FALSE, the status of the flip-flop instruction will not be changed. </p>
+<p>If the status of both input variables is TRUE, the status of the flip-flop instruction will be determined by the priority input marked with the number 1.</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="RS" src="/images/Prog/rs.png" /></td>
+<td align="center"><img alt="RS" src="/images/Math/rs.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><u>Truth table</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">A (S1)</th>
+<th align="center">B (R)</th>
+<th align="center">Q1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">On changed</td>
+</tr>
+<tr>
+<td align="center">X</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">Priority SET</th>
+<th align="center">Priority RESET</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="SR" src="/images/TwinCAT/sr.png" /></td>
+<td align="center"><img alt="RS" src="/images/TwinCAT/rs.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="RS" src="/images/TIA/rs.png" /></td>
+<td align="center"><img alt="SR" src="/images/TIA/sr.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>When creating a flip-flop in Beckhoff, the ES software package asks you to create the corresponding instance data, which is displayed above the flip-flop instruction. In Siemens, no instance data is created, but a free PLC memory (%M) BOOL variable must be assigned. However, the operation is similar to that of instance data (making the status of the internal variable unique). Using the instance data/free memory flag, the CPU can store the status of the flip-flop instruction during RT.</p>
+<p>To link the output result of a flip-flop instruction to a PLC memory flag (%M) or a PLC output variable (%Q) of the BOOL data type, the COIL instruction must be used.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Condition</th>
+<th align="center">Online view</th>
+<th align="center">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Condition 1</td>
+<td align="center"><img alt="Condition 1" src="/images/TIA/flipflop1.png" /></td>
+<td align="center">Input A, input B and output R are deactivated</td>
+</tr>
+<tr>
+<td align="center">Condition 2</td>
+<td align="center"><img alt="Condition 2" src="/images/TIA/flipflop2.png" /></td>
+<td align="center">Output R is TRUE because the SET input of <br> the flip-flop has been activated. <br> This causes the status of the flip-flop <br> to become TRUE, which is presented at output Q</td>
+</tr>
+<tr>
+<td align="center">Condition 3</td>
+<td align="center"><img alt="Condition 3" src="/images/TIA/flipflop3.png" /></td>
+<td align="center">The SET input of the flip-flop has the status <br> FALSE, but the status of the flip-flop remains TRUE! <br> As a result, the output R retains the status TRUE</td>
+</tr>
+<tr>
+<td align="center">Condition 4</td>
+<td align="center"><img alt="Condition 4" src="/images/TIA/flipflop4.png" /></td>
+<td align="center">The status of output R is FALSE because the <br> RESET input of the flip-flop has been activated. <br> This causes the status of the flip-flop <br> to become FALSE, which is presented at output Q</td>
+</tr>
+</tbody>
+</table>
 <h3 id="edge-detection-r_trigf_trig">Edge detection (R_TRIG/F_TRIG)<a class="headerlink" href="#edge-detection-r_trigf_trig" title="Permanent link"></a></h3>
+<p>Flank detection is used to detect the change in state of a BOOL variable. A distinction is made between:
+- Positive edge detection = variable that changes from FALSE to TRUE, also know as positive edge
+- Negative edge detection = variable that changes from TRUE to FALSE, also know as negative edge</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">IEC view LD</th>
+<th align="center">IEC view FBD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Rising edge</td>
+<td align="center"><img alt="RE" src="/images/Prog/re_lad.png" /></td>
+<td align="center"><img alt="RE" src="/images/Prog/re_fbd.png" /></td>
+</tr>
+<tr>
+<td align="center">Falling edge</td>
+<td align="center"><img alt="FE" src="/images/Prog/fe_lad.png" /></td>
+<td align="center"><img alt="RE" src="/images/Prog/fe_fbd.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>The output of an edge instruction will only be TRUE at the moment the transition is detected (order of magnitude ms). To determine this, the instruction requires a PLC memory flag (%M) at Siemens. Beckhoff uses instance data.</p>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">FBD</th>
+<th align="center">LD equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="RE &amp; FE" src="/images/TwinCAT/fbd_trig.png" /></td>
+<td align="center"><img alt="RE &amp; FE" src="/images/TwinCAT/lad_trig.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="RE &amp; FE" src="/images/TIA/fbd_trig.png" /></td>
+<td align="center"><img alt="RE &amp; FE" src="/images/TIA/lad_trig.png" /></td>
+</tr>
+</tbody>
+</table>
 <h3 id="copy-move">Copy (MOVE)<a class="headerlink" href="#copy-move" title="Permanent link"></a></h3>
+<p>Using the MOVE instruction, it is possible to copy the contents of an input variable to an output variable. The input and output variables are of the type BYTE, WORD, DWORD, LWORD or ANY_NUM, whereby the data types of both variables can be the same or different.</p>
+<p>The MOVE instruction is executed as soon as the status of the AND input is TRUE. If no variable is assigned to the AND input, the instruction is executed continuously.</p>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">FBD &amp; LD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="MOVE" src="/images/TwinCAT/move.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="MOVE" src="/images/TIA/move.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>Siemens offers the option of expanding the number of output variables, making it possible to copy the value of the input variable to multiple output variables simultaneously.</p>
 <h3 id="iec-timers-tontoftp">IEC Timers (TON/TOF/TP)<a class="headerlink" href="#iec-timers-tontoftp" title="Permanent link"></a></h3>
+<p>A timer with an on-delay or <strong>on-delay timer</strong> will ensure that the output [Q] is activated a certain time or Preset Time [PT] later than the input signal [IN].</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="TON" src="/images/Prog/ton.png" /></td>
+<td align="center"><img alt="TON" src="/images/Math/ton.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="TON" src="/images/Math/ton_scheme.png" /></p>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">Timer</th>
+<th align="center">FBD example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="TON" src="/images/TwinCAT/ton1.png" /></td>
+<td align="center"><img alt="TON" src="/images/TwinCAT/ton2.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="TON" src="/images/TIA/ton1.png" /></td>
+<td align="center"><img alt="TON" src="/images/TIA/ton2.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>When creating a timer, the ES software package asks you to create the corresponding instance data. Using the instance data, the CPU can store the remaining time in the PLC memory during RT.</p>
+<div class="highlight"><pre>In some cars, the low beam is automatically switched on by a light sensor. 
+As soon as the light sensor no longer detects any light during a certain waiting period, the low beam is switched on.
+
+The waiting period is necessary to prevent the low beam from being switched on every time you drive under a bridge, for example.
+-   The low beams switch on with a delay 
+</pre></div>
+
+<p>A timer with delay or <strong>off-delay timer</strong> ensures that the output [Q] remains activated for a certain time or Preset Time [PT] after the input signal [IN] has been deactivated.</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="TOF" src="/images/Prog/tof.png" /></td>
+<td align="center"><img alt="TOF" src="/images/Math/tof.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="TOF" src="/images/Math/tof_scheme.png" /></p>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">Timer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="TOF" src="/images/TwinCAT/tof.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="TOF" src="/images/TIA/tof.png" /></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre>Some cars are equipped with a ‘Coming Home’ function. 
+This causes the car&#39;s low beam headlights to remain on for about 30 seconds after the key has been removed from the ignition.
+-   The low beams switch off with a delay.
+</pre></div>
+
+<p>A <strong>pulse timer</strong> ensures that the output signal [Q] is activated for exactly the set time or Preset Time [PT] as soon as the input signal [IN] is activated.</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="TP" src="/images/Prog/tp.png" /></td>
+<td align="center"><img alt="TP" src="/images/Math/tp.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="TP" src="/images/Math/tp_scheme.png" /></p>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">Timer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="TP" src="/images/TwinCAT/tp.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="TP" src="/images/TIA/tp.png" /></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre>If a car is driving too fast, it may be caught by a speed camera. 
+
+The flash must work correctly. 
+If it flashes for too short a time, the photo will be underexposed (the photo will be too dark = black will dominate), 
+but if it flashes for too long, the photo will be overexposed (the photo will be too bright = white will dominate).
+-   The flash lamp should not be too short or too long.
+</pre></div>
+
 <h3 id="iec-counters-ctuctdctud">IEC Counters (CTU/CTD/CTUD)<a class="headerlink" href="#iec-counters-ctuctdctud" title="Permanent link"></a></h3>
+<p>A counter is used to increment or decrement a decimal number by one. The decimal number can be of the following data types:
+- INT – Integer
+- DINT – Double integer
+- LINT – Long integer
+- UDINT – Unsigned double integer
+- ULINT – Unsigned long integer</p>
+<p>The minimum and maximum values of the decimal number depend on the selected data type.
+An <strong>up counter</strong> will increment a decimal number by one whenever a rising edge signal (internal to the device) is detected at the count-up [CU] input. Once the current counter value is greater than or equal to the preset value [PV] input, the output [Q] will be activated.</p>
+<p>The counter value can be set to 0 by activating the reset [R] input. The current counter value is provided at the current value [CV] output.</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="CTU" src="/images/Prog/ctu.png" /></td>
+<td align="center"><img alt="CTU" src="/images/Math/ctu.png" /></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre>A waiting room is often equipped with a display and a ticket machine. 
+The next customer or patient&#39;s turn is shown on the display, which displays a queue number. 
+Each customer or patient has taken a paper queue number from the ticket machine.
+-   Each time the operator presses the ‘next customer’ button, the display increases by 1
+-   When the maximum value is reached, it starts again with number 0 or 1
+</pre></div>
+
+<table>
+<thead>
+<tr>
+<th align="center">Type</th>
+<th align="left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">CTU</td>
+<td align="left">Counting up a INT number <br> <em>Count-Up INT</em></td>
+</tr>
+<tr>
+<td align="center">CTU_DINT</td>
+<td align="left">Counting up a DINT number <br> <em>Count-Up DINT</em></td>
+</tr>
+<tr>
+<td align="center">CTU_LINT</td>
+<td align="left">Counting up a LINT number <br> <em>Count-Up LINT</em></td>
+</tr>
+<tr>
+<td align="center">CTU_UDINT</td>
+<td align="left">Counting up a UDINT number <br> <em>Count-Up UDINT</em></td>
+</tr>
+<tr>
+<td align="center">CTU_ULINT</td>
+<td align="left">Counting up a ULINT number <br> <em>Count-Up ULINT</em></td>
+</tr>
+</tbody>
+</table>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">Counter</th>
+<th align="center">FBD example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="CTU" src="/images/TwinCAT/ctu1.png" /></td>
+<td align="center"><img alt="CTU" src="/images/TwinCAT/ctu2.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="CTU" src="/images/TIA/ctu1.png" /></td>
+<td align="center"><img alt="CTU" src="/images/TIA/ctu2.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>When creating a counter, the ES software package prompts you to create the corresponding instance data. Using this instance data, the CPU can store the current counter value in the PLC memory during RT.</p>
+<p>A <strong>down counter</strong> will decrease a decimal number by one whenever a rising edge signal (internally the module) is detected at the countdown [CD] input. As soon as the current counter value is less than or equal to zero, the output [Q] will be activated.</p>
+<p>The counter value can be set to the preset value [PV] by activating the load [LD] input. The current counter value is presented at the current value [CV] output.</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="CTD" src="/images/Prog/ctd.png" /></td>
+<td align="center"><img alt="CTD" src="/images/Math/ctd.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">Type</th>
+<th align="left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">CTD</td>
+<td align="left">Counting down a INT number <br> <em>Count-Down INT</em></td>
+</tr>
+<tr>
+<td align="center">CTD_DINT</td>
+<td align="left">Counting down a DINT number <br> <em>Count-Down DINT</em></td>
+</tr>
+<tr>
+<td align="center">CTD_LINT</td>
+<td align="left">Counting down a LINT number <br> <em>Count-Down LINT</em></td>
+</tr>
+<tr>
+<td align="center">CTD_UDINT</td>
+<td align="left">Counting down a UDINT number <br> <em>Count-Down UDINT</em></td>
+</tr>
+<tr>
+<td align="center">CTD_ULINT</td>
+<td align="left">Counting down a ULINT number <br> <em>Count-Down ULINT</em></td>
+</tr>
+</tbody>
+</table>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">Counter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="CTD" src="/images/TwinCAT/ctd.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="CTD" src="/images/TIA/ctd.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>combination counter</strong> is a combination of an upward and a downward counter.</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="CTUD" src="/images/Prog/ctud.png" /></td>
+<td align="center"><img alt="CTUD" src="/images/Math/ctud.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">Type</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">CTUD</td>
+<td><em>Count Up/Down INT</em></td>
+</tr>
+<tr>
+<td align="center">CTUD_DINT</td>
+<td><em>Count Up/Down DINT</em></td>
+</tr>
+<tr>
+<td align="center">CTUD_LINT</td>
+<td><em>Count Up/Down LINT</em></td>
+</tr>
+<tr>
+<td align="center">CTUD_UDINT</td>
+<td><em>Count Up/Down UDINT</em></td>
+</tr>
+<tr>
+<td align="center">CTUD_ULINT</td>
+<td><em>Count Up/Down ULINT</em></td>
+</tr>
+</tbody>
+</table>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">Counter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="CTUD" src="/images/TwinCAT/ctud.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="CTUD" src="/images/TIA/ctud.png" /></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre>Paid parking often have one or more displays showing how many empty parking spaces are available. 
+
+The number of cars is counted at the point where they enter the lot (pass through the barrier and take a ticket) 
+and at the point where they exit the lot (pass through the barrier and insert a paid ticket).
+-   The number of empty parking spaces decreases every time a car enters the parking lot.
+-   The number of empty parking spaces increases every time a car leaves the parking lot.
+</pre></div>
+
 <h3 id="mathematical-instructions">Mathematical instructions<a class="headerlink" href="#mathematical-instructions" title="Permanent link"></a></h3>
+<p>Mathematical instructions allows arithmetic operations to be performed on ANY_NUM variables.</p>
+<p>When programming in LD/FBD, an arithmetic instruction is displayed as a box.
+- The instruction type is indicated at the top of the box using an abbreviation.
+- The inputs are displayed on the left side of the box.
+- The output, with the arithmetic result, is displayed on the right side.
+- All variables have the same data type.</p>
+<p>Mathematical instructions can be divided into two groups:
+- Operations on multiple integers (ANY_NUM variables)
+- Operations on a single integer (ANY_REAL variables)</p>
+<p>The group of operations on multiple integers includes addition, subtraction, division, multiplication, remainder after division, and working with exponents.</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Mathematical instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="Math instructions" src="/images/Prog/math.png" /></td>
+<td align="center"><img alt="Math instructions" src="/images/Math/math.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">ADD</th>
+<th align="center">SUB</th>
+<th align="center">EXPT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="ADD" src="/images/TwinCAT/add.png" /></td>
+<td align="center"><img alt="SUB" src="/images/TwinCAT/sub.png" /></td>
+<td align="center"><img alt="EXPT" src="/images/TwinCAT/expt.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="ADD" src="/images/TIA/add.png" /></td>
+<td align="center"><img alt="SUB" src="/images/TIA/sub.png" /></td>
+<td align="center"><img alt="EXPT" src="/images/TIA/expt.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>Both Beckhoff and Siemens offer the option of expanding the number of inputs for mathematical instructions that can be performed on multiple numbers, with the exception of the EXPT and MOD instructions, where the number of inputs is limited to 2.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Beckhoff</th>
+<th align="center">Siemens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="Append input" src="/images/TwinCAT/add_input.png" /></td>
+<td align="center"><img alt="Insert input" src="/images/TIA/add_input.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>An arithmetic instruction often has an AND/ENO input and output.
+If the AND input is TRUE, or if no variable is provided, the instruction is executed. The ENO output becomes TRUE if the instruction is executed and is used to connect the various building blocks.</p>
+<p>Beckhoff allows programming in the FBD language to work without an AND/ENO input and output. This allows the output result of one mathematical instruction to be connected to the input of another mathematical instruction.</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Mathematical instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">without EN/ENO</td>
+<td align="center"><img alt="Without EN/ENO" src="/images/TwinCAT/without_eno.png" /></td>
+</tr>
+<tr>
+<td align="center">with EN/ENO</td>
+<td align="center"><img alt="With EN/EN" src="/images/TwinCAT/with_eno.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>The group of mathematical operations on a single number includes trigonometric, exponential, and logarithmic instructions.</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Mathematical instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="Math instructions" src="/images/Prog/math1.png" /></td>
+<td align="center"><img alt="Math instructions" src="/images/Math/math1.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><u>Programming examples</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">Manufacturer</th>
+<th align="center">SIN</th>
+<th align="center">SQRT</th>
+<th align="center">EXP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Beckhoff</td>
+<td align="center"><img alt="SIN" src="/images/TwinCAT/sin.png" /></td>
+<td align="center"><img alt="SQRT" src="/images/TwinCAT/sqrt.png" /></td>
+<td align="center"><img alt="EXP" src="/images/TwinCAT/exp.png" /></td>
+</tr>
+<tr>
+<td align="center">Siemens</td>
+<td align="center"><img alt="SIN" src="/images/TIA/sin.png" /></td>
+<td align="center"><img alt="SQRT" src="/images/TIA/sqrt.png" /></td>
+<td align="center"><img alt="EXP" src="/images/TIA/exp.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>It&rsquo;s not possible to increase the number of inputs for single-number mathematical instructions. The input variable must belong to the ANY_REAL group.
+For trigonometric functions, the angle must be represented in radians instead of degrees.</p>
+<p><img alt="RAD conversion formula" src="/images/Math/rad_to_deg.png" /> </p>
 <h3 id="comparison-instructions">Comparison instructions<a class="headerlink" href="#comparison-instructions" title="Permanent link"></a></h3>
+<p>Comparison instructions are used to compare two numbers. The result of a comparison is either TRUE or FALSE and is therefore of the BOOL data type.
+Comparison statements are executed between ANY_NUM variables of the same data type.</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="Comparison instructions" src="/images/Prog/comp.png" /></td>
+<td align="center"><img alt="Comparison instructions" src="/images/Math/comp.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>It is not possible to expand the number of inputs for comparison instructions.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Type instruction</th>
+<th align="center">Function</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">GT_*</td>
+<td align="center">OUT := IN1 > IN2</td>
+<td align="left">Bigger then</td>
+</tr>
+<tr>
+<td align="center">GE_*</td>
+<td align="center">OUT := IN1 >= IN2</td>
+<td align="left">Bigger than or equal to</td>
+</tr>
+<tr>
+<td align="center">LT_*</td>
+<td align="center">OUT := IN1 \&lt; IN2</td>
+<td align="left">Smaller than</td>
+</tr>
+<tr>
+<td align="center">LE_*</td>
+<td align="center">OUT := IN1 \&lt;= IN2</td>
+<td align="left">Smaller than or equal to</td>
+</tr>
+<tr>
+<td align="center">EQ_*</td>
+<td align="center">OUT := IN1 = IN2</td>
+<td align="left">Equal to</td>
+</tr>
+<tr>
+<td align="center">NE_*</td>
+<td align="center">OUT := IN1 \&lt;> IN2</td>
+<td align="left">Different then</td>
+</tr>
+</tbody>
+</table>
 <h3 id="conversion-instructions">Conversion instructions<a class="headerlink" href="#conversion-instructions" title="Permanent link"></a></h3>
-<h2 id="programming-in-st">Programming in ST<a class="headerlink" href="#programming-in-st" title="Permanent link"></a></h2></article></body></html>
+<p>It is often necessary to convert ANY_NUM variables, which have a specific numeric data type, to another numeric data type. This can be done using conversion instructions.</p>
+<p><u>Graphic representation</u></p>
+<table>
+<thead>
+<tr>
+<th align="center">IEC view</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="Conversion instructions" src="/images/Prog/conv.png" /></td>
+<td align="center"><img alt="Conversion instructions" src="/images/Math/conv.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">Type instruction</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>General conversion instructions</em></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">IN<strong>_TO_</strong>OUT</td>
+<td align="left">E.g. from SINT to DINT = SINT_TO_DINT <br> E.g. from INT to REAL = INT_TO_REAL</td>
+</tr>
+<tr>
+<td align="center"><em>Specific conversion instructions</em></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">ROUND</td>
+<td align="left">REAL to INT &amp; round to the next whole (even) number</td>
+</tr>
+<tr>
+<td align="center">CEIL</td>
+<td align="left">REAL to INT &amp; round to the upper integer</td>
+</tr>
+<tr>
+<td align="center">FLOOR</td>
+<td align="left">REAL to INT &amp; round to the lowest integer</td>
+</tr>
+<tr>
+<td align="center">TRUNC</td>
+<td align="left">REAL to INT &amp; dropping decimal places</td>
+</tr>
+<tr>
+<td align="center">ABS</td>
+<td align="left">Absolute number</td>
+</tr>
+</tbody>
+</table>
+<p>The table below shows the different results when using specific conversion instructions.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Number</th>
+<th align="center">ROUND</th>
+<th align="center">CEIL</th>
+<th align="center">FLOOR</th>
+<th align="center">TRUNC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1,01</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1,00</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">0,99</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0,51</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0,50</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0,49</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0,00</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">-0,49</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">-1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">-0,50</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">-1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">-0,51</td>
+<td align="center">-1</td>
+<td align="center">0</td>
+<td align="center">-1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">-0,99</td>
+<td align="center">-1</td>
+<td align="center">0</td>
+<td align="center">-1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">-1,00</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+</tr>
+<tr>
+<td align="center">-1,01</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center">-2</td>
+<td align="center">-1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="programming-in-st">Programming in ST<a class="headerlink" href="#programming-in-st" title="Permanent link"></a></h2>
+<h3 id="general_1">General<a class="headerlink" href="#general_1" title="Permanent link"></a></h3>
+<p>The ST programming language is a textual programming language based on the PASCAL programming language, which was mainly used in the design of PC software programs.</p>
+<p>Program organization blocks, functions and function blocks can be programmed in the ST programming language, whereby the programming language is determined when creating a block. Once a block has been created, it is often not possible to switch to another programming language.</p>
+<p>Note that Siemens uses the abbreviation SCL<sup>4</sup> instead of ST<sup>5</sup>.</p>
+<p><sup>4</sup> <em>SCL = Structured Control Language</em> <br>
+<sup>5</sup> <em>ST = Structured Text</em> <br></p>
+<p><img alt="Creating Siemens SCL block" src="/images/TIA/scl_block.png" /> <img alt="Creating Beckhoff ST block" src="/images/TwinCAT/st_block.png" /></p>
+<p>Flowcharts are often used to build software in a structured way in the ST programming language. This is a graphical analysis method for analyzing a process and/or a software problem. The final drawing is the graphical solution to the problem and must be converted into an ES software program.</p>
+<h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link"></a></h3>
+<p>A building block made in ST programming language keeps the structure of:
+- Interface section
+- Programming section</p>
+<p>The programming section is displayed textually in one section (no networks), distinguishing between:
+- Comments
+- Variables
+- Instructions, control structures, etc.
+- Constants (e.g. TRUE, FALSE)</p>
+<p>The distinction is shown using text formatting.</p>
+<table>
+<thead>
+<tr>
+<th>Manufacturer</th>
+<th>General text colours</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beckhoff</td>
+<td>Comment <br> Absolute variables <br> Symbolic variables <br> Instructions <br> Constants</td>
+<td>Green of blue (cursive) and start with // <br> Purple <br> Black <br> Blue (bold)  Dark yellow</td>
+</tr>
+<tr>
+<td>Siemens</td>
+<td>Comment Absolute variables Symbolic variables Instructions Constants</td>
+<td>Green and start with // Purple Purple Blue Dark cyan</td>
+</tr>
+</tbody>
+</table>
+<h3 id="control-structure-if-then-else">Control structure IF &hellip; THEN &hellip; ELSE<a class="headerlink" href="#control-structure-if-then-else" title="Permanent link"></a></h3>
+<h3 id="control-structure-case-of-else">Control structure CASE &hellip; OF &hellip; ELSE<a class="headerlink" href="#control-structure-case-of-else" title="Permanent link"></a></h3>
+<h3 id="control-structure-while-do">Control structure WHILE &hellip; DO<a class="headerlink" href="#control-structure-while-do" title="Permanent link"></a></h3>
+<h3 id="control-structure-repeat-until">Control structure REPEAT &hellip; UNTIL<a class="headerlink" href="#control-structure-repeat-until" title="Permanent link"></a></h3>
+<h3 id="control-structure-for-to-by">Control structure FOR &hellip; TO &hellip; BY<a class="headerlink" href="#control-structure-for-to-by" title="Permanent link"></a></h3></article></body></html>
