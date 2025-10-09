@@ -457,16 +457,18 @@ but if it flashes for too long, the photo will be overexposed (the photo will be
 ### IEC Counters (CTU/CTD/CTUD)
 
 A counter is used to increment or decrement a decimal number by one. The decimal number can be of the following data types:
-–	INT – Integer
-–	DINT – Double integer
-–	LINT – Long integer
-–	UDINT – Unsigned double integer
-–	ULINT – Unsigned long integer
+- INT – Integer
+- DINT – Double integer
+- LINT – Long integer
+- UDINT – Unsigned double integer
+- ULINT – Unsigned long integer
 
 The minimum and maximum values of the decimal number depend on the selected data type.
 An **up counter** will increment a decimal number by one whenever a rising edge signal (internal to the device) is detected at the count-up [CU] input. Once the current counter value is greater than or equal to the preset value [PV] input, the output [Q] will be activated.
 
 The counter value can be set to 0 by activating the reset [R] input. The current counter value is provided at the current value [CV] output.
+
+<u>Graphic representation</u>
 
 | IEC view | Explanation |
 |:--------:|:-----------------:|
@@ -490,8 +492,8 @@ Each customer or patient has taken a paper queue number from the ticket machine.
 
 <u>Programming examples</u>
 
-| Manufacturer | Timer | FBD example | 
-|:------------:|:-----:|:-----------:|
+| Manufacturer | Counter | FBD example | 
+|:------------:|:-------:|:-----------:|
 | Beckhoff     | ![CTU](/images/TwinCAT/ctu1.png) | ![CTU](/images/TwinCAT/ctu2.png) |  
 | Siemens      | ![CTU](/images/TIA/ctu1.png)     | ![CTU](/images/TIA/ctu2.png) | 
 
@@ -501,6 +503,57 @@ A **down counter** will decrease a decimal number by one whenever a rising edge 
 
 The counter value can be set to the preset value [PV] by activating the load [LD] input. The current counter value is presented at the current value [CV] output.
 
+<u>Graphic representation</u>
+
+| IEC view | Explanation |
+|:--------:|:-----------------:|
+| ![CTD](/images/Prog/ctd.png) | ![CTD](/images/Math/ctd.png) |
+
+| Type      | Explanation                                      |
+|:---------:|:-------------------------------------------------|
+| CTD       | Counting down a INT number <br> *Count-Down INT*     |
+| CTD_DINT  | Counting down a DINT number <br> *Count-Down DINT*   |
+| CTD_LINT  | Counting down a LINT number <br> *Count-Down LINT*   |
+| CTD_UDINT | Counting down a UDINT number <br> *Count-Down UDINT* |
+| CTD_ULINT | Counting down a ULINT number <br> *Count-Down ULINT* |
+
+<u>Programming examples</u>
+
+| Manufacturer | Counter | 
+|:------------:|:-------:|
+| Beckhoff     | ![CTD](/images/TwinCAT/ctd.png) | 
+| Siemens      | ![CTD](/images/TIA/ctd.png)     | 
+
+A **combination counter** is a combination of an upward and a downward counter.
+
+<u>Graphic representation</u>
+
+| IEC view | Explanation |
+|:--------:|:-----------------:|
+| ![CTUD](/images/Prog/ctud.png) | ![CTUD](/images/Math/ctud.png) |
+
+| Type       | Explanation           |
+|:----------:|-----------------------|
+| CTUD       | *Count Up/Down INT*   |
+| CTUD_DINT  | *Count Up/Down DINT*  |
+| CTUD_LINT  | *Count Up/Down LINT*  |
+| CTUD_UDINT | *Count Up/Down UDINT* |
+| CTUD_ULINT | *Count Up/Down ULINT* |
+
+<u>Programming examples</u>
+
+| Manufacturer | Counter | 
+|:------------:|:-------:|
+| Beckhoff     | ![CTUD](/images/TwinCAT/ctud.png) | 
+| Siemens      | ![CTUD](/images/TIA/ctud.png)     | 
+
+```Example
+Paid parking lots often have one or more displays showing how many empty parking spaces are available. 
+The number of cars is counted at the point where they enter the lot (pass through the barrier and take a ticket) 
+and at the point where they exit the lot (pass through the barrier and insert a paid ticket).
+-	The number of empty parking spaces decreases every time a car enters the parking lot.
+-	The number of empty parking spaces increases every time a car leaves the parking lot.
+```
 
 ### Mathematical instructions
 
