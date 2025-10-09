@@ -557,7 +557,74 @@ and at the point where they exit the lot (pass through the barrier and insert a 
 
 ### Mathematical instructions
 
+Mathematical instructions allows arithmetic operations to be performed on ANY_NUM variables.
+
+When programming in LD/FBD, an arithmetic instruction is displayed as a box.
+- The instruction type is indicated at the top of the box using an abbreviation.
+- The inputs are displayed on the left side of the box.
+- The output, with the arithmetic result, is displayed on the right side.
+- All variables have the same data type.
+
+Mathematical instructions can be divided into two groups:
+- Operations on multiple integers (ANY_NUM variables)
+- Operations on a single integer (ANY_REAL variables)
+
+The group of operations on multiple integers includes addition, subtraction, division, multiplication, remainder after division, and working with exponents.
+
+<u>Graphic representation</u>
+
+| IEC view | Mathematical instruction |
+|:--------:|:------------------------:|
+| ![Math instructions](/images/Prog/math.png) | ![Math instructions](/images/Math/math.png) |
+
+<u>Programming examples</u>
+
+| Manufacturer | ADD | SUB | EXPT | 
+|:------------:|:---:|:---:|:----:|
+| Beckhoff     | ![ADD](/images/TwinCAT/add.png) | ![SUB](/images/TwinCAT/sub.png) | ![EXPT](/images/TwinCAT/expt.png) |
+| Siemens      | ![ADD](/images/TIA/add.png) | ![SUB](/images/TIA/sub.png) | ![EXPT](/images/TIA/expt.png) |
+
+Both Beckhoff and Siemens offer the option of expanding the number of inputs for mathematical instructions that can be performed on multiple numbers, with the exception of the EXPT and MOD instructions, where the number of inputs is limited to 2.
+
+| Beckhoff | Siemens |
+|:--------:|:-------:|
+| ![Append input](/images/TwinCAT/add_input.png) | ![Insert input](/images/TIA/add_input.png) | 
+
+An arithmetic instruction often has an AND/ENO input and output.
+If the AND input is TRUE, or if no variable is provided, the instruction is executed. The ENO output becomes TRUE if the instruction is executed and is used to connect the various building blocks.
+
+Beckhoff allows programming in the FBD language to work without an AND/ENO input and output. This allows the output result of one mathematical instruction to be connected to the input of another mathematical instruction.
+
+|                | Mathematical instruction |
+|:--------------:|:------------------------:|
+| without EN/ENO | ![Without EN/ENO](/images/TwinCAT/without_eno.png)  |
+| with EN/ENO    | ![With EN/EN](/images/TwinCAT/with_eno.png)  |
+
+The group of mathematical operations on a single number includes trigonometric, exponential, and logarithmic instructions.
+
+<u>Graphic representation</u>
+
+| IEC view | Mathematical instruction |
+|:--------:|:------------------------:|
+| ![Math instructions](/images/Prog/math1.png) | ![Math instructions](/images/Math/math1.png) |
+
+<u>Programming examples</u>
+
+| Manufacturer | SIN | SQRT | EXP | 
+|:------------:|:---:|:----:|:---:|
+| Beckhoff     | ![SIN](/images/TwinCAT/sin.png) | ![SQRT](/images/TwinCAT/sqrt.png) | ![EXP](/images/TwinCAT/exp.png) |
+| Siemens      | ![SIN](/images/TIA/sin.png) | ![SQRT](/images/TIA/sqrt.png) | ![EXP](/images/TIA/exp.png) |
+
+It's not possible to increase the number of inputs for single-number mathematical instructions. The input variable must belong to the ANY_REAL group.
+For trigonometric functions, the angle must be represented in radians instead of degrees.
+
+![RAD conversion formula](/images/Math/rad_to_deg.png) 
+
 ### Comparison instructions
+
+Comparison instructions are used to compare two numbers. The result of a comparison is either TRUE or FALSE and is therefore of the BOOL data type.
+Comparison statements are executed between ANY_NUM variables of the same data type.
+
 
 ### Conversion instructions
 
