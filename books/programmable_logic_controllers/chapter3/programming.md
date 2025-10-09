@@ -685,6 +685,15 @@ The table below shows the different results when using specific conversion instr
 ## Programming in ST
 ### General
 
+The ST programming language is a textual programming language based on the PASCAL programming language, which was mainly used in the design of PC software programs.
+
+Program organization blocks, functions and function blocks can be programmed in the ST programming language, whereby the programming language is determined when creating a block. Once a block has been created, it is often not possible to switch to another programming language.
+
+Note that Siemens uses the abbreviation SCL<sup>1</sup> instead of ST<sup>2</sup>.
+
+<sup>1</sup> *SCL = Structured Control Language* <br>
+<sup>2</sup> *ST = Structured Text* <br>
+
 ### Structure
 
 ### Control structure IF ... THEN ... ELSE
