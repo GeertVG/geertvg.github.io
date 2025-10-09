@@ -728,12 +728,67 @@ The distinction is shown using text formatting.
 
 Comments, instructions, etc. are entered line by line, with each line having a unique sequence number. This sequence number can be found on the left-hand side of the programming section.
 
+### Instructions
+
+As with other programming languages, an extensive set of instructions is available, with each instruction ending with a semicolon ‘;’.
+
 ### Control structure IF ... THEN ... ELSE
+
+An IF ... THEN ... ELSE control structure is used to check the status of a condition, whereby the result is either TRUE or FALSE. This means that only instructions that return a result in BOOL form can be used.
+
+The condition can consist of:
+- One comparison instruction between variables and/or constants
+- Multiple comparison instructions that are connected using logical instructions
+
+![IF ... THEN ... ELSE](/images/Prog/if_then_else.png)
+
+| Manufacturer | Programming example |
+|:------------:|:--------------------|
+| Beckhoff     | ![IF ... THEN ... ELSE](/images/TwinCAT/if_then_else.png) |
+| Siemens      | ![IF ... THEN ... ELSE](/images/TIA/if_then_else.png)  |
+
+It is possible to apply ‘code folding’ in a control structure:
+-	Hide software using the ‘-’ sign in front of the control structure
+-	Show software in full using the ‘+’ sign in front of the control structure
+
+![Hide ST code](/images/TwinCAT/st_hide.png)
+![Hide SCL code](/images/TIA/scl_hide.png)
+
+The ST editor does not distinguish between a space and a return within an instruction or control structure. This makes it possible to write an instruction across multiple lines or on a single line.
+
+![Single line ST code](/images/TwinCAT/st_re.png)
+![Single line SCL code](/images/TIA/scl_re.png)
+
+An extension of the IF … THEN … ELSE control structure is the IF … THEN … ELSEIF … ELSE control structure, which allows a second condition to be added.
+
+![IF ... THEN ... ELSEIF ... ELSE](/images/Prog/if_then_elseif.png)
 
 ### Control structure CASE ... OF ... ELSE
 
+A CASE control structure is used to perform certain actions based on the status of a numeric variable (ANY_INT data type).
+
 ### Control structure WHILE ... DO
+
+A WHILE ... DO control structure is used to perform certain actions repeatedly. It is possible to terminate a WHILE ... DO control structure prematurely with an EXIT statement.
 
 ### Control structure REPEAT ... UNTIL
 
+A REPEAT ... UNTIL control structure is used to perform certain actions repeatedly. It is possible to terminate a REPEAT ... UNTIL control structure prematurely with an EXIT statement.
+
+Unlike the WHILE ... DO control structure, a REPEAT ... UNTIL control structure is executed at least once.
+
 ### Control structure FOR ... TO ... BY 
+
+A control structure FOR … TO … BY … DO consists of the following parts:
+–    Index
+–    Initial value (FOR value)
+–    End value (TO value)
+–    Increment (BY value)
+
+Working principle:
+	1)	The control structure starts with an initial index value
+	2)	The index is compared with the desired end value
+		a.	I fit is greater, the control structure is terminated
+		b.	Otherwise, the DO actions are executed, after which the index is increased by the BY value. The process is then repeated from point 2.
+
+The data types of the index, initial value, end value and increment must be of the data type SINT, INT or DINT, whereby positive and negative integers are permitted. It is possible to terminate a FOR … TO … BY … DO control structure prematurely with an EXIT instruction.
