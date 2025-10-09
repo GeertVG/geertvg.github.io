@@ -721,7 +721,7 @@ The programming section is displayed textually in one section (no networks), dis
 
 The distinction is shown using text formatting.
 
-| Manufacturer | General text colors  |                         |
+| Manufacturer |                      | General text colors     |
 |--------------|----------------------|-------------------------|
 | Beckhoff     | Comment <br> Absolute variables <br> Symbolic variables <br> Instructions <br> Constants | Green of blue (cursive) and start with // <br> Purple <br> Black <br> Blue (bold) <br> Dark yellow |
 | Siemens      | Comment <br> Absolute variables <br> Symbolic variables <br> Instructions <br> Constants | Green and start with // <br> Purple <br> Purple <br> Blue <br> Dark cyan |
