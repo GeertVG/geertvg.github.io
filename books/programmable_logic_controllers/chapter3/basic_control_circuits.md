@@ -147,8 +147,8 @@ An alarm is programmed using a flip-flop, with the SET instruction taking priori
 
 | Manufacturer | FBD                         |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Alarm circuit](/images/TwinCAT/alarm_fbd.png) |
+| Siemens      | ![Alarm circuit](/images/TIA/alarm_fbd.png) |
 
 ```TAGs
 •	iTB01_Mbv_Q1 = digital input – motor circuit breaker [-Q1] conveyor 1
@@ -159,8 +159,8 @@ An alarm is programmed using a flip-flop, with the SET instruction taking priori
 
 | Manufacturer | LD                          |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Alarm circuit](/images/TwinCAT/alarm_lad.png) |
+| Siemens      | ![Alarm circuit](/images/TIA/alarm_lad.png) |
 
 > **What does the Machinery Directive 2006/42/EG  describes about alarms?**
 > 
@@ -211,19 +211,14 @@ The circuit is characterized by the use of an XOR instruction (only in FBD) in c
 
 | Manufacturer | FBD                         |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Latching circuit](/images/TwinCAT/latch_fbd.png) |
+| Siemens      | ![Latching circuit](/images/TIA/latch_fbd.png) |
 
 ```TAGs
 •	iSB_SelAuto_S1 = digital input – switch automatic mode [-S1]
 •	ID_TOF_M003 = Instance data – stop delay event no. 003
 •	mM003 = memory flag – event no. 003 = installation in automatic mode
 ```
-
-| Manufacturer | LD                          |
-|:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
 
 The operation can be explained using a truth table across multiple PLC cycles.
 
@@ -248,10 +243,12 @@ The operation can be explained using a truth table across multiple PLC cycles.
 
 A flashing light circuit makes it possible to make a lamp flash. The time that the lamp is on can differ from the time that the lamp is off. The ratio between the time that the lamp is on and the total period of time is called the ‘duty cycle’.
 
+![Duty cycle](/images/Math/duty_cycle.png "Duty cycle") 
+
 | Manufacturer | FBD                         |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Flashing light circuit](/images/TwinCAT/flash_fbd.png) |
+| Siemens      | ![Flashing light circuit](/images/TIA/flash_fbd.png) |
 
 ```TAGs
 •	oLmp_H1 = digital output – Lamp [-H1]
@@ -261,8 +258,8 @@ A flashing light circuit makes it possible to make a lamp flash. The time that t
 
 | Manufacturer | LD                          |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Flashing light circuit](/images/TwinCAT/flash_lad.png) |
+| Siemens      | ![Flashing light circuit](/images/TIA/flash_lad.png) |
 
 ```Example
 Cars are equipped with orange direction indicators to indicate a change of direction. 
