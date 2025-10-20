@@ -66,8 +66,8 @@ Features of the reverse circuit:
 
 | Manufacturer | FBD                         |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Reverse circuit](/images/TwinCAT/reverse_fbd.png) |
+| Siemens      | ![Reverse circuit](/images/TIA/reverse_fbd.png) |
 
 ```TAGs
 •	iSB_DkR_S1 = digital input – Clockwise push button [-S1] on the control panel
@@ -83,8 +83,8 @@ Features of the reverse circuit:
 
 | Manufacturer | LD                          |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Reverse circuit](/images/TwinCAT/reverse_lad.png) |
+| Siemens      | ![Reverse circuit](/images/TIA/reverse_lad.png) |
 
 ## Star-delta circuit
 
@@ -104,8 +104,8 @@ Features of the star-delta circuit:
 
 | Manufacturer | FBD                         |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Star-delta circuit](/images/TwinCAT/star_delta_fbd.png) |
+| Siemens      | ![Star-delta circuit](/images/TIA/star_delta_fbd.png) |
 
 ```TAGs
 •	iSB_DkStart_S1 = digital input – start push button [-S1] on the control panel
@@ -121,8 +121,8 @@ Features of the star-delta circuit:
 
 | Manufacturer | LD                          |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Star-delta circuit](/images/TwinCAT/star_delta_lad.png) |
+| Siemens      | ![Star-delta circuit](/images/TIA/star_delta_lad.png) |
 
 ## Alarm circuit
 
@@ -186,22 +186,27 @@ Operation in manual mode depends on the control design:
 -	Start-stop control: The actuators are started and stopped with separate push buttons. When switching from automatic mode to manual mode, the last operating state of an actuator is retained (=Bump less control transfer).
 -	Dead man's control: An actuator will only be activated when the corresponding push button is pressed. When switching from automatic mode to manual mode, the actuator will stop.
 
+![Operating modes in process automation](/images/hand_mode.png "Operating modes in process automation") 
+
+Pump 2, in the figure above, will be started and stopped according to the automatic operation. Pump 1 is switched to manual mode and will stop when switching from automatic mode to manual mode. In manual mode, pump 1 will only operate if the manual push button is pressed (=dead man's control).
+
+An event message is programmed using a COIL instruction and a delay.
+
 | Manufacturer | FBD                         |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Event circuit](/images/TwinCAT/event_fbd.png) |
+| Siemens      | ![Event circuit](/images/TIA/event_fbd.png) |
 
 ```TAGs
-•	iHAL_DkLmp_S10 = digital input – push button light in the hall [-S10]
-•	oHAL_Lmp_H10 = digital output = lamp in the hall [-H10]
-•	mHAL_PfLmp_S10 = memory flag – rising edge on the push button light in the hall
-•	mHAL_Lmp_S10 = memory flag – switch on the lamp in the hall
+•	iSB_SelAuto_S1 = digital input – switch automatic mode [-S1]
+•	ID_TOF_M003 = Instance data – stop delay event no. 003
+•	mM003 = memory flag – event no. 003 = installation in automatic mode
 ```
 
 | Manufacturer | LD                          |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Event circuit](/images/TwinCAT/event_lad.png) |
+| Siemens      | ![Event circuit](/images/TIA/event_lad.png) |
 
 ## Latching circuit
 
@@ -215,9 +220,10 @@ The circuit is characterized by the use of an XOR instruction (only in FBD) in c
 | Siemens      | ![Latching circuit](/images/TIA/latch_fbd.png) |
 
 ```TAGs
-•	iSB_SelAuto_S1 = digital input – switch automatic mode [-S1]
-•	ID_TOF_M003 = Instance data – stop delay event no. 003
-•	mM003 = memory flag – event no. 003 = installation in automatic mode
+•	iHAL_DkLmp_S10 = digital input – push button light in the hall [-S10]
+•	oHAL_Lmp_H10 = digital output = lamp in the hall [-H10]
+•	mHAL_PfLmp_S10 = memory flag – rising edge on the push button light in the hall
+•	mHAL_Lmp_S10 = memory flag – switch on the lamp in the hall
 ```
 
 The operation can be explained using a truth table across multiple PLC cycles.
@@ -271,16 +277,20 @@ will be enabled and disabled at regular intervals.
 
 ## On-off circuit
 
-An on-off circuit is used to switch a loop manipulated value output LMN [BOOL] on or off depending on a process value PV [REAL] and a setpoint value SP [REAL]. The on-off circuit ensures that the actuator does not switch on and off too often by using two threshold values, namely:
+An on-off circuit is used to switch a loop manipulated value output Y[BOOL] on or off depending on a process value X [REAL] and a setpoint value W [REAL]. The on-off circuit ensures that the actuator does not switch on and off too often by using two threshold values, namely:
 -	The switch-on threshold value (lower limit)
 -	The switch-off threshold value (upper limit)
 
+![Hysteresis](/images/Math/hyst_graph.png) 
+
 The difference between the switch-on and switch-off threshold values is called hysteresis. The following mathematical formulas apply:
+
+![Hysteresis](/images/Math/hyst.png) 
 
 | Manufacturer | FBD                         |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![On-off circuit](/images/TwinCAT/on_off_fbd.png) |
+| Siemens      | ![On-off circuit](/images/TIA/on_off_fbd.png) |
 
 ```TAGs
 •	mHyst = memory flag = Hysteresis
@@ -292,15 +302,15 @@ The difference between the switch-on and switch-off threshold values is called h
 
 | Manufacturer | LD                          |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![On-off circuit](/images/TwinCAT/on_off_lad.png) |
+| Siemens      | ![On-off circuit](/images/TIA/on_off_lad.png) |
 
 If the measured value is lower than the switch-on threshold, the control output will be switched on. As soon as the switch-off threshold is reached, the control output will be disabled.
 
 | Manufacturer | FBD                         |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![On-off circuit](/images/TwinCAT/on_off_cir_fbd.png) |
+| Siemens      | ![On-off circuit](/images/TIA/on_off_cir_fbd.png) |
 
 ```TAGs
 •	mX = memory flag = Process value
@@ -310,23 +320,34 @@ If the measured value is lower than the switch-on threshold, the control output 
 
 | Manufacturer | LD                          |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![On-off circuit](/images/TwinCAT/on_off_cir_lad.png) |
+| Siemens      | ![On-off circuit](/images/TIA/on_off_cir_lad.png) |
+
+```Example
+Homes are often equipped with a thermostat to measure and regulate the temperature in a room. 
+-	The thermostat measures the room temperature = measured value X.
+-	The ideal temperature is entered on the thermostat = desired value W.
+-	If it is too cold, the thermostat will ensure that the boiler is switched on = closed contact = control output Y on
+-	If it is too warm, the thermostat will ensure that the boiler is disabled = open contact = control output Y off
+-	Depending on the type of thermostat, the hysteresis is either a fixed value or adjustable (order of magnitude 0.5 to 1.0 °C).
+```
 
 ## Always TRUE & Always FALSE circuits
 
 With the Always TRUE circuit it is possible to obtain a result that always has the value TRUE. An Always FALSE circuit, on the other hand, has a result that is always FALSE.
 
+![Boolean formulas always TRUE & FALSE](/images/Math/always_true_false.png) 
+
 | Manufacturer | FBD                         |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Always TRUE & FALSE](/images/TwinCAT/always_true_false_fbd.png) |
+| Siemens      | ![Always TRUE & FALSE](/images/TIA/always_true_false_fbd.png) |
 
 
 | Manufacturer | LD                          |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Always TRUE & FALSE](/images/TwinCAT/always_true_false_lad.png) |
+| Siemens      | ![Always TRUE & FALSE](/images/TIA/always_true_false_lad.png) |
 
 ## Normalization circuit
 
