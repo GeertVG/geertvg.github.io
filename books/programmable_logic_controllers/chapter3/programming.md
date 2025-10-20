@@ -732,6 +732,59 @@ Comments, instructions, etc. are entered line by line, with each line having a u
 
 As with other programming languages, an extensive set of instructions is available, with each instruction ending with a semicolon ‘;’.
 
+|             | Action                   | Symbol     |
+|:------------|:-------------------------|:----------:|
+| Assign      | Assign                   | :=         |
+| Mathematics | To power                 | \*\*       |
+|             | Multiply                 | \*         |
+|             | Divide                   | /          |
+|             | Remainder after division | MOD        |
+|             | Divide (ANY_INT)         | DIV        |
+|             | Add                      | \+         |
+|             | Subtract                 | \-         |
+|             | Sine                     | SIN & ASIN |
+|             | Cosine                   | COS & ACOS |
+|             | Tangent                  | TAN & ATAN |
+|             | Exponent                 | EXP        |
+|             | Natural logarithm        | LN         |
+|             | Square root              | SQRT       |
+|             | Subtract                 | \-         |
+| Compare     | Smaller than             | \<         |
+|             | Bigger than              | \>         |
+|             | Smaller than or equal to | \<=        |
+|             | Bigger than or equal to  | \>=        |
+|             | Equal to                 | =          |
+|             | Different to             | \<\>       |
+| Logic       | Invert                   | NOT        |
+|             | AND                      | AND of &   |
+|             | OR                       | OR         |
+|             | EXOR                     | XOR        |
+| Group       | Brackets                 | ( )        |
+
+|                     |Action                                   |Symbol                                                               |
+|:--------------------|:----------------------------------------|:-------------------------------------------------------------------:|
+| Timers              | Start delay                             | TON(IN:= ,PT:= ,Q=\> ,ET=\> )                                       |
+|                     | Stop delay                              | TOF(IN:= ,PT:= ,Q=\> ,ET=\> )                                       |
+|                     | Pulse timer                             | TP(IN:= ,PT:= ,Q=\> ,ET=\> )                                        |
+| Counters            | Upwards                                 | CTD(CD:= , LOAD:= , PV:= , Q=\> , CV=\> )                           |
+|                     | Downwards                               | CTU(CU:= , RESET:= , PV:= , Q=\> , CV=\> )                          |
+|                     | Up- & Downwards                         | CTUD(CU:= ,CD:= , RESET:= , LOAD:= , PV:= , QU=\> , QD=\> , CV=\> ) |
+| Conversion          | Absolute value                          | ABS                                                                 |
+|                     | Rounding to nearest whole (even) number | ROUND                                                               |
+|                     | Rounding up to nearest whole number     | CEIL_\<Datatype\>                                                   |
+|                     | Rounding down to nearest whole number   | FLOOR_\<Datatype\>                                                  |
+|                     | Conversion                              | CONVERT \<Datatype\>_TO_\<Datatype\>                                |
+| Edged               | Rising edge                             | R_TRIG(CLK:= , Q=\> )                                               |
+|                     | Falling edge                            | F_TRIG(CLK:= , Q=\> )                                               |
+| Programming control | Jump                                    | JMP of GOTO                                                         |
+|                     | End building block early                | RETURN                                                              |
+
+
+| Manufacturer | Programming example         |
+|:------------:|:----------------------------|
+| Beckhoff     | ![ST programming example](/images/TwinCAT/example_st.png) |
+| Siemens      | ![ST programming example](/images/TIA/example_st.png) |
+
 ### Control structure IF ... THEN ... ELSE
 
 An IF ... THEN ... ELSE control structure is used to check the status of a condition, whereby the result is either TRUE or FALSE. This means that only instructions that return a result in BOOL form can be used.
