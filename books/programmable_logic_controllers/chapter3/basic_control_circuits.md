@@ -353,12 +353,16 @@ With the Always TRUE circuit it is possible to obtain a result that always has t
 
 The normalization circuit, abbreviated NORM, is used to convert an INT number limited between a minimum and maximum value to a REAL number limited between the values 0.0 and 1.0 (or 0% and 100%).
 
+![NORM graph in which the axes can be considered dynamic (movable](/images/Math/norm_graph.png) 
+
 To convert an INT number to a REAL number, a conversion instruction must be used. The mathematical formula below is then used to convert the number to a value between 0.0 and 1.0.
+
+![NORM graph in which the axes can be considered dynamic (movable)](/images/Math/norm.png) 
 
 | Manufacturer | FBD                         |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Normalization circuit](/images/TwinCAT/norm_fbd.png) |
+| Siemens      | ![Normalization circuit](/images/TIA/norm_fbd.png) |
 
 ```TAGs
 •	mX = memory flag = Process value
@@ -368,21 +372,25 @@ To convert an INT number to a REAL number, a conversion instruction must be used
 
 | Manufacturer | LD                          |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Normalization circuit](/images/TwinCAT/norm_lad.png) |
+| Siemens      | ![Normalization circuit](/images/TIA/norm_lad.png) |
 
 ## Scale circuit
 
 The scale circuit is used to convert a REAL number bounded between the values 0.0 and 1.0 (or 0% and 100%) to a REAL number bounded between a minimum and maximum value.
 
+![SCALE graph in which the axes can be considered dynamic (shift-able)](/images/Math/scale_graph.png) 
+
 The mathematical formula below is used to convert the number to a value between MIN and MAX.
+
+![SCALE graph in which the axes can be considered dynamic (shift-able)](/images/Math/scale.png) 
 
 The scale circuit is often used in combination with the normalization circuit to convert an analogue input value, which is a decimal integer between two extremes (-32768 and +32767), to a decimal number in an SI unit.
 
 | Manufacturer | FBD                         |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Scale circuit](/images/TwinCAT/scale_fbd.png) |
+| Siemens      | ![Scale circuit](/images/TIA/scale_fbd.png) |
 
 ```TAGs
 •	mX = memory flag = Process value
@@ -392,5 +400,5 @@ The scale circuit is often used in combination with the normalization circuit to
 
 | Manufacturer | LD                          |
 |:------------:|:----------------------------|
-| Beckhoff     |                             |
-| Siemens      |                             |
+| Beckhoff     | ![Scale circuit](/images/TwinCAT/scale_lad.png) |
+| Siemens      | ![Scale circuit](/images/TIA/scale_lad.png) |
