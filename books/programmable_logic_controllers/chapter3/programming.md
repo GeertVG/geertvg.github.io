@@ -820,15 +820,36 @@ An extension of the IF … THEN … ELSE control structure is the IF … THEN �
 
 A CASE control structure is used to perform certain actions based on the status of a numeric variable (ANY_INT data type).
 
+![CASE ... OF ... ELSE](/images/Prog/case.png)
+
+| Manufacturer | Programming example |
+|:------------:|:--------------------|
+| Beckhoff     | ![CASE ... OF ... ELSE](/images/TwinCAT/case.png) |
+| Siemens      | ![CASE ... OF ... ELSE](/images/TIA/case.png)  |
+
 ### Control structure WHILE ... DO
 
 A WHILE ... DO control structure is used to perform certain actions repeatedly. It is possible to terminate a WHILE ... DO control structure prematurely with an EXIT statement.
+
+![WHILE ... DO](/images/Prog/while.png)
+
+| Manufacturer | Programming example |
+|:------------:|:--------------------|
+| Beckhoff     | ![WHILE ... DO](/images/TwinCAT/while.png) |
+| Siemens      | ![WHILE ... DO](/images/TIA/while.png)  |
 
 ### Control structure REPEAT ... UNTIL
 
 A REPEAT ... UNTIL control structure is used to perform certain actions repeatedly. It is possible to terminate a REPEAT ... UNTIL control structure prematurely with an EXIT statement.
 
 Unlike the WHILE ... DO control structure, a REPEAT ... UNTIL control structure is executed at least once.
+
+![REPEAT ... UNTIL](/images/Prog/repeat.png)
+
+| Manufacturer | Programming example |
+|:------------:|:--------------------|
+| Beckhoff     | ![REPEAT ... UNTIL](/images/TwinCAT/repeat.png) |
+| Siemens      | ![REPEAT ... UNTIL](/images/TIA/repeat.png)  |
 
 ### Control structure FOR ... TO ... BY 
 
@@ -845,3 +866,10 @@ Working principle:
 		b.	Otherwise, the DO actions are executed, after which the index is increased by the BY value. The process is then repeated from point 2.
 
 The data types of the index, initial value, end value and increment must be of the data type SINT, INT or DINT, whereby positive and negative integers are permitted. It is possible to terminate a FOR … TO … BY … DO control structure prematurely with an EXIT instruction.
+
+![FOR ... TO ... BY](/images/Prog/for.png)
+
+| Manufacturer | Programming example |
+|:------------:|:--------------------|
+| Beckhoff     | ![FOR ... TO ... BY](/images/TwinCAT/for.png) |
+| Siemens      | ![FOR ... TO ... BY](/images/TIA/for.png)  |
