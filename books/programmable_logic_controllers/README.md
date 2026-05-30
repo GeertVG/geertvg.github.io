@@ -12,7 +12,7 @@ The eBook is conceived as a narrative that unfolds across the chapters. It is no
 
 As a teacher, you are not bound to follow the order of the book. You can create your own learning track for your students, referring to the various sections. This makes industrial automation challenge for the students and the teacher!
 
-Finally, I would like to thank a number of people and organizations: BECKHOFF nv, SIEMENS nv, and Realgames for giving permission to reproduce information from their products. Annette Luyten for the support within the publisher, Linda Van den Broeck and Randy Geerts for the proofreading, Mohamed Al Farisi for his critical feedback, Bart Van Mol for his assistance with the translation and my family for their patience and support.
+Finally, I would like to thank a number of people and organizations: BECKHOFF nv, SIEMENS nv, and Realgames for giving permission to reproduce information from their products. Linda Van den Broeck and Randy Geerts for the proofreading, Mohamed Al Farisi for his critical feedback, Bart Van Mol for his assistance with the translation and my family for their patience and support.
 
 ***Summary***
 
@@ -24,7 +24,7 @@ In short, the perfect basis for all training courses that involving PLC.
 
 ***Copyright***
 
-This eBook is a translation from Dutch of the book *"Automatisatie, Programmeerbare sturingen, Editie 2021, ISBN 978-90-497-0098-0"* written by Geert Van Grieken and Published by Plantyn Uitgeverij **(https://www.plantyn.com)**.
+This eBook is a translation from Dutch of the book *"Automatisatie, Programmeerbare sturingen, ISBN 978-90-337-0265-5"*, previous know as *"Automatisatie, Programmeerbare sturingen, Editie 2021"* written by Geert Van Grieken and since 2026 Published by Universitas **(https://www.universitas.be/)**.
 
 Copyright ©2025 Geert Van Grieken, 2200 Herentals, All rights reserved. No part of this publication may be reproduced or published in printed, acoustic, cinematographic or any other form without the written permission of the author.
 
