@@ -14,7 +14,7 @@
 	* [Industrial networks](books/programmable_logic_controllers/chapter2/industrial_networks.md)
 	* [HMI](books/programmable_logic_controllers/chapter2/hmi.md)
 	* [Safety](books/programmable_logic_controllers/chapter2/safety.md)
-* [Programmable Logic Controller](books/programmable_logic_controllers/chapter3/intro.md)
+* [PLC](books/programmable_logic_controllers/chapter3/intro.md)
 	* [Learning goals](books/programmable_logic_controllers/chapter3/learning_goals.md)
 	* [Definition of terms](books/programmable_logic_controllers/chapter3/definition_of_terms.md)
 	* [Device configuration](books/programmable_logic_controllers/chapter3/device_configuration.md)

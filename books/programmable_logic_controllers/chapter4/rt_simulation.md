@@ -1,6 +1,6 @@
 # RT Simulation
 ---
-RT simulation is a useful tool during the design process. It allows the HMI design to be tested, either in combination with a programmable controller or without, without the need for a real HMI screen.
+RT simulation is an useful tool during the design process. It allows the HMI design to be tested, either in combination with a programmable controller or without, without the need for a real HMI screen.
 
 ![TIA Portal HMI simulation](/images/simulation_Siemens_hmi.png  "TIA Portal HMI starting simulation, ©2020 Siemens") 
 
