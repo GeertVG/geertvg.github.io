@@ -34,3 +34,40 @@ The IEC 61131 standard includes five programming languages, including the SFC pr
 > **Conclusions**
 > -	It is possible to convert GRAFCET into software code in a programming language of your choice
 > -	The SFC programming language is very similar to the GRAFCET design language but is not 100% the same
+
+## Structure of a GRAFCET according to IEC 60848
+### GRAFCET diagram
+
+| Symbol | Description |
+| :----: | :---------: |
+| ![GRAFCET](/images/Grafcet/diagram.png ) | A diagram is a collection of steps, actions, transition conditions, connections, ... that form a whole. Often abbreviated as GRAFCET. <br> The collection is represented by a rectangle that encompasses all elements of the GRAFCET diagram. |
+| ![GRAFCET](/images/Grafcet/input_var.png )| Input variables are placed to the left of the rectangle and marked with an incoming arrow. <br> Example: Activate initial step and start installation
+ 	transition conditions |
+| ![GRAFCET](/images/Grafcet/output_var.png )| Output variables are placed tot the write of the rectangular and marked with an outgoing arrow. <br> Example: Forward and backward control |
+| ![GRAFCET](/images/Grafcet/comment.png )| Comments which clarifies the operation of a specific section, is written between double quotation marks, with the asterisk symbol replaced by the description. <br> Example: Stop the drain pump if the level is too low |
+
+### Step
+
+### Connecting elements
+
+### Transition
+
+### Action
+
+### Structures
+
+### Operation
+
+### Example
+
+## GRAFCET programming in LAD/FBD using BOOL
+
+The GRAFCET is programmed in the LAD or FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is disabled (RETAIN).
+
+## GRAFCET programming in LAD/FBD using INT
+
+The GRAFCET is programmed in the LAD of FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is disabled (RETAIN).
+
+## GRAFCET programming in ST
+
+The GRAFCET is programmed in the ST programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is disabled (RETAIN).
