@@ -1,4 +1,5 @@
 # Intro
+---
 As already mentioned, human-machine and machine-human interaction becomes possible by adding Human Machine Interfaces, or HMI for short. 
 This interface mainly consists of:
 -	Push buttons & switches
