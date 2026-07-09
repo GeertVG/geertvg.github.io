@@ -1,5 +1,5 @@
 # Device configuration
-
+---
 The creation and editing of the available modules, such as CPU, digital input
 modules, analogue input modules, digital output modules, etc., is done in the
 ‘**Device configuration**’ or hardware configurator of the ES software package.

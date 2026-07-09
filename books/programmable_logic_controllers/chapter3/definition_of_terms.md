@@ -1,5 +1,5 @@
 # Definition of terms
-
+---
 | Term | Description |
 | :---: | :---------- |
 | Variable | A data object whose content, called state, can change |

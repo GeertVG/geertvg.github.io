@@ -1,5 +1,5 @@
 # GRAFCET
-
+---
 Designing software for an automatic machine/installation requires the necessary analyses, including a description of the desired operation.
 
 The automatic operation can be carried out via a continuous, sequential or batch process.

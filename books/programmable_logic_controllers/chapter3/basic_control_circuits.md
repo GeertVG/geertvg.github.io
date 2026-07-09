@@ -1,4 +1,5 @@
 # Basic control circuits
+---
 ## Start-stop circuit
 
 A start-stop circuit is used to start and stop actuators, an entire machine or a technical installation. It is equipped with at least one start button, one stop button and one output result.
