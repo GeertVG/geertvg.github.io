@@ -10,11 +10,19 @@ Siemens TIA Portal RT simulation options:
 -	With script debugger = Only applicable if scripts are present
 
 In Beckhoff TwinCAT 3 the RT simulation is started in a similar way to the simulation of a programmable controller:
+
 -	Execute ‘Activate configuration’ to transfer changes from the ES environment to the RT environment
+
 ![Beckhoff TwinCAT 3 HMI simulation](/images/simulation1_Beckhoff_hmi.png  "Beckhoff TwinCAT 3 HMI simulation, ©2020 Beckhoff") 
+
 -	Then restart TwinCAT 3 in ‘Run Mode’
+
 ![Beckhoff TwinCAT 3 HMI simulation](/images/simulation2_Beckhoff_hmi.png  "Beckhoff TwinCAT 3 HMI simulation, ©2020 Beckhoff") 
+
 -	Afterwords log in on the RT-environment
+
 ![Beckhoff TwinCAT 3 HMI simulation](/images/simulation3_Beckhoff_hmi.png  "Beckhoff TwinCAT 3 HMI simulation, ©2020 Beckhoff") 
+
 -	Finally restart all
+
 ![Beckhoff TwinCAT 3 HMI simulation](/images/simulation4_Beckhoff_hmi.png  "Beckhoff TwinCAT 3 HMI simulation, ©2020 Beckhoff") 
