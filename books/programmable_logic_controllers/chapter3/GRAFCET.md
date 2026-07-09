@@ -40,7 +40,7 @@ The IEC 61131 standard includes five programming languages, including the SFC pr
 
 | Symbol | Description |
 | :----: | :---------- |
-| ![GRAFCET](/images/Grafcet/diagram.png ) | A diagram is a collection of steps, actions, transition conditions, connections, ... that form a whole. Often abbreviated as GRAFCET. <br> The collection is represented by a rectangle that encompasses all elements of the GRAFCET diagram. |
+| ![GRAFCET](/images/Grafcet/diagram.png ) | A diagram is a collection of steps, actions, transition conditions, connections, ... that form a whole. Often abbreviated as GRAFCET. <br> <br> The collection is represented by a rectangle that encompasses all elements of the GRAFCET diagram. |
 | ![GRAFCET](/images/Grafcet/input_var.png )| Input variables are placed to the left of the rectangle and marked with an incoming arrow. |
 | ![GRAFCET](/images/Grafcet/output_var.png )| Output variables are placed tot the write of the rectangular and marked with an outgoing arrow. |
 | ![GRAFCET](/images/Grafcet/comment.png )| Comments which clarifies the operation of a specific section, is written between double quotation marks, with the asterisk symbol replaced by the description. |
@@ -58,14 +58,21 @@ At a given moment during the evolution of the sequential process:
 
 | Symbol | Description |
 | :----: | :---------- |
-| ![GRAFCET](/images/Grafcet/step.png ) | A step is represented graphically by a square with a unique label. For practical reasons, a numerical label is used to replace the asterisk symbol. |
-| ![GRAFCET](/images/Grafcet/intial_step.png ) | The initial step characterises the initial state and is represented by a double square. If an initial step is active, all other steps in the GRAFCET are inactive. <br> The agreements relating to a step apply. <br> The use of multiple initial steps is permitted, but often only one initial step is used. |
-| ![GRAFCET](/images/Grafcet/encl_step.png ) | An enclosed step indicates that this step contains multiple internal steps. As soon as the transition condition after an enclosed step is TRUE, the program moves on to the next steps and all internal steps will be inactive. <br>  An enclosed step may contain multiple GRAFCET diagrams, but the enclosed internal steps can only belong to one enclosed step. <br> The agreements regarding a step apply. |
-| ![GRAFCET](/images/Grafcet/encl_initial_step.png ) | An enclosed initial step indicates that this step contains multiple internal steps and that it participates in the initial state. <br>  An enclosed initial step contains at least one internal initial step and may contain multiple GRAFCET diagrams. <br>  The agreements regarding a step apply.  |
-| ![GRAFCET](/images/Grafcet/macro_step.png ) | A macro step indicates that this step contains multiple internal steps, whereby a macro can be described as a clearly defined piece of software code. A macro is not designed as stand-alone software; its purpose is to support another piece of software code. <br> The internal steps always start with a source step and always end with an end step. The macro can only be exited if the end step is active. <br> Unlike an embedded step, a macro contains a maximum of one GRAFCET diagram and the asterisk symbol is replaced by a unique label that may differ from the step labels and numbering. |
+| ![GRAFCET](/images/Grafcet/step.png ) | A step is represented graphically by a square with a unique label. For practical reasons, a, for the diagram, unique numerical label is used to replace the asterisk symbol. |
+| ![GRAFCET](/images/Grafcet/intial_step.png ) | The initial step characterises the initial state and is represented by a double square. If an initial step is active, all other steps in the GRAFCET are inactive. <br> <br> The agreements relating to a step apply. <br> <br> The use of multiple initial steps is permitted, but often only one initial step is used. |
+| ![GRAFCET](/images/Grafcet/encl_step.png ) | An enclosed step indicates that this step contains multiple internal steps. As soon as the transition condition after an enclosed step is TRUE, the program moves on to the next steps and all internal steps will be inactive. <br> <br>  An enclosed step may contain multiple GRAFCET diagrams, but the enclosed internal steps can only belong to one enclosed step. <br> <br> The agreements regarding a step apply. |
+| ![GRAFCET](/images/Grafcet/encl_intial_step.png ) | An enclosed initial step indicates that this step contains multiple internal steps and that it participates in the initial state. <br> <br> An enclosed initial step contains at least one internal initial step and may contain multiple GRAFCET diagrams. <br> <br> The agreements regarding a step apply.  |
+| ![GRAFCET](/images/Grafcet/macro_step.png ) | A macro step indicates that this step contains multiple internal steps, whereby a macro can be described as a clearly defined piece of software code. A macro is not designed as stand-alone software; its purpose is to support another piece of software code. <br> <br> The internal steps always start with a source step and always end with an end step. The macro can only be exited if the end step is active. <br> <br> Unlike an embedded step, a macro contains a maximum of one GRAFCET diagram and the asterisk symbol is replaced by a unique label that may differ from the step labels and numbering. |
 | ![GRAFCET](/images/Grafcet/active_step.png ) | If it is necessary to indicate an active step, this will be done by means of a dot placed under the label. |
 
 ### Connecting elements
+
+| Symbol | Description |
+| :----: | :---------- |
+| ![GRAFCET](/images/Grafcet/ver_line.png ) | Connecting elements are lines in the network that connect the various steps. |
+| ![GRAFCET](/images/Grafcet/hor_line.png ) | Both horizontal and vertical lines may be used. <br> <br> Diagonal connections should be avoided; they are permitted, but only to promote clarity. |
+| ![GRAFCET](/images/Grafcet/line_dir.png ) | The direction of a connection is always from top to bottom. Arrows are only used if this convention cannot be followed or to promote clarity. |
+| ![GRAFCET](/images/Grafcet/next_page.png ) | If a connection needs to be interrupted (e.g. when multiple pages are required or in the case of complex GRAFCET), the label of the next step will be indicated. <br> <br> If the next step is on a different page, the page number will be added. |
 
 ### Transition
 
@@ -75,16 +82,25 @@ At a given moment during the evolution of the sequential process:
 
 ### Operation
 
+In general, it can be said that a GRAFCET operates step by step.
+If a step is active, the next step can only become active if the status of the transition condition is TRUE. As soon as the next step is active, the current step is deactivated.
+However, it is possible that, due to the status of various transition conditions, the operation of a GRAFCET does not appear to proceed step by step. It is the designer's task to avoid this operation, which can lead to unstable operation of, for example, actions.
+
+
 ### Example
+
+The following example shows a GRAFCET for the operation of a conveyor on which a box is placed and moved back and forth five times before stopping. After this, the conveyor must be restarted.
+
+
 
 ## GRAFCET programming in LAD/FBD using BOOL
 
-The GRAFCET is programmed in the LAD or FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is disabled (RETAIN).
+The GRAFCET is programmed in the LAD or FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off  (RETAIN).
 
 ## GRAFCET programming in LAD/FBD using INT
 
-The GRAFCET is programmed in the LAD of FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is disabled (RETAIN).
+The GRAFCET is programmed in the LAD of FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off  (RETAIN).
 
 ## GRAFCET programming in ST
 
-The GRAFCET is programmed in the ST programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is disabled (RETAIN).
+The GRAFCET is programmed in the ST programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off (RETAIN).
