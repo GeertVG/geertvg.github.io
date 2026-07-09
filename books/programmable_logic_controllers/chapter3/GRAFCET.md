@@ -76,6 +76,40 @@ At a given moment during the evolution of the sequential process:
 
 ### Transition
 
+| Symbol | Description |
+| :----: | :---------- 
+| ![GRAFCET](/images/Grafcet/transition.png ) | A transition between two steps is represented by a horizontal crossbar on the connecting line. <br> <br> A transition is active when the preceding step is active. <br> <br> Only one transition is allowed between two steps. |
+| ![GRAFCET](/images/Grafcet/transition_ver.png ) | For graphic reasons, it is permissible to place a vertical crossbar over a horizontal connecting line. |
+| ![GRAFCET](/images/Grafcet/transition_cond.png ) | Each transition has a transition condition. This is a mathematical Boolean expression composed of variables, which replaces the asterisk symbol and can be TRUE or FALSE. <br> <br> The transition condition is always placed to the right of the transition. <br> <br> Of all the available information at a given moment, the transition condition contains only that which is necessary for crossing that transition.  |
+| ![GRAFCET](/images/Grafcet/transition_label.png ) || A transition may optionally be provided with a unique numeric label in brackets placed to the left of the transition. |
+| ![GRAFCET](/images/Grafcet/transition_true.png ) | A transition condition that is always TRUE is represented by an underlined number 1|
+| ![GRAFCET](/images/Grafcet/transition_state.png )| The status of a step (active or inactive) can be added to a transition condition using the letter X, whereby the asterisk symbol is replaced by the label of the step. |
+| ![GRAFCET](/images/Grafcet/transition_re.png )| The representation of a rising edge in a variable is shown using an upward arrow. |
+| ![GRAFCET](/images/Grafcet/transition_fe.png )|| The representation of a falling edge in a variable is shown using a downward arrow.|
+| ![GRAFCET](/images/Grafcet/transition_comp.png )| A comparison instruction is written between square brackets, with the asterisk symbol replaced by the comparison. <br> <br> The result of a comparison instruction is TRUE or FALSE. |
+| ![GRAFCET](/images/Grafcet/transition_to.png )| The representation of a variable that is time-dependent is displayed using the ‘/’ symbol. <br> <br> Here, the transition condition is TRUE after a rise delay and remains TRUE with a fall delay. <br> <br> It is permitted to simplify the notation by removing the fall delay if it is not applicable. |
+| ![GRAFCET](/images/Grafcet/transition_source.png )| A source transition condition is a transition condition without a preceding step. Whenever the transition condition is TRUE, the following step will become active. <br> <br> It is recommended to provide the transition condition with a rising or falling edge to avoid continuous activation of the next step. |
+| ![GRAFCET](/images/Grafcet/transition_end.png )| An end transition condition is a transition condition that is not followed by a step. Whenever the transition condition is TRUE, all upward steps will be deactivated |
+
+**Example**
+
+The example shows 
+- The use of mathematical expressions to connect boolean tags (eg. iStsStared AND iSen2)
+- The use of a rising edge on the initialization command
+- The use of a 5s on-delay if iSen1=FALSE
+
+![GRAFCET](/images/Grafcet/example1.png )
+
+Explanation on GRAFCET initialization. On a rising edge of iCmdInit
+- The current active step is deactivated by iCmdInit after step 3 == All upward steps are deactivated
+- The initial step is activated by iCmdInit before step 0 == Activate the following step
+
+Explanation of symbolic tags in the example
+-	iCmdInit = digital input – Initialisation command
+-	iStsStarted = digital input – Result of a basic start stop control circuit
+-	iSen1 = digital input – Sensor 1
+-	iSen2 = digital input – Sensor 2
+
 ### Action
 
 ### Structures
@@ -83,7 +117,9 @@ At a given moment during the evolution of the sequential process:
 ### Operation
 
 In general, it can be said that a GRAFCET operates step by step.
+
 If a step is active, the next step can only become active if the status of the transition condition is TRUE. As soon as the next step is active, the current step is deactivated.
+
 However, it is possible that, due to the status of various transition conditions, the operation of a GRAFCET does not appear to proceed step by step. It is the designer's task to avoid this operation, which can lead to unstable operation of, for example, actions.
 
 
