@@ -105,10 +105,10 @@ Explanation on GRAFCET initialization. On a rising edge of iCmdInit
 - The initial step is activated by iCmdInit before step 0 == Activate the following step
 
 ```TAGs
-•	iCmdInit = digital input – Initialisation command
-•	iStsStarted = digital input – Result of a basic start stop control circuit
-•	iSen1 = digital input – Sensor 1
-•	iSen2 = digital input – Sensor 2
+•	iCmdInit = digital input variable of FB – Initialisation command
+•	iStsStarted = digital input variable of FB – Result of a basic start stop control circuit
+•	iSen1 = digital input variable of FB – Sensor 1
+•	iSen2 = digital input variable of FB – Sensor 2
 ```
 
 ### Action
@@ -146,12 +146,11 @@ However, it is possible that, due to the status of various transition conditions
 
 | Operation | Description |
 | :----: | :---------- |
-| ![GRAFCET](/images/Grafcet/operation1.png ) | In the case of a **non-permanent operation**, the operation will proceed step by step. <br> <br> Situation: <br>  Step 4 active <br> <br> iSen1 = iSen2 = iSen3 = FALSE <br> <br> Operation: <br> iSen1 (1) becomes TRUE activating step 5 and deactivating step 4. |
-| ![GRAFCET](/images/Grafcet/operation2.png ) | In the case of a **transient operation**, it will not proceed step by step. <br> <br> Situation: <br> <br> Step 4 active <br> iSen1 = iSen3 = FALSE <br> iSen2 = TRUE <br> <br> Operation: <br>	iSen1 (1) becomes TRUE, activating step 5 and deactivating step 4. Because iSen2 (2) is TRUE, step 6 is immediately activated and step 5 is deactivated. <br> <br> Disadvantage: If actions are used instead of memory actions, it is possible that actions assigned to a transient step are not executed or are executed too briefly (=unstable operation). |
-| ![GRAFCET](/images/Grafcet/operation3.png ) | In an AND convergence, parallel sequences are started if the preceding transition condition is TRUE. <br> <br> Situation : <br> If step 1 is active and the transition condition iStarted is TRUE, steps 2 and 4 will be activated. |
-| ![GRAFCET](/images/Grafcet/operation4.png ) | In an AND convergence, parallel sequences are started if the preceding transition condition is TRUE. <br> <br> Situation : <br> Once the parallel sequences have been activated, they will be executed independently of each other. |
-| ![GRAFCET](/images/Grafcet/operation5.png ) | In an AND convergence, parallel sequences are started if the preceding transition condition is TRUE. <br> <br> Situation : <br> Step 9 is activated if steps 3 and 6 are active and if the transition condition iSen1.iSen2 TRUE is true. |
-
+| ![GRAFCET](/images/Grafcet/operation1.png ) | In the case of a **non-permanent operation**, the operation will proceed step by step. <br> <br> Situation: Step 4 active <br> <br> - iSen1 = iSen2 = iSen3 = FALSE <br> <br> Operation: iSen1 (1) becomes TRUE activating step 5 and deactivating step 4. |
+| ![GRAFCET](/images/Grafcet/operation2.png ) | In the case of a **transient operation**, it will not proceed step by step. <br> <br> Situation: Step 4 active <br> - iSen1 = iSen3 = FALSE <br> - iSen2 = TRUE <br> <br> Operation: iSen1 (1) becomes TRUE, activating step 5 and deactivating step 4. Because iSen2 (2) is TRUE, step 6 is immediately activated and step 5 is deactivated. <br> <br> Disadvantage: If actions are used instead of memory actions, it is possible that actions assigned to a transient step are not executed or are executed too briefly (=unstable operation). |
+| ![GRAFCET](/images/Grafcet/operation3.png ) | In an AND convergence, parallel sequences are started if the preceding transition condition is TRUE. <br> <br> Situation 1 : If step 1 is active and the transition condition iStarted is TRUE, steps 2 and 4 will be activated. |
+| ![GRAFCET](/images/Grafcet/operation4.png ) | Situation 2 : Once the parallel sequences have been activated, they will be executed independently of each other. |
+| ![GRAFCET](/images/Grafcet/operation5.png ) | Situation 3 : Step 9 is activated if steps 3 and 6 are active and if the transition condition iSen1.iSen2 TRUE is true. |
 
 ### Example 2
 
@@ -163,19 +162,36 @@ De GRAFCET has the name FB_PE_Belt:
 -	FB = GRAFCET is programmed in a function block (FB)
 -	PE = Indicates that the building block is a procedure  element
 
+```TAGs
+•	iSenRev_S4 = digital input – Sensor reverse - Labelled as S4 on electrical drawings
+•	iSenFwd_S3 = digital input - Sensor forward - Labelled as S3 on electrical drawings
+```
+
 The conveyor is started and stopped using a start and stop push buttons. The operation of these buttons is not included in the GRAFCET but is performed by a basic start-stop control circuit. The result of this is linked to the GRAFCET input variable ‘iStsStarted’.
 
 ![GRAFCET](/images/Grafcet/example2b.png )
 
 
 ```TAGs
-•	iBtnStart – Start button
-•	iBtnStop - Stop button
-•	iStsStarted – Result of a basic start stop control circuit, TRUE if started
+•	iBtnStart = digital input – Start button
+•	iBtnStop = digital input - Stop button
+•   mStarted = memory flag - Result of a basic start stop control circuit, TRUE if started
+•	iStsStarted = digital input variable of FB – Status of a start-stop circuit
 ```
 Each time the stop push button is pressed, the conveyor will stop immediately (the box will stop moving). As soon as the start push button is pressed again, the GRAFCET will continue where it left off.
 
 ![GRAFCET](/images/Grafcet/example2c.png )
+
+```TAGs
+•	iCmdInit = digital input variable of FB – Initialization command
+•	iStsStarted = digital input variable of FB – Status of a start-stop circuit
+•	iStsSenFwd = digital input variable of FB – Sensor forward
+•	iStsSenRev = digital input variable of FB – Sensor reverse
+•	i = static retain flag of FB - counter
+•	oBeltFwd = digital output variable of FB - Move belt forward
+•	oBeltRev = digital output variable of FB - Move belt reverse
+•	oOK = digital output variable of FB - Job done
+```
 
 The photocell sensors on the conveyor detect the presence of the box when the infrared beam between the photocell and reflector is interrupted. The status of these photocells (%I) is linked to the GRAFCET input variables ‘iSenFwd’ and ‘iSenRev’.
 
@@ -188,6 +204,13 @@ The forward and reverse control of the conveyor is determined by step 1 & step 2
 The conveyor is effectively controlled by the GRAFCET output variables ‘oBeltFwd’ and ‘oBeltRev’, which are linked to the contactors (%Q) of the conveyor motor (asynchronous motor).
 
 ![GRAFCET](/images/Grafcet/example2f.png )
+
+```TAGs
+•	oBeltFwd = digital output variable of FB - Move belt forward
+•	oBeltRev = digital output variable of FB - Move belt reverse
+•	oConFwd_K1 = digital output - Contactor of belt motor, labelled as K1, to move the belt forward
+•	oConRev_K2 = digital output - Contactor of belt motor, labelled as K2, to move the belt reversed
+```
 
 The counting of the number of back-and-forth movements is controlled by the internal INT variable ‘i’. This variable is an internal function block parameter of the STATIC type. This makes it possible to remember the state of the variable ‘i’ even when the voltage is disabled (=remanent).
 
