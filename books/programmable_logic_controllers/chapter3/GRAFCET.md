@@ -77,7 +77,7 @@ At a given moment during the evolution of the sequential process:
 ### Transition
 
 | Symbol | Description |
-| :----: | :---------- 
+| :----: | :---------- |
 | ![GRAFCET](/images/Grafcet/transition.png ) | A transition between two steps is represented by a horizontal crossbar on the connecting line. <br> <br> A transition is active when the preceding step is active. <br> <br> Only one transition is allowed between two steps. |
 | ![GRAFCET](/images/Grafcet/transition_ver.png ) | For graphic reasons, it is permissible to place a vertical crossbar over a horizontal connecting line. |
 | ![GRAFCET](/images/Grafcet/transition_cond.png ) | Each transition has a transition condition. This is a mathematical Boolean expression composed of variables, which replaces the asterisk symbol and can be TRUE or FALSE. <br> <br> The transition condition is always placed to the right of the transition. <br> <br> Of all the available information at a given moment, the transition condition contains only that which is necessary for crossing that transition.  |
@@ -91,12 +91,12 @@ At a given moment during the evolution of the sequential process:
 | ![GRAFCET](/images/Grafcet/transition_source.png )| A source transition condition is a transition condition without a preceding step. Whenever the transition condition is TRUE, the following step will become active. <br> <br> It is recommended to provide the transition condition with a rising or falling edge to avoid continuous activation of the next step. |
 | ![GRAFCET](/images/Grafcet/transition_end.png )| An end transition condition is a transition condition that is not followed by a step. Whenever the transition condition is TRUE, all upward steps will be deactivated |
 
-**Example**
+### Example 1
 
 The example shows 
-- The use of mathematical expressions to connect boolean tags (eg. iStsStared AND iSen2)
+- The use of mathematical expressions to connect boolean tags (e.g. iStsStared AND iSen2)
 - The use of a rising edge on the initialization command
-- The use of a 5s on-delay if iSen1=FALSE
+- The use of a 5s on-delay if iSen1=FALSE (transition from step 2 to step 3)
 
 ![GRAFCET](/images/Grafcet/example1.png )
 
@@ -104,15 +104,36 @@ Explanation on GRAFCET initialization. On a rising edge of iCmdInit
 - The current active step is deactivated by iCmdInit after step 3 == All upward steps are deactivated
 - The initial step is activated by iCmdInit before step 0 == Activate the following step
 
-Explanation of symbolic tags in the example
--	iCmdInit = digital input – Initialisation command
--	iStsStarted = digital input – Result of a basic start stop control circuit
--	iSen1 = digital input – Sensor 1
--	iSen2 = digital input – Sensor 2
+> Symbolic tags mnemonics
+> -	iCmdInit = digital input – Initialisation command
+> -	iStsStarted = digital input – Result of a basic start stop control circuit
+> -	iSen1 = digital input – Sensor 1
+> -	iSen2 = digital input – Sensor 2
 
 ### Action
 
+| Symbol | Description |
+| :----: | :---------- |
+| ![GRAFCET](/images/Grafcet/action1.png ) | An action is assigned to a step and is represented by a rectangle connected to the step by a horizontal line. <br> <br> It is permitted to assign multiple actions to a single step if they are represented by their own rectangles. <br> <br> Permitted representations of multiple actions: <br> <br> ![GRAFCET](/images/Grafcet/action2.png ) |
+| ![GRAFCET](/images/Grafcet/action3.png ) | Each action has an action label that refers to the action to be performed. It is preferable to use variables instead of descriptive text. The label is noted in the rectangle, with the asterisk symbol replaced by the variable. <br> <br> For a continuous action, the state of the variable will be TRUE when the corresponding step is active. At all other times, the action is FALSE. |
+| ![GRAFCET](/images/Grafcet/action4.png ) | In a memory action, a specific value is assigned to a variable, which is then stored. The asterisk symbol is replaced by the variable and the # symbol is replaced by a (mathematical) value, formula, ... |
+| ![GRAFCET](/images/Grafcet/action5.png ) | A conditional action is given the status TRUE if the corresponding step is active and the assigned action condition is TRUE. |
+| ![GRAFCET](/images/Grafcet/action6.png ) | A conditional action that is time-dependent is indicated using the ‘/’ symbol. <br> <br> In this case, the action is TRUE after a rise delay and remains TRUE with a fall delay. <br> <br> It is permitted to simplify the notation by removing the fall delay if it does not apply. |
+| ![GRAFCET](/images/Grafcet/action7.png ) | It is possible to perform a memory action when activating a step. This is indicated by an upward arrow. |
+| ![GRAFCET](/images/Grafcet/action8.png ) | It is possible to perform a memory action when deactivating a step. This is indicated by a downward arrow. |
+
 ### Structures
+
+| Symbol | Description |
+| :----: | :---------- |
+| ![GRAFCET](/images/Grafcet/seq1.png ) | A sequence is a succession of steps in which there is a maximum of one transition condition for each step. <br> <br> The sequence is called active if at least one step of the sequence is active. <br> <br> The sequence is called inactive if all steps of the sequence are inactive. |
+| ![GRAFCET](/images/Grafcet/seq2.png ) | A single loop sequence is a succession of steps in which there is a maximum of one transition condition at each step and in which the last step is connected to the first step. |
+| ![GRAFCET](/images/Grafcet/seq3.png ) | A sequence with a source step contains a step without a preceding transition condition. |
+| ![GRAFCET](/images/Grafcet/seq4.png ) | A sequence with an end step contains a step that is followed by a transition condition. <br> <br> An end step (and a source step) are necessary for macros. |
+| ![GRAFCET](/images/Grafcet/seq5.png ) | With a forward sequence jump, it is possible to skip a sequence or part of it. <br> <br> Note that only one transition is allowed between two steps. |
+| ![GRAFCET](/images/Grafcet/seq6.png ) | With a backward sequence jump, it is possible to skip a sequence or part of it. This makes it possible to repeat a sequence. <br> <br> Note that only one transition is allowed between two steps. |
+| ![GRAFCET](/images/Grafcet/or_conv.png )| Using OR convergence, it is possible to choose between different sequences in which only one transition is allowed between two steps. <br> <br> The designer must ensure that the simultaneous activation of different steps is not possible. |
+| ![GRAFCET](/images/Grafcet/and_conv.png ) | Using an AND convergence, it is possible to activate multiple steps and sequences simultaneously. The parallel sequences are started after a transition condition. An AND convergence is represented by a double line. <br> <br> Once the parallel sequences have been activated, they will be executed independently of each other. <br> <br> An AND convergence is synchronised at the end by exiting the parallel sequences and reactivating a single step. This is represented by a double line for a transition condition. All end steps of parallel sequences must be activated and the status of the transition condition must be TRUE. |
 
 ### Operation
 
@@ -122,21 +143,84 @@ If a step is active, the next step can only become active if the status of the t
 
 However, it is possible that, due to the status of various transition conditions, the operation of a GRAFCET does not appear to proceed step by step. It is the designer's task to avoid this operation, which can lead to unstable operation of, for example, actions.
 
+| Operation | Description |
+| :----: | :---------- |
+| ![GRAFCET](/images/Grafcet/operation1.png ) | In the case of a **non-permanent operation**, the operation will proceed step by step. <br> <br> Situation: <br>  Step 4 active <br> <br> iSen1 = iSen2 = iSen3 = FALSE <br> <br> Operation: <br> iSen1 (1) becomes TRUE activating step 5 and deactivating step 4. |
+| ![GRAFCET](/images/Grafcet/operation2.png ) | In the case of a **transient operation**, it will not proceed step by step. <br> <br> Situation: <br> <br> Step 4 active <br> iSen1 = iSen3 = FALSE <br> iSen2 = TRUE <br> <br> Operation: <br>	iSen1 (1) becomes TRUE, activating step 5 and deactivating step 4. Because iSen2 (2) is TRUE, step 6 is immediately activated and step 5 is deactivated. <br> <br> Disadvantage: If actions are used instead of memory actions, it is possible that actions assigned to a transient step are not executed or are executed too briefly (=unstable operation). |
+| ![GRAFCET](/images/Grafcet/operation3.png ) | In an AND convergence, parallel sequences are started if the preceding transition condition is TRUE. <br> <br> Situation : <br> If step 1 is active and the transition condition iStarted is TRUE, steps 2 and 4 will be activated. |
+| ![GRAFCET](/images/Grafcet/operation4.png ) | In an AND convergence, parallel sequences are started if the preceding transition condition is TRUE. <br> <br> Situation : <br> Once the parallel sequences have been activated, they will be executed independently of each other. |
+| ![GRAFCET](/images/Grafcet/operation5.png ) | In an AND convergence, parallel sequences are started if the preceding transition condition is TRUE. <br> <br> Situation : <br> Step 9 is activated if steps 3 and 6 are active and if the transition condition iSen1.iSen2 TRUE is true. |
 
-### Example
 
-The following example shows a GRAFCET for the operation of a conveyor on which a box is placed and moved back and forth five times before stopping. After this, the conveyor must be restarted.
+### Example 2
 
+The following example shows a GRAFCET for the operation of a belt conveyor on which a box is placed and moved back and forth five times before stopping. After this, the conveyor must be restarted.
 
+![GRAFCET](/images/Grafcet/example2a.png )
+
+De GRAFCET has the name FB_PE_Belt:
+-	FB = GRAFCET is programmed in a function block (FB)
+-	PE = Indicates that the building block is a procedure  element
+
+The conveyor is started and stopped using a start and stop push buttons. The operation of these buttons is not included in the GRAFCET but is performed by a basic start-stop control circuit. The result of this is linked to the GRAFCET input variable ‘iStsStarted’.
+
+![GRAFCET](/images/Grafcet/example2b.png )
+
+> Symbolic tags mnemonics
+> -	iBtnStart – Start button
+> - iBtnStop - Stop button
+> -	iStsStarted – Result of a basic start stop control circuit, TRUE if started
+
+Each time the stop push button is pressed, the conveyor will stop immediately (the box will stop moving). As soon as the start push button is pressed again, the GRAFCET will continue where it left off.
+
+![GRAFCET](/images/Grafcet/example2c.png )
+
+The photocell sensors on the conveyor detect the presence of the box when the infrared beam between the photocell and reflector is interrupted. The status of these photocells (%I) is linked to the GRAFCET input variables ‘iSenFwd’ and ‘iSenRev’.
+
+![GRAFCET](/images/Grafcet/example2d.png )
+
+The forward and reverse control of the conveyor is determined by step 1 & step 2, provided that the installation has been started (result of the combinatorial basic start-stop circuit).
+
+![GRAFCET](/images/Grafcet/example2e.png )
+
+The conveyor is effectively controlled by the GRAFCET output variables ‘oBeltFwd’ and ‘oBeltRev’, which are linked to the contactors (%Q) of the conveyor motor (asynchronous motor).
+
+![GRAFCET](/images/Grafcet/example2f.png )
+
+The counting of the number of back-and-forth movements is controlled by the internal INT variable ‘i’. This variable is an internal function block parameter of the STATIC type. This makes it possible to remember the state of the variable ‘i’ even when the voltage is disabled (=remanent).
+
+![GRAFCET](/images/Grafcet/example2g.png )
+
+The variable ‘i’ is incremented in step 3. Step 1 is then activated because there is a loop sequence between step 3 and step 1, but only as long as the value of the variable ‘i’ is less than the decimal value 5.
+
+Note that increasing the variable ‘i’ is only performed when step 3 becomes active (rising edge). This is to prevent the variable from being increased incorrectly if step 3 is active for more than one cycle.
+
+If the box has been moved back and forth five times, this is indicated by a green OK light. This light (%Q) is linked to the GRAFCET output variable “oOK”. The installation must then be stopped using the stop push button before it can be restarted.
+
+![GRAFCET](/images/Grafcet/example2h.png )
+
+It is possible to initialise the GRAFCET. This involves activating the initial step (step 0) using the GRAFCET input variable “iCmdInit”. All other active steps are deactivated. Initialisation is only performed on a rising edge of the “iInit” GRAFCET input variable.
+
+![GRAFCET](/images/Grafcet/example2i.png )
+
+For example, you can decide to initialise the installation by pressing the start and stop push buttons simultaneously for 5 seconds or more.
+
+![GRAFCET](/images/Grafcet/example2j.png )
 
 ## GRAFCET programming in LAD/FBD using BOOL
 
 The GRAFCET is programmed in the LAD or FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off  (RETAIN).
 
+The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff English tag mnemonics are used, for Siemens Dutch tag mnemonics are used.
+
 ## GRAFCET programming in LAD/FBD using INT
 
 The GRAFCET is programmed in the LAD of FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off  (RETAIN).
 
+The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff English tag mnemonics are used, for Siemens Dutch tag mnemonics are used.
+
 ## GRAFCET programming in ST
 
 The GRAFCET is programmed in the ST programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off (RETAIN).
+
+The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff English tag mnemonics are used, for Siemens Dutch tag mnemonics are used.
