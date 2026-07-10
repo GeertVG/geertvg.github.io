@@ -216,9 +216,7 @@ The counting of the number of back-and-forth movements is controlled by the inte
 
 ![GRAFCET](/images/Grafcet/example2g.png )
 
-The variable ‘i’ is incremented in step 3. Step 1 is then activated because there is a loop sequence between step 3 and step 1, but only as long as the value of the variable ‘i’ is less than the decimal value 5.
-
-Note that increasing the variable ‘i’ is only performed when step 3 becomes active (rising edge). This is to prevent the variable from being increased incorrectly if step 3 is active for more than one cycle.
+The variable ‘i’ is incremented in step 3. Step 1 is then activated because there is a loop sequence between step 3 and step 1, but only as long as the value of the variable ‘i’ is less than the decimal value 5. Note that increasing the variable ‘i’ is only performed when step 3 becomes active (rising edge). This is to prevent the variable from being increased incorrectly if step 3 is active for more than one cycle.
 
 If the box has been moved back and forth five times, this is indicated by a green OK light. This light (%Q) is linked to the GRAFCET output variable “oOK”. The installation must then be stopped using the stop push button before it can be restarted.
 
@@ -236,16 +234,16 @@ For example, you can decide to initialise the installation by pressing the start
 
 The GRAFCET is programmed in the LAD or FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off  (RETAIN).
 
-The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff English tag mnemonics are used, for Siemens Dutch tag mnemonics are used.
+The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff Dutch tag mnemonics are used, for Siemens English tag mnemonics are used.
 
 ## GRAFCET programming in LAD/FBD using INT
 
 The GRAFCET is programmed in the LAD or FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off  (RETAIN).
 
-The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff English tag mnemonics are used, for Siemens Dutch tag mnemonics are used.
+The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff Dutch tag mnemonics are used, for Siemens English tag mnemonics are used.
 
 ## GRAFCET programming in ST
 
 The GRAFCET is programmed in the ST programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off (RETAIN).
 
-The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff English tag mnemonics are used, for Siemens Dutch tag mnemonics are used.
+The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff Dutch tag mnemonics are used, for Siemens English tag mnemonics are used.
