@@ -104,11 +104,12 @@ Explanation on GRAFCET initialization. On a rising edge of iCmdInit
 - The current active step is deactivated by iCmdInit after step 3 == All upward steps are deactivated
 - The initial step is activated by iCmdInit before step 0 == Activate the following step
 
-> Symbolic tags mnemonics
-> -	iCmdInit = digital input – Initialisation command
-> -	iStsStarted = digital input – Result of a basic start stop control circuit
-> -	iSen1 = digital input – Sensor 1
-> -	iSen2 = digital input – Sensor 2
+```TAGs
+•	iCmdInit = digital input – Initialisation command
+•	iStsStarted = digital input – Result of a basic start stop control circuit
+•	iSen1 = digital input – Sensor 1
+•	iSen2 = digital input – Sensor 2
+```
 
 ### Action
 
@@ -166,11 +167,12 @@ The conveyor is started and stopped using a start and stop push buttons. The ope
 
 ![GRAFCET](/images/Grafcet/example2b.png )
 
-> Symbolic tags mnemonics
-> -	iBtnStart – Start button
-> - iBtnStop - Stop button
-> -	iStsStarted – Result of a basic start stop control circuit, TRUE if started
 
+```TAGs
+•	iBtnStart – Start button
+•	iBtnStop - Stop button
+•	iStsStarted – Result of a basic start stop control circuit, TRUE if started
+```
 Each time the stop push button is pressed, the conveyor will stop immediately (the box will stop moving). As soon as the start push button is pressed again, the GRAFCET will continue where it left off.
 
 ![GRAFCET](/images/Grafcet/example2c.png )
@@ -215,7 +217,7 @@ The conversion of a GRAFCET design to software code is demonstrated by means of 
 
 ## GRAFCET programming in LAD/FBD using INT
 
-The GRAFCET is programmed in the LAD of FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off  (RETAIN).
+The GRAFCET is programmed in the LAD or FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off  (RETAIN).
 
 The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff English tag mnemonics are used, for Siemens Dutch tag mnemonics are used.
 
