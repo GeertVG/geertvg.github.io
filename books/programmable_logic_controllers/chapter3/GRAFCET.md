@@ -236,14 +236,135 @@ The GRAFCET is programmed in the LAD or FBD programming language in a function b
 
 The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff Dutch tag mnemonics are used, for Siemens English tag mnemonics are used.
 
+| Manufacturer | Parameter interface |
+| :----------: | :------------------ |
+| Beckhoff <br> (NL) | |
+| Siemens <br> (EN)  | |
+
+Programming is divided into three parts, which are programmed chronologically in different networks:
+-	Initialisation (network 1)
+-	Transition conditions (network 2 … x)
+-	Actions (network x+1 … last network)
+
+GRAFCET programming in LAD/FBD using BOOL variables is based on the following ideas
+-	An ARRAY is used, whereby the ARRAY number corresponds to the GRAFCET step number
+-	There is always an initialisation input ‘iCmdInit’ which ensures that the initial step becomes active on a rising edge signal from this input
+-	There is always an input ‘iStsStarted’ which passes the result of a basic start-stop control circuit to the GRAFCET
+
+| Manufacturer | Initialisation overview |
+| :----------: | :---------------------- |
+| Beckhoff <br> (LAD) | |
+| Siemens <br>  (FBD) | |
+
+
+| Manufacturer | Transitions overview |
+| :----------: | :------------------- |
+| Beckhoff <br> (LAD) | |
+| Siemens <br>  (FBD) | |
+
+
+| Manufacturer | Actions overview |
+| :----------: | :--------------- |
+| Beckhoff <br> (LAD) | |
+| Siemens <br>  (FBD) | |
+
+| Advantages                     | Disadvantages                                                               |
+|:------------------------------:|:---------------------------------------------------------------------------:|
+| Simplicity (1 step = 1 variable) | Initial step is not activated during the very first download of the programme |
+|                                  | Monitoring of active steps is more extensive than with the other variants     |
+
+
 ## GRAFCET programming in LAD/FBD using INT
 
 The GRAFCET is programmed in the LAD or FBD programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off  (RETAIN).
 
 The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff Dutch tag mnemonics are used, for Siemens English tag mnemonics are used.
 
+| Manufacturer | Parameter interface |
+| :----------: | :------------------ |
+| Beckhoff <br> (NL) | |
+| Siemens <br> (EN)  | |
+
+Programming is divided into three parts, which are programmed chronologically in different networks:
+-	Initialisation (network 1)
+-	Transition conditions (network 2 … x)
+-	Actions (network x+1 … last network)
+
+GRAFCET programming in LAD/FBD using an INT variable is based on the following ideas  
+-	Only the current step(s) must be known
+-	These current steps are represented as INT numbers using one or more variables
+-	If the decimal value of these variables is equal to a GRAFCET step number, the GRAFCET step is active
+-	There is always an initialisation input ‘iCmdInit’ which ensures that the initial step becomes active on a rising edge signal from this input
+-	The initial step must be active automatically the very first time the software is downloaded to the PLC; this is because an INT number has a decimal value of 0 by default
+-	There is always an input ‘iStsStarted’ which transmits the result of a basic start-stop control circuit to the GRAFCET
+
+| Manufacturer | Initialisation overview |
+| :----------: | :---------------------- |
+| Beckhoff <br> (FBD) | |
+| Siemens <br>  (LAD) | |
+
+
+| Manufacturer | Transitions overview |
+| :----------: | :------------------- |
+| Beckhoff <br> (FBD) | |
+| Siemens <br>  (LAD) | |
+
+
+| Manufacturer | Actions overview |
+| :----------: | :--------------- |
+| Beckhoff <br> (FBD) | |
+| Siemens <br>  (LAD) | |
+
+| Advantages                     | Disadvantages                                                               |
+|:------------------------------:|:---------------------------------------------------------------------------:|
+| Initial step is activated during the very first download of the programme | More complex, extensive programming than with LAD/FBD BOOL variant |
+| Monitoring of active steps is clearer | Programming of AND convergence is more complex than with LAD/FBD BOOL variant |
+
 ## GRAFCET programming in ST
 
 The GRAFCET is programmed in the ST programming language in a function block (%FB). This allows the use of STATIC parameters that can retain their status even when the power is cut-off (RETAIN).
 
 The conversion of a GRAFCET design to software code is demonstrated by means of example 2. For Beckhoff Dutch tag mnemonics are used, for Siemens English tag mnemonics are used.
+
+| Manufacturer | Parameter interface |
+| :----------: | :------------------ |
+| Beckhoff <br> (NL) | |
+| Siemens <br> (EN)  | |
+
+The programming is divided into three parts, which are programmed chronologically in different networks:
+-	Initialisation
+-	Transition conditions
+-	Actions
+
+GRAFCET programming in ST is based on the following ideas
+-	A CASE .. OF .. ELSE control structure is used to handle the transition conditions.
+-	An INT data type is used to display the current step(s), because the control structure requires an ANY_INT data type.
+-	If the decimal value of this variable or variables is equal to a GRAFCET step number, the GRAFCET step is active
+-	There is always an initialisation input ‘iCmdInit’ which ensures that the initial step becomes active on a rising edge signal from this input
+-	The initial step must be active automatically the very first time the software is downloaded to the PLC; because an INT number has a decimal value of 0 by default, step 0 is applied as the initial step
+-	There is always an input ‘iStsStarted’ which passes the result of a basic start-stop control circuit to the GRAFCET
+
+| Manufacturer | Initialisation overview |
+| :----------: | :---------------------- |
+| Beckhoff <br> (NL) | |
+| Siemens <br>  (EN) | |
+
+
+| Manufacturer | Transitions overview |
+| :----------: | :------------------- |
+| Beckhoff <br> (NL) | |
+| Siemens <br>  (EN) | |
+
+
+| Manufacturer | Actions overview |
+| :----------: | :--------------- |
+| Beckhoff <br> (NL) | |
+| Siemens <br>  (EN) | |
+
+| Advantages                                                                | Disadvantages                                                                   |
+|:-------------------------------------------------------------------------:|:-------------------------------------------------------------------------------:|
+| Initial step is activated during the very first download of the programme | More complex programming than with the LAD/FBD variant |
+| More compact programming than the LAD/FBD variant | Programming of AND convergence is more complex than with the LAD/FBD BOOL variant |
+| Monitoring of the active steps is more transparent | Debugging in ST is more difficult than in FBD/LAD  |
+
+
